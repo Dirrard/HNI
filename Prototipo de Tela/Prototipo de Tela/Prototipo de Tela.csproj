@@ -87,10 +87,14 @@
     <None Include="Titulo.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\boneco-the-flash-personagem-liga-da-justica-30-cm-mattel-D_NQ_NP_848669-MLB26081940981_092017-F.jpg" />
+    <EmbeddedResource Include="Resources\boneco-the-flash-personagem-liga-da-justica-30-cm-mattel-D_NQ_NP_848669-MLB26081940981_092017-F.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Titulo.PNG" />
+    <EmbeddedResource Include="Resources\Titulo.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
