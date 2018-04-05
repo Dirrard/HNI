@@ -1,0 +1,2 @@
+c:\users\aluno\documents\visual studio 2015\Projects\Prototipo de Tela\Prototipo de Tela\bin\Debug\Prototipo de Tela.exe.config
+C:\Users\Aluno\Desktop\Prototipo de Tela\Prototipo de Tela\bin\Debug\Prototipo de Tela.exe.config
