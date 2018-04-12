@@ -7,18 +7,50 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    background-color: bisque;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+#nav {
+    background-color: antiquewhite;
+    font-family: 'Baskerville Old Face';
+    font-size: large;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+#Bod {
+    background-color: bisque;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
 }
+
+
+.navbar-inverse .navbar-nav > li > a {
+    color:black !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar-inverse .navbar-brand {
+    color: black !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#bu {
+    margin-bottom:50px;
+    font-size:x-large;
+  
+}
+#Bodin{
+    background-color:blanchedalmond;
+    color: black;
+    font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
+}
+#D {
+ 
+    border: 5px solid white;
+    width: 80%;
+}
+
