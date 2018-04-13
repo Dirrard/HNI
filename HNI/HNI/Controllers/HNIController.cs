@@ -21,5 +21,9 @@ namespace HNI.Controllers
         {
             return View();
         }
+        public ActionResult Ajuda()
+        {
+            return View();
+        }
     }
 }
