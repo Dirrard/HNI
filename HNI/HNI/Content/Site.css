@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-bottom:15px;
     background-color: bisque;
     color: black;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -42,10 +43,12 @@
   
 }
 #Bodin{
+    /* background-image: url('../Background-Image02.jpg');*/
     background-color:blanchedalmond;
     color: black;
     font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
+     border: 5px solid black;
 }
 }
 #D {
@@ -54,3 +57,6 @@
     width: 80%;
 }
 
+#K {
+    background-image: url('../Background-Image.jpg');
+}
