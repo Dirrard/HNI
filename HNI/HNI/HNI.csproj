@@ -211,6 +211,16 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HNI,Models\HNI.Models.csproj">
+      <Project>{4060ef20-8c53-4157-9405-fa01c4f06414}</Project>
+      <Name>HNI.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HNI.Dataaccess\HNI.DataAccess.csproj">
+      <Project>{2b4ff2e0-a691-4997-be5a-abe62614a735}</Project>
+      <Name>HNI.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
