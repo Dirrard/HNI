@@ -3,5 +3,20 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
-
+<h1>Bem-Vindo</h1>
+<br />
+<br />
+<form>
+    <div class="jumbotron" id="Bodin">
+        <div class="row">
+            <div class="form-grop">
+                <div class="col-md">
+                    <h2>Login</h2>
+                    <br />
+                    @Html.LabelFor(m => m.Nome, "Nome:" , new { @class = "control-label"})
+                    <p><a class="btn btn-primary" href="~/HNI/Cadastro">Entar</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
