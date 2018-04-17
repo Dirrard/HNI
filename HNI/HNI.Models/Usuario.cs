@@ -14,7 +14,7 @@ namespace HNI_Models
         public string Email { get; set; }
         public string Senha { get; set; }
         public string ConfSenha { get; set; }
-        public int DataNasc { get; set; }
+        public string DataNasc { get; set; }
         public string Genero { get; set; }
         public bool Termo { get; set; }
     }
