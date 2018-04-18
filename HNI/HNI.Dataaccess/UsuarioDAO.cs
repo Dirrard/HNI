@@ -42,6 +42,37 @@ namespace HNI.Dataaccess
             }
         }
 
+        public Usuario Login(Usuario u)
+        {
+            using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI; Data Source = localhost; Integrated Security=SSPI"))
+            {
+                string strSQL = @"SELECT * FROM Usuario WHERE Email = '" + u.Email + "' AND Senha= '" + u.Senha + "'";
 
+                using (SqlCommand cmd = new SqlCommand(strSQL))
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandText = strSQL;
+                    var dataReader = cmd.ExecuteReader();
+                    var dt = new DataTable();
+                    dt.Load(dataReader);
+                    conn.Close();
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        var usuario = new Usuario()
+                        {
+                            Id = Convert.ToInt32(row["ID"]),
+                            Email = row["EMAIL"].ToString(),
+                            Senha = row["SENHA"].ToString()
+
+                        };
+
+                        return usuario;
+                    }
+                }
+            }
+            return null;
+        }
     }
 }
