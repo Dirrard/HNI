@@ -9,7 +9,7 @@ using System.Data;
 
 namespace HNI.Dataaccess
 {
-    class UsuarioDAO
+    public class UsuarioDAO
     {
         public void Inserir(Usuario obj)
         {
