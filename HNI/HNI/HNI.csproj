@@ -212,13 +212,13 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HNI,Models\HNI.Models.csproj">
-      <Project>{4060ef20-8c53-4157-9405-fa01c4f06414}</Project>
-      <Name>HNI.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HNI.Dataaccess\HNI.DataAccess.csproj">
       <Project>{2b4ff2e0-a691-4997-be5a-abe62614a735}</Project>
       <Name>HNI.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HNI.Models\HNI.Models.csproj">
+      <Project>{c78d57b5-8fd8-4eea-b06e-752c1b3ee5cf}</Project>
+      <Name>HNI.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

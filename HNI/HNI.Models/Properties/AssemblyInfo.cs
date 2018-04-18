@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HNI,Models")]
+[assembly: AssemblyTitle("HNI.Models")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HNI,Models")]
+[assembly: AssemblyProduct("HNI.Models")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4060ef20-8c53-4157-9405-fa01c4f06414")]
+[assembly: Guid("c78d57b5-8fd8-4eea-b06e-752c1b3ee5cf")]
 
 // Version information for an assembly consists of the following four values:
 //

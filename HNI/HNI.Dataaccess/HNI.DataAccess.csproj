@@ -43,8 +43,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HNI,Models\HNI.Models.csproj">
-      <Project>{4060ef20-8c53-4157-9405-fa01c4f06414}</Project>
+    <ProjectReference Include="..\HNI.Models\HNI.Models.csproj">
+      <Project>{c78d57b5-8fd8-4eea-b06e-752c1b3ee5cf}</Project>
       <Name>HNI.Models</Name>
     </ProjectReference>
   </ItemGroup>

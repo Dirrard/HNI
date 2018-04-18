@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HNI_Models
+namespace HNI.Models
 {
-    class Usuario
+   public class Usuario
     {
         public int Id { get; set; }
         public string Nome { get; set; }
