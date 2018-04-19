@@ -2,31 +2,34 @@
 @{
     ViewBag.Title = "Cadastro";
 }
-
-<div id="Bod" class="text-center">
-    <h1>Bem-Vindo ao Cadastro do jogo HNI</h1>
-    <br />
-</div>
-<div class="jumbotron" id="Bodin">
-    <h1>Cadastro</h1>
+@using HNI.Models
+    @model Usuario
     <div class="row">
-        <div class="col-md-12">
-            <form action="@Url.Action("Salvar","Cor")" class="form-horizontal">
-                <div class="form-group">
-                    <div class="col-md-8">
-                        @Html.LabelFor(m => m.Nome, "Nome:", new { @class = "control_label" })
-                        @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-12 text-right">
-                        <button type="submit" class="btn btn-primary">Salvar</button>
-                        <button type="button" class="btn btn-default">Cancelar</button>
-                    </div>
-                </div>
-            </form>
+        <div id="Bod" class="text-center">
+            <h1>Bem-Vindo ao Cadastro do jogo HNI</h1>
+            <br />
         </div>
+        <div class="jumbotron" id="Bodin">
+            <h1>Cadastro</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="@Url.Action("Salvar","Cor")" class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                @Html.LabelFor(m => m.Nome, "Nome:", new { @class = "control_label" })
+                                @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12 text-right">
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                                <button type="button" class="btn btn-default">Cancelar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </div>
-    
-</div>
 
