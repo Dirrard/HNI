@@ -1,37 +1,32 @@
-﻿@{
-    ViewBag.Title = "Login";
-}
-@using HNI.Models
+﻿@using HNI.Models
 @model Usuario
-
-<div class="row">
-    <div class="jumbotron" id="Bodin">
-        <div class="col-md-12">
-
-            <form action="@Url.Action("Login_U","HNI")" class="form-horizontal">
-
-                <div class="col-md-4">
-                    <h2>Login</h2>
-                </div>
-                <h2>Login</h2>
-                <div class="form-grop">
-                    <div class="col-md-4">
-                        @Html.LabelFor(m => m.Email, "Digite seu Email:", new { @class = "control-label" })
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-
-                    </div>
-                </div>
-                <div class="form-grop">
-
-                    <div class="col-md-4">
-
-                        @Html.LabelFor(m => m.Senha, "Digite sua Senha:", new { @class = "control_label" })
-                        @Html.PasswordFor(m => m.Senha, new { @class = "form-control" })
-                        <button type="submit" class="btn btn-primary">Entrar</button>
-
-                    </div>
-                </div>
-            </form>
+<style type="text/css">
+    body {
+        background-image: url('@Url.Content("~/Background-Image.jpg")');
+    }
+</style>
+<div id="Bod" class="text-center">
+    <h1>Bem-Vindo</h1>
+    <br />
+    <p>Tela de Login</p>
+    <br />
+</div>
+<div class="jumbotron" id="Bodin">
+    <form action="@Url.Action("Login_U","HNI")" class="form-horizontal">
+        <h2>Login</h2>
+        <div class="form-group">
+            <div class="col-md-4">
+                @Html.LabelFor(m => m.Email, "Digite seu Email:", new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+            <div class="col-md-4">
+                @Html.LabelFor(m => m.Senha, "Digite sua Senha:", new { @class = "control_label" })
+                @Html.PasswordFor(m => m.Senha, new { @class = "form-control" })
+            </div>
+            <div class="col-md-4">
+                <br />
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </div>
         </div>
-    </div>
-    </div>
+    </form>
+</div>
