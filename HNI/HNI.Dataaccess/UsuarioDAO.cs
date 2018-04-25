@@ -19,7 +19,7 @@ namespace HNI.Dataaccess
                         Data Source=localhost;
                         Integrated Security=SSPI;"))
                 {
-                    string strSQL = @"INSERT INTO estado(Nome,Nick,Email,Senha,DataNasc,Genero )
+                    string strSQL = @"INSERT INTO Usuario (Nome,Nick,Email,Senha,DataNasc,Genero )
                                  VALUES (@nome,@nick,@email,@senha,@datanasc,@genero);";
 
                     using (SqlCommand cmd = new SqlCommand(strSQL))
