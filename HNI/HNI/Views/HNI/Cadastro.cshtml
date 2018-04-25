@@ -16,13 +16,11 @@
             <div class="col-md-12">
                 <form action="@Url.Action("Salvar","Cor")" class="form-horizontal">
                     <div class="form-group">
-                        <div class="col-md-10">
+                        <div class="col-md-5">
                             @Html.LabelFor(m => m.Nome, "Nome:", new { @class = "control_label" })
                             @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-10">
+                        <div class="col-md-5">
                             @Html.LabelFor(m => m.Nick, "Nick:", new { @class = "control_label" })
                             @Html.TextBoxFor(m => m.Nick, new { @class = "form-control" })
                         </div>
@@ -34,36 +32,34 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-10">
+                        <div class="col-md-5">
                             @Html.LabelFor(m => m.Senha, "Senha:", new { @class = "control_label" })
                             @Html.TextBoxFor(m => m.Senha, new { @class = "form-control" })
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-10">
+                        <div class="col-md-5">
                             @Html.LabelFor(m => m.ConfSenha, "Conferir Senha:", new { @class = "control_label" })
                             @Html.TextBoxFor(m => m.ConfSenha, new { @class = "form-control" })
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             @Html.LabelFor(m => m.DataNasc, "Data de Nascimento:", new { @class = "control_label" })
                             @Html.TextBoxFor(m => m.DataNasc, new { @class = "form-control" })
                         </div>
-                        <div class="col-md-8">
-                            @Html.LabelFor(m => m.Genero, "Genero:", new { @class = "control_label" })
-                            <input type="radio" name="@Html.RadioButton("GeneroM", false)
-                            <label for="radio-choice-v-2a">Masculino</label>
-                            <input type="radio" name="@Html.RadioButton("GeneroF", false)
-                            <label for="radio-choice-v-2b">Feminino</label>
-                            <input type="radio" name="@Html.RadioButton("GeneroO", false)
-                            <label for="radio-choice-v-2c">Outro</label>
+                        <div class="col-md-4">
+                            @Html.LabelFor(m => m.Genero, "Genero:", new { @class = "control-label" })
+                            @Html.RadioButtonFor(m => m.Genero, "Masculino")
+                            @Html.LabelFor(m => m.Genero, "Masculino", new { @class = "control-label" })
+                            @Html.RadioButtonFor(m => m.Genero, "Feminino")
+                            @Html.LabelFor(m => m.Genero, "Feminino", new { @class = "control-label" })
+                            @Html.RadioButtonFor(m => m.Genero, "Outro")
+                            @Html.LabelFor(m => m.Genero, "Outro", new { @class = "control-label" })
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-12 text-right">
-                            <button type="submit" class="btn btn-primary">Salvar</button>
-                            <button type="button" class="btn btn-default">Cancelar</button>
+                        <div class="col-md-12 text-center" >
+                            <button type="submit" id="FAR2" class="btn btn-primary">Salvar</button>
+                            <button type="button" id="FAR2" class="btn btn-default">Cancelar</button>
                         </div>
                     </div>
                 </form>
