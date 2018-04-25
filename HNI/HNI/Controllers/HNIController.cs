@@ -19,6 +19,10 @@ namespace HNI.Controllers
         {
             return View();
         }
+        public ActionResult Termo()
+        {
+            return View();
+        }
         public ActionResult Login()
         {
             return View();

@@ -198,6 +198,7 @@
     <Content Include="Views\HNI\Cadastro.cshtml" />
     <Content Include="Views\HNI\Login.cshtml" />
     <Content Include="Views\HNI\Ajuda.cshtml" />
+    <Content Include="Views\HNI\Termo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

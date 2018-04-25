@@ -14,7 +14,7 @@
         <br />
         <div class="row">
             <div class="col-md-12">
-                <form action="@Url.Action("Salvar","Cor")" class="form-horizontal">
+                <form action="@Url.Action("Salvar_U","HNI")" class="form-horizontal">
                     <div class="form-group">
                         <div class="col-md-5">
                             @Html.LabelFor(m => m.Nome, "Nome:", new { @class = "control_label" })
@@ -54,6 +54,13 @@
                             @Html.LabelFor(m => m.Genero, "Feminino", new { @class = "control-label" })
                             @Html.RadioButtonFor(m => m.Genero, "Outro")
                             @Html.LabelFor(m => m.Genero, "Outro", new { @class = "control-label" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            @Html.CheckBoxFor(m => m.Termo)
+                            @Html.LabelFor(m => m.Termo, "Eu li e Concordo com os", new { @class = "control-label" })
+                            @Html.ActionLink("Termos de Uso", "Termo", "HNI")
                         </div>
                     </div>
                     <div class="form-group">
