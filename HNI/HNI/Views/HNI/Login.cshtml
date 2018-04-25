@@ -1,4 +1,7 @@
-﻿@using HNI.Models
+﻿@{
+    ViewBag.Title = "Login Page";
+}
+@using HNI.Models
 @model Usuario
 <style type="text/css">
     body {
@@ -11,21 +14,32 @@
     <p>Tela de Login</p>
     <br />
 </div>
-<div class="jumbotron" id="Bodin">
+<div class="jumbotron text-center" id="Bodin">
     <form action="@Url.Action("Login_U","HNI")" class="form-horizontal">
         <h2>Login</h2>
+        <br />
         <div class="form-group">
+            <div class="col-md-4">
+            </div>
             <div class="col-md-4">
                 @Html.LabelFor(m => m.Email, "Digite seu Email:", new { @class = "control-label" })
                 @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4">
             </div>
             <div class="col-md-4">
                 @Html.LabelFor(m => m.Senha, "Digite sua Senha:", new { @class = "control_label" })
                 @Html.PasswordFor(m => m.Senha, new { @class = "form-control" })
             </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4">
+            </div>
             <div class="col-md-4">
                 <br />
-                <button type="submit" class="btn btn-primary">Entrar</button>
+                <button type="submit" id="FAR2" class="btn btn-primary">Entrar</button>
             </div>
         </div>
     </form>

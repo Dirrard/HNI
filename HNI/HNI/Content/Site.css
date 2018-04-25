@@ -61,7 +61,13 @@
     background-image: url('../Background-Image.jpg');
 }
 #FAR {
-    font-size:large!important;
+    font-size:x-large!important;
     font-family:Perpetua!important;
     border:3px solid black;
+}
+
+#FAR2 {
+    font-size:x-large!important;
+    font-family:Perpetua!important;
+    border:2px solid black;
 }
