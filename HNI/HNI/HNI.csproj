@@ -200,6 +200,8 @@
     <Content Include="Views\HNI\Ajuda.cshtml" />
     <Content Include="Views\HNI\Termo.cshtml" />
     <Content Include="Views\HNI\Jogo.cshtml" />
+    <Content Include="Views\HNI\Cadastro_Erro.cshtml" />
+    <Content Include="Views\HNI\Login_Erro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

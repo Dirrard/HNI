@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Login Page";
+}
+@using HNI.Models
+@model Usuario
+<style type="text/css">
+    body {
+        background-image: url('@Url.Content("~/Background-Image.jpg")');
+    }
+</style>
+<div id="Bud" class="text-center">
+    <h1>Bem-Vindo ao Login - ERRO</h1>
+    <br />
+    <p id="Erro" >Ocorreu um erro no momento do login, seu email ou senha não estão corretos</pid="Erro">
+    <br />
+</div>
+<div class="col-md-4">
+</div>
+<div class="col-md-4">
+    <div class="jumbotron text-center" id="Bodin">
+        <form action="@Url.Action("Login_U","HNI")" class="form-horizontal">
+            <h2>Login</h2>
+            <br />
+            <div class="form-group">
+                <div class="col-md-12">
+                    @Html.LabelFor(m => m.Email, "Digite seu Email:", new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-12">
+                    @Html.LabelFor(m => m.Senha, "Digite sua Senha:", new { @class = "control_label" })
+                    @Html.PasswordFor(m => m.Senha, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <br />
+                    <button type="submit" id="FAR2" class="btn btn-primary">Entrar</button>
+                    <a class="btn btn-success" id="FAR2" href="~/HNI/Cadastro">Criar Conta</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

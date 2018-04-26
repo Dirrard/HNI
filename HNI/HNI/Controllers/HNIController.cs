@@ -31,19 +31,46 @@ namespace HNI.Controllers
         {
             return View();
         }
+        public ActionResult Login_Erro()
+        {
+            return View();
+        }
         public ActionResult Ajuda()
+        {
+            return View();
+        }
+        public ActionResult Cadastro_Erro()
         {
             return View();
         }
         public ActionResult Salvar_U(Usuario obj)
         {
-            new UsuarioDAO().Inserir(obj);
-            return RedirectToAction("Index", "Home");
+            if (obj.Termo == true && obj.Senha == obj.ConfSenha)
+            {
+                new UsuarioDAO().Inserir(obj);
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {    
+                return RedirectToAction("Cadastro_Erro", "HNI");
+            }
+
         }
         public ActionResult Login_U(Usuario obj)
         {
-            new UsuarioDAO().Login(obj);
-            return RedirectToAction("Jogo", "HNI");
+            Usuario u = new Usuario();
+           u= new UsuarioDAO().Login(obj);
+            if (u.Termo == true)
+            {
+
+                return RedirectToAction("Jogo", "HNI");
+            }
+            else
+            {
+                return RedirectToAction("Login_Erro", "HNI");
+            }
+     
         }
     }
+
 }

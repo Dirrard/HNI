@@ -67,12 +67,14 @@ namespace HNI.Dataaccess
                             Senha = row["SENHA"].ToString()
 
                         };
-
+                        usuario.Termo = true;
                         return usuario;
                     }
                 }
             }
-            return null;
+            Usuario usuarie = new Usuario();
+            usuarie.Termo = false;
+            return usuarie;
         }
     }
 }
