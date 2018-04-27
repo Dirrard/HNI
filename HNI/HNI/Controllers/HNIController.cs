@@ -39,6 +39,10 @@ namespace HNI.Controllers
         {
             return View();
         }
+        public ActionResult Escolha_01_Resposta00_Cena_01()
+        {
+            return View();
+        }
         public ActionResult Cadastro_Erro()
         {
             return View();
