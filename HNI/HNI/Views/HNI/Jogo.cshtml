@@ -1,7 +1,38 @@
 ﻿
 @{
-    ViewBag.Title = "Jogo";
+    ViewBag.Title = "Inicio";
+
 }
 
-<h2>Jogo</h2>
-
+<style type="text/css">
+    body {
+        background-image: url('@Url.Content("~/Background-Image.jpg")');
+    }
+</style>
+<div class="row">
+    <div class="text-center">
+        <div class="col-md-12 text-center">
+            <div class="jumbotron" id="Urban">
+                <br />
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <div class="jumbotron" id="Ur">
+                        <h1>HNI</h1>
+                    </div>
+                </div>
+                <br />
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <p><a class="btn btn-primary" id="FAR2" href="~/HNI/Criar_Personagem">Jogar</a></p>
+                </div>
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <p><a class="btn btn-success" id="FAR2" href="~/HNI/Carregar_Jogo">Carregar</a></p>
+                </div>
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <p><a class="btn btn-danger" id="FAR2" href="~/Home/Index">Sair</a></p>
+                </div>
+                <br />
+                <p>Nota:O botão "Jogar" mandará para uma tela de criação de personagem(NumMx:3) , o botão "Carregar" le levará a uma tela de escolha de utilizar um personagem previamente criado e o botão "Sair" le enviará a tela inicial</p>
+            </div>
+        </div>
+        <br />
+    </div>
+</div>

@@ -71,7 +71,22 @@
     font-family:Perpetua!important;
     border:2px solid black;
 }
+
 #Erro {
     font-size:x-large!important;
     color:crimson;
+}
+
+#Ur {
+    border:3px solid black;
+    background-color:deepskyblue;
+    color:firebrick;
+    font-family:Castellar!important;
+    font-size: large !important;
+}
+
+#Urban {
+    border:5px solid black;
+    background-color:aliceblue;
+    color:black;
 }
