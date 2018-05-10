@@ -80,8 +80,7 @@ namespace HNI.Controllers
      
         }
         public ActionResult Criar_P(Personagem obj)
-        {
-
+        {  
             return RedirectToAction("Escolha", "HNI");
 
         }

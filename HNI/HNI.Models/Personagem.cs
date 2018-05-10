@@ -14,7 +14,7 @@ namespace HNI.Models
         public string Imagem { get; set; }
         public string  Nome { get; set; }
         public string Genero { get; set; }
-        public int ouro { get; set; }
+        public int Ouro { get; set; }
         public int Mana { get; set; }
         public int Hp { get; set; }
         public int AtkF { get; set; }
