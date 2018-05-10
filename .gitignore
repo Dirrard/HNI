@@ -8,3 +8,7 @@ HNI/.vs/HNI/v14/.suo
 /HNI/HNI.Models/obj
 /HNI/HNI.Models/bin
 /HNI/HNI.Models/*.user
+*.user
+*.user
+*.user
+/HNI/HNI/*.user
