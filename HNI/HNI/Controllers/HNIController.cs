@@ -64,14 +64,16 @@ namespace HNI.Controllers
             }
 
         }
+     
         public ActionResult Login_U(Usuario obj)
         {
             Usuario u = new Usuario();
            u= new UsuarioDAO().Login(obj);
             if (u.Termo == true)
             {
-
+                Response.Cookies.Add(new HttpCookie("Usuario", Convert.ToString(u.Id)));
                 return RedirectToAction("Jogo", "HNI");
+                
             }
             else
             {
@@ -80,7 +82,14 @@ namespace HNI.Controllers
      
         }
         public ActionResult Criar_P(Personagem obj)
-        {  
+        {
+            obj.Ouro = 100;
+            obj.Nivel = 1;
+            obj.Exp = 0;
+            HttpCookie cookie = Request.Cookies.Get("Usuario");
+            obj.Usuario.Id = Convert.ToInt32(cookie);
+            PersonagemDAO p = new PersonagemDAO();
+            p.Inserir(obj);
             return RedirectToAction("Escolha", "HNI");
 
         }

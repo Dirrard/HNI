@@ -32,11 +32,11 @@ create table Personagem
 (
 Id int primary key identity(1,1),
 Id_Usuario integer references Usuario(Id),
-Classe integer references Classe(Id),
+Classe integer references Classe(Id) default 3,
 Imagem Varchar(20),
 Nome Varchar(50),
 Genero Varchar(10),
-ouro integer,
+Ouro integer,
 Mana integer,
 Hp integer,
 AtkF integer,
