@@ -1,5 +1,0 @@
-C:\Users\Aluno\Documents\GitHub\HNI\HNI\HNI.Models\bin\Debug\HNI.Models.dll
-C:\Users\Aluno\Documents\GitHub\HNI\HNI\HNI.Models\bin\Debug\HNI.Models.pdb
-C:\Users\Aluno\Documents\GitHub\HNI\HNI\HNI.Models\obj\Debug\HNI.Models.csprojResolveAssemblyReference.cache
-C:\Users\Aluno\Documents\GitHub\HNI\HNI\HNI.Models\obj\Debug\HNI.Models.dll
-C:\Users\Aluno\Documents\GitHub\HNI\HNI\HNI.Models\obj\Debug\HNI.Models.pdb

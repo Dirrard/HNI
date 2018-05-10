@@ -1,7 +1,0 @@
-C:\Users\Aluno\Documents\GitHub\HNI\HNI\HNI.Dataaccess\bin\Debug\HNI.Dataaccess.dll
-C:\Users\Aluno\Documents\GitHub\HNI\HNI\HNI.Dataaccess\bin\Debug\HNI.Dataaccess.pdb
-C:\Users\Aluno\Documents\GitHub\HNI\HNI\HNI.Dataaccess\bin\Debug\HNI.Models.dll
-C:\Users\Aluno\Documents\GitHub\HNI\HNI\HNI.Dataaccess\bin\Debug\HNI.Models.pdb
-C:\Users\Aluno\Documents\GitHub\HNI\HNI\HNI.Dataaccess\obj\Debug\HNI.Dataaccess.csprojResolveAssemblyReference.cache
-C:\Users\Aluno\Documents\GitHub\HNI\HNI\HNI.Dataaccess\obj\Debug\HNI.Dataaccess.dll
-C:\Users\Aluno\Documents\GitHub\HNI\HNI\HNI.Dataaccess\obj\Debug\HNI.Dataaccess.pdb

@@ -1,2 +1,10 @@
 
 HNI/.vs/HNI/v14/.suo
+/HNI/.vs
+/HNI/HNI/obj
+/HNI/HNI/bin
+/HNI/HNI.Dataaccess/bin
+/HNI/HNI.Dataaccess/obj
+/HNI/HNI.Models/obj
+/HNI/HNI.Models/bin
+/HNI/HNI.Models/*.user
