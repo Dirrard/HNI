@@ -17,6 +17,7 @@ go
 create table Classe
 (
 Id int primary key identity(1,1),
+Imagem Varchar(20),
 Nome varchar(100),
 [Desc] varchar(max),
 Mana integer,
@@ -32,6 +33,7 @@ create table Personagem
 Id int primary key identity(1,1),
 Id_Usuario integer references Usuario(Id),
 Classe integer references Classe(Id),
+Imagem Varchar(20),
 Nome Varchar(50),
 Genero Varchar(10),
 ouro integer,
@@ -47,6 +49,7 @@ go
 create table Item
 (
 Id int primary key identity(1,1),
+Imagem Varchar(20),
 Nome Varchar(50),
 Mana integer,
 Hp integer,
@@ -59,6 +62,7 @@ go
 create table AtkE
 (
 Id int primary key identity(1,1),
+Imagem Varchar(20),
 Nome Varchar(50),
 AtkM integer,
 Def integer,
@@ -70,6 +74,7 @@ go
 create table Criatura
 (
 Id int primary key identity(1,1),
+Imagem Varchar(20),
 Nome Varchar(50),
 Mana integer,
 Hp integer,
@@ -113,5 +118,13 @@ create table ItemxCriat
 Item_Id integer references Item(Id),
 Criat_Id integer references Criatura(Id),
 id_ItemxCriat integer primary key identity(1,1)
+);
+go
+
+create table Cena
+(
+Id int primary key identity(1,1),
+IdP int references Personagem(Id),
+Imagem varchar(20)
 );
 go

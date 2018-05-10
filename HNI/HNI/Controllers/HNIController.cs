@@ -39,7 +39,11 @@ namespace HNI.Controllers
         {
             return View();
         }
-        public ActionResult Escolha_01_Resposta00_Cena_01()
+        public ActionResult Criar_Personagem()
+        {
+            return View();
+        }
+        public ActionResult Escolha()
         {
             return View();
         }
@@ -74,6 +78,12 @@ namespace HNI.Controllers
                 return RedirectToAction("Login_Erro", "HNI");
             }
      
+        }
+        public ActionResult Criar_P(Personagem obj)
+        {
+
+            return RedirectToAction("Escolha", "HNI");
+
         }
     }
 
