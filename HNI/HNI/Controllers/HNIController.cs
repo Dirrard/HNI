@@ -86,9 +86,19 @@ namespace HNI.Controllers
             obj.Ouro = 100;
             obj.Nivel = 1;
             obj.Exp = 0;
+            ClasseDAO ca = new ClasseDAO();
+            Classe c = new Classe();
+            c=ca.Buscar(obj);
             HttpCookie cookie = Request.Cookies.Get("Usuario");
             obj.Usuario.Id = Convert.ToInt32(cookie);
             PersonagemDAO p = new PersonagemDAO();
+            obj.AtkF = c.AtkF;
+            obj.AtkM = c.AtkM;
+            obj.Def = c.Def;
+            obj.Imagem = c.Imagem;
+            obj.Mana = c.Mana;
+            obj.Hp = c.Hp;
+            obj.Genero = "Masculino";
             p.Inserir(obj);
             return RedirectToAction("Escolha", "HNI");
 
