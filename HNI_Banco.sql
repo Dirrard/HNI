@@ -120,11 +120,18 @@ Criat_Id integer references Criatura(Id),
 id_ItemxCriat integer primary key identity(1,1)
 );
 go
-
+insert into Classe
+values
+('Guerreiro-01','Guerreiro','Bravos, fortes e habilidosos com utilização de armas fisicas, possuem pouca habiliade magica porem compensam em força bruta',100,550,100,20,100,1),
+('Mago-01','Mago','Inteligentes,astutos e habilidosos com as energias e poderes magicos,possuem pouca habilidade fisica porem compensam em poder especias',600,300,20,100,50,1),
+('Ladino-01','Ladino','Bravos,astutos e habilidosos com as energias e armas fisicas , possuem habilidades equilibradas são fortes fiscamente e magicamente',300,400,70,70,700,1);
+go
+/*
+Fazer Cena futuramente
 create table Cena
 (
 Id int primary key identity(1,1),
 IdP int references Personagem(Id),
 Imagem varchar(20)
 );
-go
+go*/
