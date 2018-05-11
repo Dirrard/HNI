@@ -43,7 +43,6 @@
   
 }
 #Bodin{
-    /* background-image: url('../Background-Image02.jpg');*/
     background-color:blanchedalmond;
     color: black;
     font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
@@ -94,4 +93,13 @@
     border:5px solid black;
     background-color:cadetblue;
     color:black;
+}
+
+#Card {
+    background-color:blanchedalmond;
+    color: black;
+    font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    border: 5px solid black;
+    font-weight: bold;
 }
