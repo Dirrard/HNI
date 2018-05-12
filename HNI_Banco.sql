@@ -126,6 +126,12 @@ values
 ('Mago-01','Mago','Inteligentes,astutos e habilidosos com as energias e poderes magicos,possuem pouca habilidade fisica porem compensam em poder especias',600,300,20,100,50,1),
 ('Ladino-01','Ladino','Bravos,astutos e habilidosos com as energias e armas fisicas , possuem habilidades equilibradas são fortes fiscamente e magicamente',300,400,70,70,700,1);
 go
+
+insert into Usuario
+values
+('Diego Castilho Lourenço','Historia','diegocastilho6@gmail.com','diego123','17/07/2001','Masculino')
+go
+
 /*
 Fazer Cena futuramente
 create table Cena

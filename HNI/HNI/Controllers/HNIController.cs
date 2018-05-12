@@ -89,8 +89,10 @@ namespace HNI.Controllers
             ClasseDAO ca = new ClasseDAO();
             Classe c = new Classe();
             c=ca.Buscar(obj);
+            UsuarioDAO ud = new UsuarioDAO();
             HttpCookie cookie = Request.Cookies.Get("Usuario");
-            obj.Usuario.Id = Convert.ToInt32(cookie.Value);
+            Int32 u=Convert.ToInt32(cookie.Value);
+            obj.Usuario=ud.Buscar(u);
             PersonagemDAO p = new PersonagemDAO();
             obj.AtkF = c.AtkF;
             obj.AtkM = c.AtkM;

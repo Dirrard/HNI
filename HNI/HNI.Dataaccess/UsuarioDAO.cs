@@ -41,7 +41,46 @@ namespace HNI.Dataaccess
                 }
             }
         }
+        public Usuario Buscar(int i)
+        {
 
+
+            using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
+            {
+                string strSQL = @"SELECT * FROM Usuario where Id = '" + i + "'";
+
+                using (SqlCommand cmd = new SqlCommand(strSQL))
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandText = strSQL;
+                    var dataReader = cmd.ExecuteReader();
+                    var dt = new DataTable();
+                    dt.Load(dataReader);
+                    conn.Close();
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        var u = new Usuario()
+                        {
+                            Id = Convert.ToInt32(row["Id"]),
+                            Nome = row["Nome"].ToString(),
+                            Email = row["EMAIL"].ToString(),
+                            Senha = row["SENHA"].ToString(),
+                            Nick = row["Nick"].ToString(),
+                            DataNasc = row["DataNasc"].ToString(),
+                            Genero = row["Genero"].ToString()
+                        };
+                        return u;
+
+                    }
+                }
+            }
+            Usuario ca = new Usuario();
+            return ca;
+
+
+        }
         public Usuario Login(Usuario u)
         {
             using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI; Data Source = localhost; Integrated Security=SSPI"))
@@ -77,4 +116,5 @@ namespace HNI.Dataaccess
             return usuarie;
         }
     }
-}
+    }
+
