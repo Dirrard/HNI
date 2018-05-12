@@ -103,3 +103,44 @@
     border: 5px solid black;
     font-weight: bold;
 }
+
+#Acron {
+     background-color:black;
+    color: firebrick;
+    font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+     border: 5px solid firebrick;
+
+}
+
+#Acron2 {    
+     background-color:lightsteelblue;
+    color:black;
+    font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+     border: 3px solid Darkblue;
+
+}
+
+#Acron3 {
+    background-color:lightsteelblue;
+    color:black;
+    font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+     border: 1px solid Darkblue;
+
+}
+
+#Acron4 {
+    
+
+}
+
+#Acron6 {
+    background-color:grey;
+    color:black;
+    font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+     border: 2px solid black;
+
+}

@@ -51,6 +51,7 @@ namespace HNI.Controllers
         {
             return View();
         }
+
         public ActionResult Salvar_U(Usuario obj)
         {
             if (obj.Termo == true && obj.Senha == obj.ConfSenha)
@@ -64,7 +65,6 @@ namespace HNI.Controllers
             }
 
         }
-     
         public ActionResult Login_U(Usuario obj)
         {
             Usuario u = new Usuario();
@@ -102,9 +102,11 @@ namespace HNI.Controllers
             obj.Hp = c.Hp;
             obj.Genero = "Masculino";
             p.Inserir(obj);
+            Response.Cookies.Add(new HttpCookie("Personagem", Convert.ToString(obj.Id)));
             return RedirectToAction("Escolha", "HNI");
 
         }
+
     }
 
 }
