@@ -132,12 +132,30 @@ values
 ('Diego Castilho Lourenço','Historia','diegocastilho6@gmail.com','diego123','17/07/2001','Masculino')
 go
 
-/*
-Fazer Cena futuramente
+
+
 create table Cena
 (
-Id int primary key identity(1,1),
-IdP int references Personagem(Id),
-Imagem varchar(20)
+Id int primary key identity(1,1)
 );
-go*/
+create table Questao
+(
+Id int primary key identity(1,1),
+Cena int references Cena(Id),
+Descr varchar(max)
+);
+create table Resposta
+(
+Id int primary key identity(1,1),
+Descr varchar(max),
+Questao int references Questao(Id),
+);
+
+create table Momento
+(
+Cena int references Cena(Id),
+Questao int references Questao(Id),
+Personagem int references Personagem(Id)
+);
+go
+select * from Personagem
