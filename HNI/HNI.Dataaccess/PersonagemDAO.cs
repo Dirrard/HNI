@@ -48,5 +48,41 @@ namespace HNI.Dataaccess
                 }
             }
         }
+
+        public Personagem Buscar_Id(Personagem obj)
+        {
+
+
+            using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
+            {
+                string strSQL = @"SELECT * FROM Personagem where Nome = '" + obj.Nome + "' and Classe ='"+obj.Classe+ "''and Nivel '= "+obj.Nivel+"' and Id_Usuario ='"+obj.Usuario.Id+"'";
+
+                using (SqlCommand cmd = new SqlCommand(strSQL))
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandText = strSQL;
+                    var dataReader = cmd.ExecuteReader();
+                    var dt = new DataTable();
+                    dt.Load(dataReader);
+                    conn.Close();
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        var P = new Personagem()
+                        {
+                            Id = Convert.ToInt32(row["Id"]),
+                        };
+                        return P;
+
+                    }
+                }
+            }
+            Personagem Pa = new Personagem();
+            return Pa;
+
+
+        }
+
     }
 }

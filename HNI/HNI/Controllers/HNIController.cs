@@ -15,6 +15,10 @@ namespace HNI.Controllers
         {
             return View();
         }
+        public ActionResult Carregar_Jogo()
+        {
+            return View();
+        }
         public ActionResult Cadastro()
         {
             return View();
@@ -60,7 +64,7 @@ namespace HNI.Controllers
                 return RedirectToAction("Index", "Home");
             }
             else
-            {    
+            {
                 return RedirectToAction("Cadastro_Erro", "HNI");
             }
 
@@ -68,18 +72,18 @@ namespace HNI.Controllers
         public ActionResult Login_U(Usuario obj)
         {
             Usuario u = new Usuario();
-           u= new UsuarioDAO().Login(obj);
+            u = new UsuarioDAO().Login(obj);
             if (u.Termo == true)
             {
                 Response.Cookies.Add(new HttpCookie("Usuario", Convert.ToString(u.Id)));
                 return RedirectToAction("Jogo", "HNI");
-                
+
             }
             else
             {
                 return RedirectToAction("Login_Erro", "HNI");
             }
-     
+
         }
         public ActionResult Criar_P(Personagem obj)
         {
@@ -88,11 +92,11 @@ namespace HNI.Controllers
             obj.Exp = 0;
             ClasseDAO ca = new ClasseDAO();
             Classe c = new Classe();
-            c=ca.Buscar(obj);
+            c = ca.Buscar(obj);
             UsuarioDAO ud = new UsuarioDAO();
             HttpCookie cookie = Request.Cookies.Get("Usuario");
-            Int32 u=Convert.ToInt32(cookie.Value);
-            obj.Usuario=ud.Buscar(u);
+            Int32 u = Convert.ToInt32(cookie.Value);
+            obj.Usuario = ud.Buscar(u);
             PersonagemDAO p = new PersonagemDAO();
             obj.AtkF = c.AtkF;
             obj.AtkM = c.AtkM;
@@ -102,7 +106,9 @@ namespace HNI.Controllers
             obj.Hp = c.Hp;
             obj.Genero = "Masculino";
             p.Inserir(obj);
-            Response.Cookies.Add(new HttpCookie("Personagem", Convert.ToString(obj.Id)));
+            Personagem Person = new Personagem();
+            Person = p.Buscar_Id(obj);
+            Response.Cookies.Add(new HttpCookie("Personagem", Convert.ToString(Person.Id)));
             return RedirectToAction("Escolha", "HNI");
 
         }
