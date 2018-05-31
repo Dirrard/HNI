@@ -81,7 +81,8 @@ Hp integer,
 AtkF integer,
 AtkM integer,
 Def integer,
-ouro integer,
+Ouro integer,
+[Desc] varchar (max),
 [Exp] integer,
 );
 go
@@ -124,12 +125,16 @@ insert into Classe
 values
 ('Guerreiro-01','Guerreiro','Bravos, fortes e habilidosos com utilização de armas fisicas, possuem pouca habiliade magica porem compensam em força bruta',100,550,100,20,100,1),
 ('Mago-01','Mago','Inteligentes,astutos e habilidosos com as energias e poderes magicos,possuem pouca habilidade fisica porem compensam em poder especias',600,300,20,100,50,1),
-('Ladino-01','Ladino','Bravos,astutos e habilidosos com as energias e armas fisicas , possuem habilidades equilibradas são fortes fiscamente e magicamente',300,400,70,70,700,1);
+('Ladino-01','Ladino','Bravos,astutos e habilidosos com as energias e armas fisicas , possuem habilidades equilibradas são fortes fiscamente e magicamente',300,400,70,70,70,1);
 go
 
 insert into Usuario
 values
 ('Diego Castilho Lourenço','Historia','diegocastilho6@gmail.com','diego123','17/07/2001','Masculino')
+go
+insert into Criatura
+values
+('Lobo-001','Lobo',20,100,60,10,40,5,'Criaturas agressivas de intelecto limitado,costumam agir em bandos, separadas não apresentam grande perigo mas em bando podem causar problemas a aventureiros iniciantes e camponeses',2)
 go
 
 
