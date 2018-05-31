@@ -18,7 +18,7 @@
 @{
     Criatura C = new Criatura();
     CriaturaDAO CD = new CriaturaDAO();
-  
+
 }
 <h3> Criaturas da Área da Terra : </h3>
 <hr id="Fi" />
@@ -28,15 +28,21 @@
             <div class="col-md-4">
                 <h5>Ilustração</h5>
                 <hr id="Fi" />
-
                 @{ViewBag.Busca = C = CD.Buscar(1);}
 
                 @{
-                    ViewBag.Imagem01 = "/Imagens/"+ C.Imagem + ".png"; }
+                    ViewBag.Imagem01 = "/Imagens/" + C.Imagem + ".png"; }
                 <img src="@ViewBag.Imagem01"
                      width="200" height="200" />
             </div>
+            <div class="col-md-8">
+                <h5>Relato</h5>
+                <hr id="Fi" />
+                @{ ViewBag.Relato = C.Descricao;}
+                <p >"@ViewBag.Relato".</p>
+            </div>
         </div>
+
     </div>
 </div>
 

@@ -163,12 +163,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <EmbeddedResource Include="Imagens\Guerreiro-01.png">
+    <EmbeddedResource Include="Models\Imagens\Guerreiro-01.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <Content Include="Imagens\HNI-LP.bmp" />
-    <Content Include="Imagens\Ladino-01.png" />
-    <EmbeddedResource Include="Imagens\Lobo-001.png">
+    <Content Include="Models\Imagens\HNI-LP.bmp" />
+    <Content Include="Models\Imagens\Ladino-01.png" />
+    <EmbeddedResource Include="Models\Imagens\Lobo-001.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <Content Include="Scripts\bootstrap.js" />
@@ -220,7 +220,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
