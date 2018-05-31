@@ -117,6 +117,11 @@ namespace HNI.Controllers
 
         }
 
+        public ActionResult Bestiario()
+        {
+            return View();
+        }
+      
     }
 
 }

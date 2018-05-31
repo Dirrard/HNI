@@ -168,6 +168,9 @@
     </EmbeddedResource>
     <Content Include="Imagens\HNI-LP.bmp" />
     <Content Include="Imagens\Ladino-01.png" />
+    <EmbeddedResource Include="Imagens\Lobo-001.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -213,6 +216,7 @@
     <Content Include="Views\HNI\Inventario.cshtml" />
     <Content Include="Views\HNI\Arvore.cshtml" />
     <Content Include="Views\HNI\Menu.cshtml" />
+    <Content Include="Views\HNI\Bestiario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

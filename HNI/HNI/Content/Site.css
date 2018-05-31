@@ -130,10 +130,7 @@
 
 }
 
-#Acron4 {
-    
 
-}
 
 #Acron6 {
     background-color:grey;
@@ -142,4 +139,16 @@
     font-size: large;
      border: 2px solid black;
 
+}
+#ci{
+    border: 2px solid black;
+}
+
+#Vi {
+    font-family:'Adobe Gothic Std';
+    font-size:large;
+}
+
+#Fi {
+    border: 1px solid black;
 }

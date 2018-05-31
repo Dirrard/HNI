@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Bestiário";
+}
+@using HNI.Models
+@using HNI.Dataaccess
+<br />
+<h2 class="text-center"> Criaturas da Era Atual </h2>
+<hr id="ci" />
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <p id="Vi" class="text-center">
+            Esse Bestiario esta se despondo a categorizar todas as criaturas conhecidas pelo homem na era moderna por
+            Laurence Pyke II pesquisador de criaturas.
+        </p>
+    </div>
+</div>
+@{
+    Criatura C = new Criatura();
+    CriaturaDAO CD = new CriaturaDAO();
+  
+}
+<h3> Criaturas da Área da Terra : </h3>
+<hr id="Fi" />
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Ilustração</h5>
+                <hr id="Fi" />
+
+                @{ViewBag.Busca = C = CD.Buscar(1);}
+
+                @{
+                    ViewBag.Imagem01 = "/Imagens/"+ C.Imagem + ".png"; }
+                <img src="@ViewBag.Imagem01"
+                     width="200" height="200" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
