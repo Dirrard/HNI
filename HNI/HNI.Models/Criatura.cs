@@ -19,5 +19,10 @@ namespace HNI.Models
         public int Ouro { get; set; }
         public string Descricao { get; set; }
         public int Exp { get; set; }
+        public string Agressividade { get; set; }
+        public string Perigo { get; set; }
+        public string Bando { get; set; }
+        public string Classificacao { get; set; }
+        
     }
 }

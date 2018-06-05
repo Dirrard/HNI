@@ -152,3 +152,29 @@
 #Fi {
     border: 1px solid black;
 }
+
+#Titulo1 {
+  
+     font-family:'Bookman Old Style';
+     color:black;
+     font-size:large;
+}
+
+#Relato {
+      font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+      font-size: large;
+      color:black;
+}
+
+#Ilustracao{
+    background-color:floralwhite;
+    color: black;
+    font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+     border: 3px solid black;
+}
+
+#Si {
+    font-family:'Bookman Old Style'!important;
+    font-size:large;
+}

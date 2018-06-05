@@ -119,9 +119,19 @@ namespace HNI.Controllers
 
         public ActionResult Bestiario()
         {
+            
             return View();
         }
-      
+
+        public ActionResult CriaturasTerra()
+        {
+            for(int i = 1;i<=3;i++)
+                { 
+          
+                }
+            return View();
+        }
+
     }
 
 }

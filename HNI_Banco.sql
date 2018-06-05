@@ -84,6 +84,10 @@ Def integer,
 Ouro integer,
 [Desc] varchar (max),
 [Exp] integer,
+Agressividade Varchar(20),
+Perigo Varchar(30),
+Bando varchar(10),
+Classificacao varchar(20)
 );
 go
 create table AtkexPerson
@@ -116,6 +120,7 @@ id_AtkexCriat integer primary key identity(1,1)
 go
 create table ItemxCriat
 (
+DropRate integer,
 Item_Id integer references Item(Id),
 Criat_Id integer references Criatura(Id),
 id_ItemxCriat integer primary key identity(1,1)
@@ -134,7 +139,9 @@ values
 go
 insert into Criatura
 values
-('Lobo-001','Lobo',20,100,60,10,40,5,'Criaturas agressivas de intelecto limitado,costumam agir em bandos, separadas não apresentam grande perigo mas em bando podem causar problemas a aventureiros iniciantes e camponeses',2)
+('Lobo-001','Lobo',20,100,60,10,40,5,'Criatura agressiva de intelecto limitado, custuma agir em bandos, separados não apresentam grande perigo mas em bando podem causar problemas a aventureiros iniciantes e camponeses',2,'Alta','Baixo','2 a 5','Animal'),
+('Cobra-001','Cobra',20,140,80,30,55,8,'Criatura agressiva de intelecto mediano, custuma agir só ,não apresenta grande perigo porem pode causar problemas a aventureiros iniciantes e camponeses',4,'Media','Baixo','1 a 2','Animal'),
+('Leão-001','Leão',80,200,90,60,60,20,'Criatura neutra de intelecto mediano, custuma agir só ou em grupos, apresentam grande perigo mas e em bando podem causar grandes problemas a aventureiros que submestimam o terretorio do Leão ,aventureiros iniciantes e camponeses',10,'Baixa','Media','1 a 4','Animal')
 go
 
 
@@ -164,3 +171,6 @@ Personagem int references Personagem(Id)
 );
 go
 select * from Personagem
+select * from Criatura
+go
+

@@ -45,9 +45,12 @@ namespace HNI.Dataaccess
                             AtkM = Convert.ToInt32(row["AtkM"]),
                             Def = Convert.ToInt32(row["Def"]),
                             Exp = Convert.ToInt32(row["Exp"]),
-                            Ouro = Convert.ToInt32(row["Ouro"])
-                            
-                        };
+                            Ouro = Convert.ToInt32(row["Ouro"]),
+                            Agressividade = row["Agressividade"].ToString(),
+                            Perigo = row["Perigo"].ToString(),
+                            Bando = row["Bando"].ToString(),
+                            Classificacao = row["Classificacao"].ToString()
+    };
                         return cri;
 
                     }
