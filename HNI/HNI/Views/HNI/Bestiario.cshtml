@@ -8,6 +8,7 @@
         background-image: url('@Url.Content("~/Background-Image.jpg")');
     }
 </style>
+
 @using HNI.Models
 @using HNI.Dataaccess
 <br />
@@ -255,7 +256,6 @@
                     ViewBag.Nome = C.Nome;
                     ViewBag.Agre = C.Agressividade;
                     ViewBag.Per = C.Perigo;
-                    ViewBag.Ban = C.Bando;
                     ViewBag.Cla = C.Classificacao;
                   }
 
@@ -263,8 +263,7 @@
                 <h5 id="Titulo1">Informações</h5>
                 <hr id="Fi" />
                 <p id="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
-                <p id="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
-                <p id="Relato">Individuos Normais por Bando: @ViewBag.Ban</p>
+                <p id="Relato">Perigo da criatura: @ViewBag.Per</p>
                 <p id="Relato">Classificação da Criatura: @ViewBag.Cla</p>
        
             </div>
@@ -279,7 +278,7 @@
 <h2 class="text-center">Lendas e Mitos</h2>
 <hr id="ci" />
 <p id="Si" class="text-center">
-    Esses seres não são examente criaturas porém suas lendas, se forem veradeiras os colocam em niveis acima de todas as criaturas que já estudei
+    Esses seres não são exatamente criaturas e suas lendas maravilhosas os colocam com niveis acima de todas as criaturas que já estudei, por conta disso determinei separa-los nessa secção própria de minha pesquisa
     - Laurence Pyke II pesquisador de criaturas.
 </p>
 <div class="row">
@@ -308,17 +307,15 @@
                     ViewBag.Nome = C.Nome;
                     ViewBag.Agre = C.Agressividade;
                     ViewBag.Per = C.Perigo;
-                    ViewBag.Ban = C.Bando;
                     ViewBag.Cla = C.Classificacao;
                 }
 
                 <p id="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
                 <h5 id="Titulo1">Informações</h5>
                 <hr id="Fi" />
-                <p id="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
-                <p id="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
-                <p id="Relato">Individuos Normais por Bando: @ViewBag.Ban</p>
-                <p id="Relato">Classificação da Criatura: @ViewBag.Cla</p>
+                <p id="Relato">Agressividade do Ser: @ViewBag.Agre </p>
+                <p id="Relato">Perigo do Ser: @ViewBag.Per</p>
+                <p id="Relato">Classificação do Ser: @ViewBag.Cla</p>
 
             </div>
         </div>
