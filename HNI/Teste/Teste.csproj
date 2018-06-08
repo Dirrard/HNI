@@ -53,6 +53,20 @@
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HNI.Dataaccess\HNI.Dataaccess.csproj">
+      <Project>{2b4ff2e0-a691-4997-be5a-abe62614a735}</Project>
+      <Name>HNI.Dataaccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HNI.Models\HNI.Models.csproj">
+      <Project>{c78d57b5-8fd8-4eea-b06e-752c1b3ee5cf}</Project>
+      <Name>HNI.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HNI\HNI.csproj">
+      <Project>{240d4166-f01f-428c-8377-39338ce0d425}</Project>
+      <Name>HNI</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
