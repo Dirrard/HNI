@@ -264,9 +264,7 @@
                                             <hr id="Fi" />
                                             <p id="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
                                             <p id="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
-                                            <p id="Relato">Individuos Normais por Bando: @ViewBag.Ban</p>
                                             <p id="Relato">Classificação da Criatura: @ViewBag.Cla</p>
-                                            <p id="Relato">Recompensa por Cabeça da Criatura: @ViewBag.Rec Peças de Ouro </p>
                                         </div>
                                     </div>
                                                     ViewBag.Id++;
@@ -323,17 +321,15 @@
                                             ViewBag.Nome = C.Nome;
                                             ViewBag.Agre = C.Agressividade;
                                             ViewBag.Per = C.Perigo;
-                                            ViewBag.Ban = C.Bando;
                                             ViewBag.Cla = C.Classificacao;
-                                            ViewBag.Rec = C.Ouro; }
+                                       }
                                         <p id="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
                                         <h5 id="Titulo1">Informações</h5>
                                         <hr id="Fi" />
-                                        <p id="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
-                                        <p id="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
-                                        <p id="Relato">Individuos Normais por Bando: @ViewBag.Ban</p>
-                                        <p id="Relato">Classificação da Criatura: @ViewBag.Cla</p>
-                                        <p id="Relato">Recompensa por Cabeça da Criatura: @ViewBag.Rec Peças de Ouro </p>
+                                        <p id="Relato">Agressividade do Ser: @ViewBag.Agre </p>
+                                        <p id="Relato">Perigo do Ser: @ViewBag.Per</p>
+                                        <p id="Relato">Classificação do Ser: @ViewBag.Cla</p>
+
                                     </div>
                                 </div>
                                                 ViewBag.Id++;
