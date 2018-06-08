@@ -215,7 +215,6 @@
     <Content Include="Views\HNI\Mundo.cshtml" />
     <Content Include="Views\HNI\Inventario.cshtml" />
     <Content Include="Views\HNI\Arvore.cshtml" />
-    <Content Include="Views\HNI\Menu.cshtml" />
     <Content Include="Views\HNI\Bestiario.cshtml" />
   </ItemGroup>
   <ItemGroup>
