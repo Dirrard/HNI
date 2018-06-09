@@ -57,6 +57,7 @@ AtkF integer,
 AtkM integer,
 Def integer,
 Nivel integer,
+Valor integer,
 );
 go
 create table AtkE
@@ -126,30 +127,11 @@ Criat_Id integer references Criatura(Id),
 id_ItemxCriat integer primary key identity(1,1)
 );
 go
-insert into Classe
-values
-('Guerreiro-01','Guerreiro','Bravos, fortes e habilidosos com utilização de armas fisicas, possuem pouca habiliade magica porem compensam em força bruta',100,550,100,20,100,1),
-('Mago-01','Mago','Inteligentes,astutos e habilidosos com as energias e poderes magicos,possuem pouca habilidade fisica porem compensam em poder especias',600,300,20,100,50,1),
-('Ladino-01','Ladino','Bravos,astutos e habilidosos com as energias e armas fisicas , possuem habilidades equilibradas são fortes fiscamente e magicamente',300,400,70,70,70,1);
-go
-
-insert into Usuario
-values
-('Diego Castilho Lourenço','Historia','diegocastilho6@gmail.com','diego123','17/07/2001','Masculino')
-go
-insert into Criatura
-values
-('Lobo-001','Lobo',20,100,60,10,40,5,'Criatura agressiva de intelecto limitado, custuma agir em bandos, separados não apresentam grande perigo mas em bando podem causar problemas a aventureiros iniciantes e camponeses',2,'Alta','Baixo','2 a 5','Animal'),
-('Cobra-001','Cobra',20,140,80,30,55,8,'Criatura agressiva de intelecto mediano, custuma agir só ,não apresenta grande perigo porem pode causar problemas a aventureiros iniciantes e camponeses',4,'Media','Baixo','1 a 2','Animal'),
-('Leão-001','Leão',80,200,90,60,60,20,'Criatura neutra de intelecto mediano, custuma agir só ou em grupos, apresentam grande perigo mas e em bando podem causar grandes problemas a aventureiros que submestimam o terretorio do Leão ,aventureiros iniciantes e camponeses',10,'Baixa','Media','1 a 4','Animal')
-go
-
-
-
 create table Cena
 (
 Id int primary key identity(1,1)
 );
+go
 create table Questao
 (
 Id int primary key identity(1,1),
@@ -163,14 +145,54 @@ Descr varchar(max),
 Questao int references Questao(Id),
 );
 
+create table Lugar 
+(
+Id int primary key identity(1,1),
+Cena int references Cena(Id),
+CriaturaNumeroInicial int,
+CriaturaNumeroFinal int,
+Imagem Varchar(30)
+);
+go
 create table Momento
 (
+Id int primary key identity(1,1),
 Cena int references Cena(Id),
+lugar int references Lugar(Id),
 Questao int references Questao(Id),
 Personagem int references Personagem(Id)
 );
 go
-select * from Personagem
+create table Distancia
+(
+Lugar1 int references Lugar(Id),
+Lugar2 int references Lugar(Id),
+Passos int,
+Id int primary key identity(1,1),
+);
+go
+create table Construcao
+(
+Item int references Item(Id),
+Resultado int references Item(Id)
+);
+go
+insert into Classe
+values
+('Guerreiro-01','Guerreiro','Bravos, fortes e habilidosos com utilização de armas fisicas, possuem pouca habiliade magica porem compensam em força bruta',100,550,100,20,100,1),
+('Mago-01','Mago','Inteligentes,astutos e habilidosos com as energias e poderes magicos,possuem pouca habilidade fisica porem compensam em poder especias',600,300,20,100,50,1),
+('Ladino-01','Ladino','Bravos,astutos e habilidosos com as energias e armas fisicas , possuem habilidades equilibradas são fortes fiscamente e magicamente',300,400,70,70,70,1);
+go
+insert into Usuario
+values
+('Diego Castilho Lourenço','Historia','diegocastilho6@gmail.com','diego123','17/07/2001','Masculino')
+go
+insert into Criatura
+values
+('Lobo-001','Lobo',20,100,60,10,40,5,'Criatura agressiva de intelecto limitado, custuma agir em bandos, separados não apresentam grande perigo mas em bando podem causar problemas a aventureiros iniciantes e camponeses',2,'Alta','Baixo','2 a 5','Animal'),
+('Cobra-001','Cobra',20,140,80,30,55,8,'Criatura agressiva de intelecto mediano, custuma agir só ,não apresenta grande perigo porem pode causar problemas a aventureiros iniciantes e camponeses',4,'Media','Baixo','1 a 2','Animal'),
+('Leão-001','Leão',80,200,90,60,60,20,'Criatura neutra de intelecto mediano, custuma agir só ou em grupos, apresentam grande perigo mas e em bando podem causar grandes problemas a aventureiros que submestimam o terretorio do Leão ,aventureiros iniciantes e camponeses',10,'Baixa','Media','1 a 4','Animal')
+go
 select * from Criatura
 go
 
