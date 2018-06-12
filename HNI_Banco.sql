@@ -134,21 +134,23 @@ Id int primary key identity(1,1)
 go
 create table Questao
 (
-Id int primary key identity(1,1),
+Id int primary key,
 Cena int references Cena(Id),
+Personagem int references Personagem(Id),
 Descr varchar(max)
 );
 create table Resposta
 (
-Id int primary key identity(1,1),
 Descr varchar(max),
 Questao int references Questao(Id),
+Id int primary key identity(1,1),
+Identi int 
 );
 
 create table Lugar 
 (
 Id int primary key identity(1,1),
-Cena int references Cena(Id),
+Questao int references Questao(Id),
 CriaturaNumeroInicial int,
 CriaturaNumeroFinal int,
 Imagem Varchar(30)

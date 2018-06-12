@@ -2,12 +2,16 @@
 @{
     ViewBag.Title = "Escolha";
 }
+@using HNI.Models
+@using HNI.Dataaccess
 <style type="text/css">
     body {
     background-image: url('@Url.Content("~/Background-Image.jpg")');
     }
 </style>
-
+@{ 
+   
+}
 <div class="row">
     <hr/>
 </div>
@@ -17,15 +21,21 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="jumbotron" id="Acron2">
+                        <style type="text/css">
+                        Acron2{
+                        background-image:url('@Url.Content(ViewBag.Fundo)') ;
+                             }
+                        </style>
                         <div class="row">
                             <div class="col-md-2 text-center">
-                                <div class="jumbotron" id="Acron4">
-                                    <p>Imagem do P</p>
+                                <div class="Row">
+                                    <img src="/Imagens/@ViewBag.PImagem"
+                                         width="190" height="220" /> 
                                 </div>
                                 <div class="Row">
                                 <div class="col-md-12  text-center">
-                                    <div class="jumbotron" id="Acron6">
-                                        <p>Texto</p>
+                                    <div id="Acron6" class="jumbotron">
+                                        <p>@ViewBag.Questao</p>
                                     </div>
                                 </div>
                                 </div>
@@ -37,22 +47,22 @@
             <div class="row">
                 <div class="col-md-6 text-center">
                     <div class="jumbotron" id="Acron3">
-                        <a class="btn" id="Acron3" href="~/HNI/Escolha">Resposta</a>
+                        <a class="btn" id="Acron3" href="~/HNI/Escolha">@ViewBag.Reposta01</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
                     <div class="jumbotron" id="Acron3">
-                        <a class="btn" id="Acron3" href="~/HNI/Escolha">Resposta</a>
+                        <a class="btn" id="Acron3" href="~/HNI/Escolha">@ViewBag.Reposta02</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
                     <div class="jumbotron" id="Acron3">
-                        <a class="btn" id="Acron3" href="~/HNI/Escolha">Resposta</a>
+                        <a class="btn" id="Acron3" href="~/HNI/Escolha">@ViewBag.Reposta03</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
                     <div class="jumbotron" id="Acron3">
-                        <a class="btn" id="Acron3" href="~/HNI/Escolha">Resposta</a>
+                        <a class="btn" id="Acron3" href="~/HNI/Escolha">@ViewBag.Reposta04</a>
                     </div>
                 </div>
                 <div class="row">

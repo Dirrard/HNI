@@ -84,5 +84,109 @@ namespace HNI.Dataaccess
 
         }
 
+        public Personagem Buscar(int Id)
+        {
+
+
+            using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
+            {
+                string strSQL = @"SELECT * FROM Personagem where Id = '" + Id;
+
+                using (SqlCommand cmd = new SqlCommand(strSQL))
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandText = strSQL;
+                    var dataReader = cmd.ExecuteReader();
+                    var dt = new DataTable();
+                    dt.Load(dataReader);
+                    conn.Close();
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        var P = new Personagem()
+                        {
+                            Id = Convert.ToInt32(row["Id"]),
+                            Nome = row["Nome"].ToString(),
+                            Imagem = row["Imagem"].ToString(),
+                            Classe = new Classe()
+                            {
+                                Id = Convert.ToInt32(row["Classe"]),
+                            },
+                            Genero = row["Genero"].ToString(),
+                            Ouro = Convert.ToInt32(row["Ouro"]),
+                            Mana = Convert.ToInt32(row["Mana"]),
+                            Hp = Convert.ToInt32(row["Hp"]),
+                            AtkF = Convert.ToInt32(row["AtkF"]),
+                            AtkM = Convert.ToInt32(row["AtkM"]),
+                            Def = Convert.ToInt32(row["Def"]),
+                            Nivel = Convert.ToInt32(row["Nivel"]),
+                            Exp = Convert.ToInt32(row["Exp"]),
+                        };
+                        return P;
+
+                    }
+                }
+            }
+            Personagem Pa = new Personagem();
+            return Pa;
+
+
+        }
+
+        public Personagem BuscarP(int Id)
+        {
+
+
+            using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
+            {
+                string strSQL = @"SELECT * FROM Personagem where Id = '" + Id ;
+
+                using (SqlCommand cmd = new SqlCommand(strSQL))
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandText = strSQL;
+                    var dataReader = cmd.ExecuteReader();
+                    var dt = new DataTable();
+                    dt.Load(dataReader);
+                    conn.Close();
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        var P = new Personagem()
+                        {
+                            Id = Convert.ToInt32(row["Id"]),
+                            Nome = row["Nome"].ToString(),
+                            Imagem = row["Imagem"].ToString(),
+                            Classe = new Classe()
+                            {
+                                Id = Convert.ToInt32(row["Classe"]),
+                            },
+                            Genero = row["Genero"].ToString(),
+                            Ouro = Convert.ToInt32(row["Ouro"]),
+                            Mana = Convert.ToInt32(row["Mana"]),
+                            Hp   =  Convert.ToInt32(row["Hp"]),
+                            AtkF =  Convert.ToInt32(row["AtkF"]),
+                            AtkM = Convert.ToInt32(row["AtkM"]),
+                            Def = Convert.ToInt32(row["Def"]),
+                           Nivel = Convert.ToInt32(row["Nivel"]),
+                            Exp = Convert.ToInt32(row["Exp"]),
+                            Usuario = new Usuario
+                            {
+                                Id = Convert.ToInt32(row["Id_Usuario"]),
+                            }
+                    };
+                        return P;
+
+                    }
+                }
+            }
+            Personagem Pa = new Personagem();
+            return Pa;
+
+
+        }
+
     }
 }
