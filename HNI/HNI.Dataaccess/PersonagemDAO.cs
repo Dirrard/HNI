@@ -55,7 +55,7 @@ namespace HNI.Dataaccess
 
             using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
             {
-                string strSQL = @"SELECT * FROM Personagem where Nome = '" + obj.Nome + "' and Classe ='"+obj.Classe+ "''and Nivel '= "+obj.Nivel+"' and Id_Usuario ='"+obj.Usuario.Id+"'";
+                string strSQL = @"SELECT * FROM Personagem where Nome = '" + obj.Nome + "' and Classe ='"+obj.Classe.Id+ "'and Nivel = ' "+obj.Nivel+"' and Id_Usuario ='"+obj.Usuario.Id+"'";
 
                 using (SqlCommand cmd = new SqlCommand(strSQL))
                 {
@@ -72,56 +72,6 @@ namespace HNI.Dataaccess
                         var P = new Personagem()
                         {
                             Id = Convert.ToInt32(row["Id"]),
-                        };
-                        return P;
-
-                    }
-                }
-            }
-            Personagem Pa = new Personagem();
-            return Pa;
-
-
-        }
-
-        public Personagem Buscar(int Id)
-        {
-
-
-            using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
-            {
-                string strSQL = @"SELECT * FROM Personagem where Id = '" + Id;
-
-                using (SqlCommand cmd = new SqlCommand(strSQL))
-                {
-                    conn.Open();
-                    cmd.Connection = conn;
-                    cmd.CommandText = strSQL;
-                    var dataReader = cmd.ExecuteReader();
-                    var dt = new DataTable();
-                    dt.Load(dataReader);
-                    conn.Close();
-
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        var P = new Personagem()
-                        {
-                            Id = Convert.ToInt32(row["Id"]),
-                            Nome = row["Nome"].ToString(),
-                            Imagem = row["Imagem"].ToString(),
-                            Classe = new Classe()
-                            {
-                                Id = Convert.ToInt32(row["Classe"]),
-                            },
-                            Genero = row["Genero"].ToString(),
-                            Ouro = Convert.ToInt32(row["Ouro"]),
-                            Mana = Convert.ToInt32(row["Mana"]),
-                            Hp = Convert.ToInt32(row["Hp"]),
-                            AtkF = Convert.ToInt32(row["AtkF"]),
-                            AtkM = Convert.ToInt32(row["AtkM"]),
-                            Def = Convert.ToInt32(row["Def"]),
-                            Nivel = Convert.ToInt32(row["Nivel"]),
-                            Exp = Convert.ToInt32(row["Exp"]),
                         };
                         return P;
 
@@ -140,7 +90,7 @@ namespace HNI.Dataaccess
 
             using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
             {
-                string strSQL = @"SELECT * FROM Personagem where Id = '" + Id ;
+                string strSQL = @"SELECT * FROM Personagem where Id = '" + Id + "'" ;
 
                 using (SqlCommand cmd = new SqlCommand(strSQL))
                 {

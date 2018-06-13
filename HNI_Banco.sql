@@ -156,6 +156,7 @@ CriaturaNumeroFinal int,
 Imagem Varchar(30)
 );
 go
+
 create table Momento
 (
 Id int primary key identity(1,1),
@@ -198,3 +199,15 @@ go
 select * from Criatura
 go
 
+BULK INSERT Questao
+FROM 'C:\Users\Aluno\Desktop\Questoes-Teste.txt'
+go
+BULK INSERT Resposta
+FROM 'C:\Users\Aluno\Desktop\Respostas-Teste.txt'
+go
+BULK INSERT Lugar
+FROM 'C:\Users\Aluno\Desktop\Lugar-Teste.txt'
+go
+BULK INSERT Personagem
+FROM 'C:\Users\Aluno\Desktop\Personagem-Teste-Escolha.txt'
+go

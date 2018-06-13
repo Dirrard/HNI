@@ -38,7 +38,7 @@ namespace HNI.Dataaccess
                             {
                             Id = Convert.ToInt32(row["Cena"])
                             },
-                            Descricao= row["Desc"].ToString(),
+                            Descricao= row["Descr"].ToString(),
                             Personagem = new Personagem
                             {
                                 Id= Convert.ToInt32(row["Personagem"]),
@@ -49,8 +49,8 @@ namespace HNI.Dataaccess
                     }
                 }
             }
-           Questao Q = new Questao();
-            return Q;
+           Questao Qu = new Questao();
+            return Qu;
 
 
         }
@@ -81,16 +81,18 @@ namespace HNI.Dataaccess
                             {
                                 Id = Convert.ToInt32(row["Questao"])
                             },
-                            Descricao = row["Desc"].ToString(),
-                             Identidade = Convert.ToInt32(row["Identidade"]),
+                            Descricao = row["Descr"].ToString(),
+                             Identidade = Convert.ToInt32(row["Identi"]),
                             
                         };
+                        R.Existe = true;
                         return R;
 
                     }
                 }
             }
             Resposta Re = new Resposta();
+            Re.Existe = false;
             return Re;
 
 

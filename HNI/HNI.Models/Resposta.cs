@@ -12,5 +12,6 @@ namespace HNI.Models
         public Questao Questao { get; set; }
         public string Descricao { get; set; }
         public int Identidade { get; set; }
+        public bool Existe { get; set; }
     }
 }

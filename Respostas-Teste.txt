@@ -1,0 +1,11 @@
+Um Genio	1	1	1
+O Maior Genio que já nasceu	1	2	2
+Um Cara Muito Inteligente	1	3	3
+Aquele Que Consegue o Quer	1	4	4
+Ok	11	5	0
+Tudo Bem	11	6	0
+Ok	12	7	0
+Tudo Bem	13	8	0
+Ok	14	9	0
+Tudo Bem	14	10	0
+Mas Todos eram verdadeiros	14	11	0

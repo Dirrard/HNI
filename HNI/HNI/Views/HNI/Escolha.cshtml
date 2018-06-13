@@ -10,7 +10,117 @@
     }
 </style>
 @{ 
-   
+    EscolhaDAO ES = new EscolhaDAO();
+    PersonagemDAO PD = new PersonagemDAO();
+    Lugar L = new Lugar();
+    Questao Q = new Questao();
+    Resposta A = new Resposta();
+    Personagem P = new Personagem();
+    HttpCookie cookie = Request.Cookies.Get("Questao");
+    Q.Id = Convert.ToInt32(cookie.Value);
+    Q = ES.Buscar_Questao(Q.Id);
+    ViewBag.Questao = Q.Descricao;
+    int p = Q.Personagem.Id;
+    P = PD.BuscarP(p);
+    ViewBag.PImagem = "/Imagens" + P.Imagem + ".png";
+    L = ES.Buscar_Lugar(Q.Id);
+    ViewBag.Fundo = "/Imagens"+L.Imagem+".png";
+    A = ES.Buscar_Respota(Q.Id, 0);
+    if (A.Existe == true)
+    {
+
+
+        ViewBag.Resposta01 = A.Descricao;
+        ViewBag.Resposta01Valor = A.Identidade;
+        A = ES.Buscar_Respota(Q.Id, 1);
+        if (A.Existe == true)
+        {
+            ViewBag.Resposta02 = A.Descricao;
+            ViewBag.Resposta02Valor = A.Identidade;
+
+        }
+        else
+        {
+            ViewBag.Resposta02 = "";
+            ViewBag.Resposta02Valor = "0";
+        }
+        A = ES.Buscar_Respota(Q.Id, 2);
+        if (A.Existe == true)
+        {
+            ViewBag.Resposta03 = A.Descricao;
+            ViewBag.Resposta03Valor = A.Identidade;
+        }
+        else
+        {
+            ViewBag.Resposta03 = "";
+            ViewBag.Resposta03Valor = "0";
+        }
+        A = ES.Buscar_Respota(Q.Id, 3);
+        if (A.Existe == true)
+        {
+            ViewBag.Resposta04 = A.Descricao;
+            ViewBag.Resposta04Valor = A.Identidade;
+        }
+        else
+        {
+            ViewBag.Resposta04 = "";
+            ViewBag.Resposta04Valor = "0";
+        }
+
+
+    }
+    else
+    {
+        A = ES.Buscar_Respota(Q.Id, 1);
+        ViewBag.Resposta01 = A.Descricao;
+        ViewBag.Resposta01Valor = A.Identidade;
+        if (A.Existe == true)
+        {
+            ViewBag.Resposta01 = A.Descricao;
+            ViewBag.Resposta01Valor = A.Identidade;
+
+        }
+        else
+        {
+            ViewBag.Resposta01 = "";
+            ViewBag.Resposta01Valor = "0";
+        }
+        A = ES.Buscar_Respota(Q.Id, 2);
+        if (A.Existe == true)
+        {
+            ViewBag.Resposta02 = A.Descricao;
+            ViewBag.Resposta02Valor = A.Identidade;
+        }
+        else
+        {
+            ViewBag.Resposta02 = "";
+            ViewBag.Resposta02Valor = "0";
+        }
+        A = ES.Buscar_Respota(Q.Id, 3);
+        if (A.Existe == true)
+        {
+            ViewBag.Resposta03 = A.Descricao;
+            ViewBag.Resposta03Valor = A.Identidade;
+        }
+        else
+        {
+            ViewBag.Resposta03 = "";
+            ViewBag.Resposta03Valor = "0";
+        }
+        A = ES.Buscar_Respota(Q.Id, 4);
+        if (A.Existe == true)
+        {
+            ViewBag.Resposta04 = A.Descricao;
+            ViewBag.Resposta04Valor = A.Identidade;
+        }
+        else
+        {
+            ViewBag.Resposta04 = "";
+            ViewBag.Resposta04Valor = "0";
+        }
+
+    }
+
 }
 <div class="row">
     <hr/>
@@ -47,22 +157,22 @@
             <div class="row">
                 <div class="col-md-6 text-center">
                     <div class="jumbotron" id="Acron3">
-                        <a class="btn" id="Acron3" href="~/HNI/Escolha">@ViewBag.Reposta01</a>
+                        <a class="btn" id="Acron3" action="@Url.Action("Escolher("+ViewBag.Resposta01Valor+")","HNI")">@ViewBag.Reposta01</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
                     <div class="jumbotron" id="Acron3">
-                        <a class="btn" id="Acron3" href="~/HNI/Escolha">@ViewBag.Reposta02</a>
+                        <a class="btn" id="Acron3" action="@Url.Action("Escolher("+ViewBag.Resposta02Valor+")","HNI")">@ViewBag.Reposta02</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
                     <div class="jumbotron" id="Acron3">
-                        <a class="btn" id="Acron3" href="~/HNI/Escolha">@ViewBag.Reposta03</a>
+                        <a class="btn" id="Acron3" action="@Url.Action("Escolher("+ViewBag.Resposta03Valor+")","HNI")">@ViewBag.Reposta03</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
                     <div class="jumbotron" id="Acron3">
-                        <a class="btn" id="Acron3" href="~/HNI/Escolha">@ViewBag.Reposta04</a>
+                        <a class="btn" id="Acron3" action="@Url.Action("Escolher("+ViewBag.Resposta04Valor+")","HNI")">@ViewBag.Reposta04</a>
                     </div>
                 </div>
                 <div class="row">
@@ -88,7 +198,8 @@
                 <div class="modal-body">
                     <div class="row text-center">
                         <a class="btn btn-primary" id="FAR2" href="~/HNI/Inventario">Inventario</a>
-                        <a class="btn btn-success" id="FAR2" href="~/HNI/Mapa">Mapa</a>
+                        <a class="btn btn-warning" id="FAR2" href="~/HNI/Mapa">Mapa</a>
+                        <a class="btn alert-success" id="FAR2" href="~/HNI/Mapa">Salvar</a>
                     </div>
                     </div>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>

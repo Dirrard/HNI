@@ -113,10 +113,36 @@ namespace HNI.Controllers
             Personagem Person = new Personagem();
             Person = p.Buscar_Id(obj);
             Response.Cookies.Add(new HttpCookie("Personagem", Convert.ToString(Person.Id)));
+            Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(1)));
             return RedirectToAction("Escolha", "HNI");
 
         }
 
+        public ActionResult Escolher(int R)
+        {
+            HttpCookie cookie = Request.Cookies.Get("Questao");
+            int Q;
+            Q = Convert.ToInt32(cookie.Value);
+            Q = (Q * 10) + R;
+            int q;
+            q = Q;
+            for (int i = q; i > 1; i = q)
+            {
+                q=q/2;
+            };
+            if (q == 1)
+            {
+                Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(Q)));
+                return RedirectToAction("HNI", "Escolha");
+            }
+            else
+            {
+                Q = (Q/100);
+                Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(Q)));
+                return RedirectToAction("HNI", "Escolha");
+            }
+
+        }
         public ActionResult Bestiario()
         {
             
