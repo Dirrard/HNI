@@ -200,6 +200,7 @@ select * from Criatura
 go
 
 BULK INSERT Questao
+
 FROM 'C:\Users\Aluno\Desktop\Questoes-Teste.txt'
 go
 BULK INSERT Resposta

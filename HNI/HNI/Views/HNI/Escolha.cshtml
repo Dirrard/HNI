@@ -22,9 +22,9 @@
     ViewBag.Questao = Q.Descricao;
     int p = Q.Personagem.Id;
     P = PD.BuscarP(p);
-    ViewBag.PImagem = "/Imagens" + P.Imagem + ".png";
+    ViewBag.PImagem = P.Imagem + ".png";
     L = ES.Buscar_Lugar(Q.Id);
-    ViewBag.Fundo = "/Imagens"+L.Imagem+".png";
+    ViewBag.Fundo = L.Imagem + ".jpg";
     A = ES.Buscar_Respota(Q.Id, 0);
     if (A.Existe == true)
     {
@@ -122,6 +122,15 @@
     }
 
 }
+<style type="text/css">
+            #Acron2{
+                        background-image:url("/Imagens/@ViewBag.Fundo");
+                        color:black;
+                        font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+                        font-size: large;
+                        border: 3px solid Darkblue;
+                             }
+</style>
 <div class="row">
     <hr/>
 </div>
@@ -131,14 +140,9 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="jumbotron" id="Acron2">
-                        <style type="text/css">
-                        Acron2{
-                        background-image:url('@Url.Content(ViewBag.Fundo)') ;
-                             }
-                        </style>
                         <div class="row">
-                            <div class="col-md-2 text-center">
-                                <div class="Row">
+                            <div class="col-md-2">
+                                <div class="Row col-lg-offset-1 ">
                                     <img src="/Imagens/@ViewBag.PImagem"
                                          width="190" height="220" /> 
                                 </div>
@@ -155,30 +159,33 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 text-center">
-                    <div class="jumbotron" id="Acron3">
-                        <a class="btn" id="Acron3" action="@Url.Action("Escolher("+ViewBag.Resposta01Valor+")","HNI")">@ViewBag.Reposta01</a>
+                <form action="@Url.Action("Escolher", "HNI")"  class="form-horizontal">
+                    <div class="col-md-6 text-center">
+                        <div class="jumbotron" id="Acron3">
+                            <button class="btn" onclick="clickHandler(this);" type="submit" name="Resposta "id="Resposta01"  value="@ViewBag.Resposta01Valor">@ViewBag.Resposta01</button>
+                         
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 text-center">
-                    <div class="jumbotron" id="Acron3">
-                        <a class="btn" id="Acron3" action="@Url.Action("Escolher("+ViewBag.Resposta02Valor+")","HNI")">@ViewBag.Reposta02</a>
+                    <div class="col-md-6 text-center">
+                        <div class="jumbotron" id="Acron3">
+                            <button class="btn" type="submit" name="Resposta "onclick="clickHandler(this);"id="Resposta02" value="@ViewBag.Resposta02Valor">@ViewBag.Resposta02</button>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 text-center">
-                    <div class="jumbotron" id="Acron3">
-                        <a class="btn" id="Acron3" action="@Url.Action("Escolher("+ViewBag.Resposta03Valor+")","HNI")">@ViewBag.Reposta03</a>
+                    <div class="col-md-6 text-center">
+                        <div class="jumbotron" id="Acron3">
+                            <button class="btn" type="submit" name="Resposta "onclick="clickHandler(this);"id="Resposta03"  value="@ViewBag.Resposta03Valor">@ViewBag.Resposta03</button>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 text-center">
-                    <div class="jumbotron" id="Acron3">
-                        <a class="btn" id="Acron3" action="@Url.Action("Escolher("+ViewBag.Resposta04Valor+")","HNI")">@ViewBag.Reposta04</a>
+                    <div class="col-md-6 text-center">
+                        <div class="jumbotron" id="Acron3">
+                            <button class="btn" type="submit" name="Resposta "onclick="clickHandler(this);"id="Resposta04" value="@ViewBag.Resposta04Valor">@ViewBag.Resposta04</button>
+                        </div>
                     </div>
-                </div>
+                </form>
                 <div class="row">
                     <div class="col-md-2 col-md-offset-5 text-center">
-                        <p><button type="submit" id="Acron5" class="btn btn-default" data-toggle="modal" data-target="#modal">Opções</button><p/>
-          
+                        <p><button type="submit" id="Acron5" class="btn btn-default" data-toggle="modal" data-target="#modal">Opções</button><p />
+
                     </div>
                 </div>
             </div>

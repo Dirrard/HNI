@@ -117,7 +117,7 @@ namespace HNI.Dataaccess
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        var R = new Lugar()
+                        var L = new Lugar()
                         {
                             Id = Convert.ToInt32(row["Id"]),
                             Questao = new Questao
@@ -128,7 +128,7 @@ namespace HNI.Dataaccess
                             Maximo = Convert.ToInt32(row["CriaturaNumeroFinal"]),
                             Imagem = row["Imagem"].ToString()
                         };
-                        return R;
+                        return L;
 
                     }
                 }

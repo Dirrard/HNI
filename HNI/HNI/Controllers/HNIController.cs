@@ -118,12 +118,12 @@ namespace HNI.Controllers
 
         }
 
-        public ActionResult Escolher(int R)
+        public ActionResult Escolher(Resposta R)
         {
             HttpCookie cookie = Request.Cookies.Get("Questao");
             int Q;
             Q = Convert.ToInt32(cookie.Value);
-            Q = (Q * 10) + R;
+            Q = (Q * 10) + R.Identidade;
             int q;
             q = Q;
             for (int i = q; i > 1; i = q)
@@ -133,13 +133,13 @@ namespace HNI.Controllers
             if (q == 1)
             {
                 Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(Q)));
-                return RedirectToAction("HNI", "Escolha");
+                return RedirectToAction("Escolha", "HNI");
             }
             else
             {
                 Q = (Q/100);
                 Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(Q)));
-                return RedirectToAction("HNI", "Escolha");
+                return RedirectToAction ("Escolha", "HNI");
             }
 
         }
