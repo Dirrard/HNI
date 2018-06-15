@@ -19,7 +19,7 @@
     font-size: large;
 }
 
-#Bod {
+.Bod {
     background-color: bisque;
     color: black;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -37,12 +37,12 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#bu {
+.bu {
     margin-bottom:50px;
     font-size:x-large;
   
 }
-#Bodin{
+.Bodin{
     background-color:blanchedalmond;
     color: black;
     font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
@@ -59,43 +59,43 @@
 #K {
     background-image: url('../Background-Image.jpg');
 }
-#FAR {
+.FAR {
     font-size:x-large!important;
     font-family:Perpetua!important;
     border:3px solid black;
 }
 
-#FAR2 {
+.FAR2 {
     font-size:x-large!important;
     font-family:Perpetua!important;
     border:2px solid black;
 }
 
-#Erro {
+.Erro {
     font-size:x-large!important;
     color:crimson;
 }
 
-#Ur {
+.Ur {
     border:4px solid black;
     color:black;
     background-color:lightsteelblue;
     font-family:Castellar;
 }
 
-#Urban {
+.Urban {
     border:5px solid black;
     background-color:aliceblue;
     color:black;
 }
 
-#Criar{
+.Criar{
     border:5px solid black;
     background-color:cadetblue;
     color:black;
 }
 
-#Card {
+.Card {
     background-color:blanchedalmond;
     color: black;
     font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
@@ -104,7 +104,7 @@
     font-weight: bold;
 }
 
-#Acron {
+.Acron {
      background-color:black;
     color: firebrick;
     font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
@@ -113,7 +113,7 @@
 
 }
 
-#Acron3 {
+.Acron3 {
     background-color:lightsteelblue;
     color:black;
     font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
@@ -123,7 +123,7 @@
 
 
 
-#Acron6 {
+.Acron6 {
     background-color:grey;
     color:black;
     font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
@@ -132,33 +132,33 @@
     width:850px;
 
 }
-#ci{
+.ci{
     border: 2px solid black;
 }
 
-#Vi {
+.Vi {
     font-family:'Adobe Gothic Std';
     font-size:large;
 }
 
-#Fi {
+.Fi {
     border: 1px solid black;
 }
 
-#Titulo1 {
+.Titulo1 {
   
      font-family:'Bookman Old Style';
      color:black;
      font-size:large;
 }
 
-#Relato {
+.Relato {
       font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
       font-size: large;
       color:black;
 }
 
-#Ilustracao{
+.Ilustracao{
     background-color:floralwhite;
     color: black;
     font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
@@ -166,17 +166,17 @@
      border: 3px solid black;
 }
 
-#Si {
+.Si {
     font-family:'Bookman Old Style'!important;
     font-size:large;
 }
 
-#Besta {
+.Besta {
   width:1000px;
    background-color:bisque;
 }
 
-#Besta1 {
+.Besta1 {
   width:1100px;
    background-color:bisque;
 }

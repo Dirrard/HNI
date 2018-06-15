@@ -13,10 +13,10 @@
 @using HNI.Dataaccess
 <br />
 <h2 class="text-center"> Criaturas da Era Atual </h2>
-<hr id="ci" />
+<hr class="ci" />
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
-        <p id="Si" class="text-center">
+        <p class="text-center Si ">
             Esse Bestiario esta se despondo a categorizar todas as criaturas conhecidas pelo homem na era moderna por
             Laurence Pyke II pesquisador de criaturas.
         </p>
@@ -27,38 +27,38 @@
     CriaturaDAO CD = new CriaturaDAO();
 
 }
-<div id="Besta1">
+<div class="Besta1">
     <h3> Criaturas da Área de Terra : </h3>
-    <hr id="Fi" />
-    <div id="Besta" class="navbar-collapse collapse">
-        <ul id="Besta" class="nav navbar-nav">
+    <hr class="Fi" />
+    <div class="navbar-collapse collapse Besta ">
+        <ul class="nav navbar-nav Besta ">
             <li>
-                <a href="#" id="Besta" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle Besta " data-toggle="dropdown">
                     <span class="caret"></span>
                 </a>
-                <ul id="Besta" class="dropdown-menu">
+                <ul class="dropdown-menu Besta">
                     <li>
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
                                 @{ ViewBag.Id = 1;}
                                 @{do
-            {<div id="Besta" class="row">
+            {<div class="row Besta">
                                     <div class="col-md-4">
-                                        <h5 id="Titulo1">Ilustração</h5>
-                                        <hr id="Fi" />
+                                        <h5 class="Titulo1">Ilustração</h5>
+                                        <hr class="Fi" />
 
 
                                         @{ViewBag.Busca = C = CD.Buscar(@ViewBag.Id);}
 
                                         @{  ViewBag.Imagem01 = "/Imagens/" + C.Imagem + ".png"; }
-                                        <div class="jumbotron" id="Ilustracao">
+                                        <div class="jumbotron Ilustracao ">
                                             <img src="@ViewBag.Imagem01"
                                                  width="200" height="220" />
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h5 id="Titulo1">Relato</h5>
-                                        <hr id="Fi" />
+                                        <h5 class="Titulo1">Relato</h5>
+                                        <hr class="Fi" />
                                         @{ ViewBag.Relato = C.Descricao;
                                             ViewBag.Nome = C.Nome;
                                             ViewBag.Agre = C.Agressividade;
@@ -66,14 +66,14 @@
                                             ViewBag.Ban = C.Bando;
                                             ViewBag.Cla = C.Classificacao;
                                             ViewBag.Rec = C.Ouro; }
-                                        <p id="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
-                                        <h5 id="Titulo1">Informações</h5>
-                                        <hr id="Fi" />
-                                        <p id="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
-                                        <p id="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
-                                        <p id="Relato">Individuos Normais por Bando: @ViewBag.Ban</p>
-                                        <p id="Relato">Classificação da Criatura: @ViewBag.Cla</p>
-                                        <p id="Relato">Recompensa por Cabeça da Criatura: @ViewBag.Rec Peças de Ouro </p>
+                                        <p class="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
+                                        <h5 class="Titulo1">Informações</h5>
+                                        <hr class="Fi" />
+                                        <p class="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
+                                        <p class="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
+                                        <p class="Relato">Individuos Normais por Bando: @ViewBag.Ban</p>
+                                        <p class="Relato">Classificação da Criatura: @ViewBag.Cla</p>
+                                        <p class="Relato">Recompensa por Cabeça da Criatura: @ViewBag.Rec Peças de Ouro </p>
                                     </div>
                                 </div>
                                                 ViewBag.Id++;
@@ -91,38 +91,38 @@
     </div>
 </div>
 
-<div id="Besta1">
+<div class="Besta1">
     <h3> Criaturas da Área de Fogo : </h3>
-    <hr id="Fi" />
-    <div id="Besta" class="navbar-collapse collapse">
-        <ul id="Besta" class="nav navbar-nav">
+    <hr class="Fi" />
+    <div class="navbar-collapse collapse Besta ">
+        <ul class="nav navbar-nav Besta">
             <li>
-                <a href="#" id="Besta" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#"  class="dropdown-toggle Besta" data-toggle="dropdown">
                     <span class="caret"></span>
                 </a>
-                <ul id="Besta" class="dropdown-menu">
+                <ul  class="dropdown-menu Besta">
                     <li>
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
                                 @{ ViewBag.Id = 4;}
                                 @{do
-            {<div id="Besta" class="row">
+            {<div  class="row Besta">
                                     <div class="col-md-4">
-                                        <h5 id="Titulo1">Ilustração</h5>
-                                        <hr id="Fi" />
+                                        <h5 class="Titulo1">Ilustração</h5>
+                                        <hr class="Fi" />
 
 
                                         @{ViewBag.Busca = C = CD.Buscar(@ViewBag.Id);}
 
                                         @{  ViewBag.Imagem01 = "/Imagens/" + C.Imagem + ".png"; }
-                                        <div class="jumbotron" id="Ilustracao">
+                                        <div class="jumbotron Ilustracao">
                                             <img src="@ViewBag.Imagem01"
                                                  width="200" height="220" />
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h5 id="Titulo1">Relato</h5>
-                                        <hr id="Fi" />
+                                        <h5 class="Titulo1">Relato</h5>
+                                        <hr class="Fi" />
                                         @{ ViewBag.Relato = C.Descricao;
                                             ViewBag.Nome = C.Nome;
                                             ViewBag.Agre = C.Agressividade;
@@ -130,14 +130,14 @@
                                             ViewBag.Ban = C.Bando;
                                             ViewBag.Cla = C.Classificacao;
                                             ViewBag.Rec = C.Ouro; }
-                                        <p id="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
-                                        <h5 id="Titulo1">Informações</h5>
-                                        <hr id="Fi" />
-                                        <p id="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
-                                        <p id="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
-                                        <p id="Relato">Individuos Normais por Bando: @ViewBag.Ban</p>
-                                        <p id="Relato">Classificação da Criatura: @ViewBag.Cla</p>
-                                        <p id="Relato">Recompensa por Cabeça da Criatura: @ViewBag.Rec Peças de Ouro </p>
+                                        <p class="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
+                                        <h5 class="Titulo1">Informações</h5>
+                                        <hr class="Fi" />
+                                        <p class="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
+                                        <p class="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
+                                        <p class="Relato">Individuos Normais por Bando: @ViewBag.Ban</p>
+                                        <p class="Relato">Classificação da Criatura: @ViewBag.Cla</p>
+                                        <p class="Relato">Recompensa por Cabeça da Criatura: @ViewBag.Rec Peças de Ouro </p>
                                     </div>
                                 </div>
                                                 ViewBag.Id++;
@@ -155,38 +155,38 @@
     </div>
 </div>
 
-<div id="Besta1">
+<div class="Besta1">
     <h3> Criaturas da Área de Água : </h3>
-    <hr id="Fi" />
-    <div id="Besta" class="navbar-collapse collapse">
-        <ul id="Besta" class="nav navbar-nav">
+    <hr class="Fi" />
+    <div class="navbar-collapse collapse Besta ">
+        <ul class="nav navbar-nav Besta">
             <li>
-                <a href="#" id="Besta" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle Besta" data-toggle="dropdown">
                     <span class="caret"></span>
                 </a>
-                <ul id="Besta" class="dropdown-menu">
+                <ul class="dropdown-menu Besta">
                     <li>
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
                                 @{ ViewBag.Id = 7;}
                                 @{do
-            {<div id="Besta" class="row">
+            {<div class="row Besta">
                                     <div class="col-md-4">
-                                        <h5 id="Titulo1">Ilustração</h5>
-                                        <hr id="Fi" />
+                                        <h5 class="Titulo1">Ilustração</h5>
+                                        <hr class="Fi" />
 
 
                                         @{ViewBag.Busca = C = CD.Buscar(@ViewBag.Id);}
 
                                         @{  ViewBag.Imagem01 = "/Imagens/" + C.Imagem + ".png"; }
-                                        <div class="jumbotron" id="Ilustracao">
+                                        <div class="jumbotron Ilustracao">
                                             <img src="@ViewBag.Imagem01"
                                                  width="200" height="220" />
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h5 id="Titulo1">Relato</h5>
-                                        <hr id="Fi" />
+                                        <h5 class="Titulo1">Relato</h5>
+                                        <hr class="Fi" />
                                         @{ ViewBag.Relato = C.Descricao;
                                             ViewBag.Nome = C.Nome;
                                             ViewBag.Agre = C.Agressividade;
@@ -194,14 +194,14 @@
                                             ViewBag.Ban = C.Bando;
                                             ViewBag.Cla = C.Classificacao;
                                             ViewBag.Rec = C.Ouro; }
-                                        <p id="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
-                                        <h5 id="Titulo1">Informações</h5>
-                                        <hr id="Fi" />
-                                        <p id="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
-                                        <p id="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
-                                        <p id="Relato">Individuos Normais por Bando: @ViewBag.Ban</p>
-                                        <p id="Relato">Classificação da Criatura: @ViewBag.Cla</p>
-                                        <p id="Relato">Recompensa por Cabeça da Criatura: @ViewBag.Rec Peças de Ouro </p>
+                                        <p class="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
+                                        <h5 class="Titulo1">Informações</h5>
+                                        <hr class="Fi" />
+                                        <p class="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
+                                        <p class="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
+                                        <p class="Relato">Individuos Normais por Bando: @ViewBag.Ban</p>
+                                        <p class="Relato">Classificação da Criatura: @ViewBag.Cla</p>
+                                        <p class="Relato">Recompensa por Cabeça da Criatura: @ViewBag.Rec Peças de Ouro </p>
                                     </div>
                                 </div>
                                                 ViewBag.Id++;
@@ -214,61 +214,61 @@
                         </div>
                     </li>
                 </ul>
-             </li>
-            </ul>
-        </div>
+            </li>
+        </ul>
     </div>
+</div>
 
-<div id="Besta1">
+<div class="Besta1">
     <h3> Criaturas da Área do Ar : </h3>
-    <hr id="Fi" />
-    <div id="Besta" class="navbar-collapse collapse">
-        <ul id="Besta" class="nav navbar-nav">
+    <hr class="Fi" />
+    <div class="navbar-collapse collapse Besta ">
+        <ul class="nav navbar-nav Besta">
             <li>
-                <a href="#" id="Besta" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle Besta" data-toggle="dropdown">
                     <span class="caret"></span>
                 </a>
-                <ul id="Besta" class="dropdown-menu">
+                <ul class="dropdown-menu Besta">
                     <li>
-                        <div id="Besta" class="row">
+                        <div class="row Besta">
                             <div class="col-md-10 col-md-offset-1">
                                 @{ ViewBag.Id = 10;}
 
                                 @{do
-            {<div id="Besta" class="row">
-                                        <div class="col-md-4">
-                                            <h5 id="Titulo1">Ilustração</h5>
-                                            <hr id="Fi" />
+            {<div class="row Besta ">
+                                    <div class="col-md-4">
+                                        <h5 class="Titulo1">Ilustração</h5>
+                                        <hr class="Fi" />
 
 
-                                            @{ViewBag.Busca = C = CD.Buscar(@ViewBag.Id);}
+                                        @{ViewBag.Busca = C = CD.Buscar(@ViewBag.Id);}
 
-                                            @{  ViewBag.Imagem01 = "/Imagens/" + C.Imagem + ".png"; }
-                                            <div class="jumbotron" id="Ilustracao">
-                                                <img src="@ViewBag.Imagem01"
-                                                     width="200" height="220" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <h5 id="Titulo1">Relato</h5>
-                                            <hr id="Fi" />
-                                            @{ ViewBag.Relato = C.Descricao;
-                                                ViewBag.Nome = C.Nome;
-                                                ViewBag.Agre = C.Agressividade;
-                                                ViewBag.Per = C.Perigo;
-                                                ViewBag.Ban = C.Bando;
-                                                ViewBag.Cla = C.Classificacao;
-                                                ViewBag.Rec = C.Ouro; }
-                                            <p id="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
-                                            <h5 id="Titulo1">Informações</h5>
-                                            <hr id="Fi" />
-                                            <p id="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
-                                            <p id="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
-                                            <p id="Relato">Classificação da Criatura: @ViewBag.Cla</p>
+                                        @{  ViewBag.Imagem01 = "/Imagens/" + C.Imagem + ".png"; }
+                                        <div class="jumbotron Ilustracao">
+                                            <img src="@ViewBag.Imagem01"
+                                                 width="200" height="220" />
                                         </div>
                                     </div>
-                                                    ViewBag.Id++;
-                                                } while (ViewBag.Id <= 12); }
+                                    <div class="col-md-8">
+                                        <h5 class="Titulo1">Relato</h5>
+                                        <hr class="Fi" />
+                                        @{ ViewBag.Relato = C.Descricao;
+                                            ViewBag.Nome = C.Nome;
+                                            ViewBag.Agre = C.Agressividade;
+                                            ViewBag.Per = C.Perigo;
+                                            ViewBag.Ban = C.Bando;
+                                            ViewBag.Cla = C.Classificacao;
+                                            ViewBag.Rec = C.Ouro; }
+                                        <p class="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
+                                        <h5 class="Titulo1">Informações</h5>
+                                        <hr class="Fi" />
+                                        <p class="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
+                                        <p class="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
+                                        <p class="Relato">Classificação da Criatura: @ViewBag.Cla</p>
+                                    </div>
+                                </div>
+                                                ViewBag.Id++;
+                                            } while (ViewBag.Id <= 12); }
 
 
 
@@ -281,54 +281,54 @@
     </div>
 </div>
 
-<div id="Besta1">
+<div class="Besta1">
     <h2 class="text-center">Feras Guardiãs</h2>
-    <hr id="ci" />
-    <p id="Si" class="text-center">
+    <hr class="ci" />
+    <p class="text-center Si ">
         Devido sua importância eu quis separa-las das demais, pois não são apenas criaturas ou monstros que habitam esse mundo, são nossas guardiãs, aqueles seres que nós permitiram viver em uma erá "pacífica"
         - Laurence Pyke II pesquisador de criaturas.
     </p>
-    <div id="Besta" class="navbar-collapse collapse">
-        <ul id="Besta" class="nav navbar-nav">
+    <div  class="navbar-collapse collapse Besta">
+        <ul class="nav navbar-nav Besta">
             <li>
-                <a href="#" id="Besta" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#"  class="dropdown-toggle" data-toggle="dropdown Besta ">
                     <span class="caret"></span>
                 </a>
-                <ul id="Besta" class="dropdown-menu">
+                <ul  class="dropdown-menu Besta ">
                     <li>
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
                                 @{ ViewBag.Id = 13;}
                                 @{do
-            {<div id="Besta" class="row">
+            {<div class="row Besta">
                                     <div class="col-md-4">
-                                        <h5 id="Titulo1">Ilustração</h5>
-                                        <hr id="Fi" />
+                                        <h5 class="Titulo1">Ilustração</h5>
+                                        <hr class="Fi" />
 
 
                                         @{ViewBag.Busca = C = CD.Buscar(@ViewBag.Id);}
 
                                         @{  ViewBag.Imagem01 = "/Imagens/" + C.Imagem + ".png"; }
-                                        <div class="jumbotron" id="Ilustracao">
+                                        <div class="jumbotron Ilustracao">
                                             <img src="@ViewBag.Imagem01"
                                                  width="200" height="220" />
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h5 id="Titulo1">Relato</h5>
-                                        <hr id="Fi" />
+                                        <h5 class="Titulo1">Relato</h5>
+                                        <hr class="Fi" />
                                         @{ ViewBag.Relato = C.Descricao;
                                             ViewBag.Nome = C.Nome;
                                             ViewBag.Agre = C.Agressividade;
                                             ViewBag.Per = C.Perigo;
                                             ViewBag.Cla = C.Classificacao;
-                                       }
-                                        <p id="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
-                                        <h5 id="Titulo1">Informações</h5>
-                                        <hr id="Fi" />
-                                        <p id="Relato">Agressividade do Ser: @ViewBag.Agre </p>
-                                        <p id="Relato">Perigo do Ser: @ViewBag.Per</p>
-                                        <p id="Relato">Classificação do Ser: @ViewBag.Cla</p>
+                                        }
+                                        <p class="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
+                                        <h5 class="Titulo1">Informações</h5>
+                                        <hr class="Fi" />
+                                        <p class="Relato">Agressividade do Ser: @ViewBag.Agre </p>
+                                        <p class="Relato">Perigo do Ser: @ViewBag.Per</p>
+                                        <p class="Relato">Classificação do Ser: @ViewBag.Cla</p>
 
                                     </div>
                                 </div>
@@ -347,42 +347,42 @@
     </div>
 </div>
 
-<div id="Besta1">
+<div class="Besta1">
     <h2 class="text-center">Lendas e Mitos</h2>
-    <hr id="ci" />
-    <p id="Si" class="text-center">
+    <hr class="ci" />
+    <p class="text-center Si ">
         Esses seres não são exatamente criaturas e suas lendas maravilhosas os colocam com niveis acima de todas as criaturas que já estudei, por conta disso determinei separa-los nessa secção própria de minha pesquisa
         - Laurence Pyke II pesquisador de criaturas.
     </p>
-    <div id="Besta" class="navbar-collapse collapse">
-        <ul id="Besta" class="nav navbar-nav">
+    <div  class="navbar-collapse collapse Besta ">
+        <ul  class="nav navbar-nav Besta " >
             <li>
-                <a href="#" id="Besta" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle Besta " data-toggle="dropdown">
                     <span class="caret"></span>
                 </a>
-                <ul id="Besta" class="dropdown-menu">
+                <ul class="dropdown-menu Besta">
                     <li>
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
                                 @{ ViewBag.Id = 18;}
                                 @{do
-            {<div id="Besta" class="row">
+            {<div  class="row Besta">
                                     <div class="col-md-4">
-                                        <h5 id="Titulo1">Ilustração</h5>
-                                        <hr id="Fi" />
+                                        <h5 class="Titulo1">Ilustração</h5>
+                                        <hr class="Fi" />
 
 
                                         @{ViewBag.Busca = C = CD.Buscar(@ViewBag.Id);}
 
                                         @{  ViewBag.Imagem01 = "/Imagens/" + C.Imagem + ".png"; }
-                                        <div class="jumbotron" id="Ilustracao">
+                                        <div class="jumbotron Ilustracao">
                                             <img src="@ViewBag.Imagem01"
                                                  width="230" height="280" />
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h5 id="Titulo1">Relato</h5>
-                                        <hr id="Fi" />
+                                        <h5 class="Titulo1">Relato</h5>
+                                        <hr class="Fi" />
                                         @{ ViewBag.Relato = C.Descricao;
                                             ViewBag.Nome = C.Nome;
                                             ViewBag.Agre = C.Agressividade;
@@ -390,14 +390,14 @@
                                             ViewBag.Ban = C.Bando;
                                             ViewBag.Cla = C.Classificacao;
                                             ViewBag.Rec = C.Ouro; }
-                                        <p id="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
-                                        <h5 id="Titulo1">Informações</h5>
-                                        <hr id="Fi" />
-                                        <p id="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
-                                        <p id="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
-                                        <p id="Relato">Individuos Normais por Bando: @ViewBag.Ban</p>
-                                        <p id="Relato">Classificação da Criatura: @ViewBag.Cla</p>
-                                        <p id="Relato">Recompensa por Cabeça da Criatura: @ViewBag.Rec Peças de Ouro </p>
+                                        <p class="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
+                                        <h5 class="Titulo1">Informações</h5>
+                                        <hr class="Fi" />
+                                        <p class="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
+                                        <p class="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
+                                        <p class="Relato">Individuos Normais por Bando: @ViewBag.Ban</p>
+                                        <p class="Relato">Classificação da Criatura: @ViewBag.Cla</p>
+                                        <p class="Relato">Recompensa por Cabeça da Criatura: @ViewBag.Rec Peças de Ouro </p>
                                     </div>
                                 </div>
                                                 ViewBag.Id++;

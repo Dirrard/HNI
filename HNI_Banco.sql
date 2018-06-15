@@ -138,6 +138,7 @@ Id int primary key,
 Cena int references Cena(Id),
 Personagem int references Personagem(Id),
 Descr varchar(max)
+Identi int 
 );
 create table Resposta
 (
@@ -150,18 +151,21 @@ Identi int
 create table Lugar 
 (
 Id int primary key identity(1,1),
-Questao int references Questao(Id),
 CriaturaNumeroInicial int,
 CriaturaNumeroFinal int,
 Imagem Varchar(30)
 );
 go
-
+create table LugarxQuestao
+(
+Questao integer references Questao(Id),
+Lugar integer references Lugar(Id),
+id_LugarxQuestao integer primary key identity(1,1)
+);
 create table Momento
 (
 Id int primary key identity(1,1),
 Cena int references Cena(Id),
-lugar int references Lugar(Id),
 Questao int references Questao(Id),
 Personagem int references Personagem(Id)
 );
@@ -213,6 +217,10 @@ with(CODEPAGE='ACP')
 go
 BULK INSERT Personagem
 FROM 'C:\Users\Aluno\Desktop\Personagem-Teste-Escolha.txt'
+with(CODEPAGE='ACP')
+go
+BULK INSERT LugarxQuestao
+FROM 'C:\Users\Aluno\Desktop\LugarxQuestao-Teste.txt'
 with(CODEPAGE='ACP')
 go
 /*

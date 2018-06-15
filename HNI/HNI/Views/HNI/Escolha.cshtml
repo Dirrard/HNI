@@ -26,7 +26,8 @@
     int p = Q.Personagem.Id;
     P = PD.BuscarP(p);
     ViewBag.PImagem = P.Imagem + ".png";
-    L = ES.Buscar_Lugar(Q.Id);
+    L = ES.Buscar_Lugar_Id(Q.Id);
+    L = ES.Buscar_Lugar(L.Id);
     ViewBag.Fundo = L.Imagem + ".jpg";
     A = ES.Buscar_Respota(Q.Id, 0);
     if (A.Existe == true)
@@ -124,12 +125,11 @@
 
     }
 
-    Resposta Re = new Resposta();
 }
 
 
 <style type="text/css">
-            #Acron2{
+            .Acron2{
                         background-image:url("/Imagens/@ViewBag.Fundo");
                         color:black;
                         font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
@@ -143,10 +143,10 @@
 </div>
 <div class="row">
     <div class="col-md-12 text-center">
-        <div class="jumbotron" id="Acron">
+        <div class="jumbotron Acron">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <div class="jumbotron" id="Acron2">
+                    <div class="jumbotron Acron2">
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="Row col-lg-offset-1 ">
@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="Row">
                                     <div class="col-md-12  text-center">
-                                        <div id="Acron6" class="jumbotron">
+                                        <div class="jumbotron Acron6 ">
                                             <p>@ViewBag.Questao</p>
                                         </div>
                                     </div>
@@ -170,26 +170,26 @@
                 <form id="Escolha" action="@Url.Action("Escolher", "HNI")" class="form-horizontal">
                     <div class="Row">
                         <div class="col-md-6 text-center">
-                            <div class="jumbotron" id="Acron3">
+                            <div class="jumbotron Acron3">
                                 @*<button class="btn" name="Resposta1" onclick="button.clicked" id="Acron3">@ViewBag.Resposta01</button>*@
-                                <a class="btn" id="Resposta1" name="Acron3" href="@Url.Action("Escolher", "HNI", new { @resposta = ViewBag.Resposta01Valor })">@ViewBag.Resposta01</a>
+                                <a class="btn Acron3 " id="Resposta1" name="Resposta" href="@Url.Action("Escolher", "HNI", new { @resposta = ViewBag.Resposta01Valor })">@ViewBag.Resposta01</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 text-center">
-                        <div class="jumbotron" id="Acron3">
-                            <button class="btn" name="Resposta2" onclick="button.clicked" id="Acron3">@ViewBag.Resposta02</button>
+                        <div class="jumbotron Acron3">
+                            <a class="btn Acron3 " id="Resposta2" name="Resposta" href="@Url.Action("Escolher", "HNI", new { @resposta = ViewBag.Resposta02Valor })">@ViewBag.Resposta02</a>
                         </div>
                     </div>
                     <div class="Row">
                         <div class="col-md-6 text-center">
-                            <div class="jumbotron" id="Acron3">
-                                <button class="btn" name="Resposta3" onclick="button.clicked" id="Acron3">@ViewBag.Resposta03</button>
+                            <div class="jumbotron Acron3">
+                                <a class="btn Acron3 " id="Resposta3" name="Resposta" href="@Url.Action("Escolher", "HNI", new { @resposta = ViewBag.Resposta03Valor })">@ViewBag.Resposta03</a>
                             </div>
                         </div>
                         <div class="col-md-6 text-center">
-                            <div class="jumbotron" id="Acron3">
-                                <button class="btn" name="Resposta4" onclick="button.clicked" id="Acron3">@ViewBag.Resposta04</button>
+                            <div class="jumbotron Acron3">
+                                <a class="btn Acron3 " id="Resposta4" name="Resposta" href="@Url.Action("Escolher", "HNI", new { @resposta = ViewBag.Resposta04Valor })">@ViewBag.Resposta04</a>
                             </div>
                         </div>
                     </div>
@@ -197,7 +197,7 @@
                 </form>
                 <div class="row">
                     <div class="col-md-2 col-md-offset-5 text-center">
-                        <p><button type="submit" id="Acron5" class="btn btn-default" data-toggle="modal" data-target="#modal">Opções</button><p />
+                        <p><button type="submit" class="btn btn-default Acron5 " data-toggle="modal" data-target="#modal">Opções</button><p />
 
                     </div>
                 </div>
@@ -217,9 +217,9 @@
             </div>
             <div class="modal-body">
                 <div class="row text-center">
-                    <a class="btn btn-primary" id="FAR2" href="~/HNI/Inventario">Inventario</a>
-                    <a class="btn btn-warning" id="FAR2" href="~/HNI/Mapa">Mapa</a>
-                    <a class="btn alert-success" id="FAR2" href="~/HNI/Mapa">Salvar</a>
+                    <a class="btn btn-primary FAR2" href="~/HNI/Inventario">Inventario</a>
+                    <a class="btn btn-warning FAR2" href="~/HNI/Mapa">Mapa</a>
+                    <a class="btn alert-success FAR2" href="~/HNI/Mapa">Salvar</a>
                 </div>
             </div>
             <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
