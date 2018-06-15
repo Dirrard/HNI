@@ -215,3 +215,7 @@ BULK INSERT Personagem
 FROM 'C:\Users\Aluno\Desktop\Personagem-Teste-Escolha.txt'
 with(CODEPAGE='ACP')
 go
+/*
+Use master;
+drop database HNI
+*/
