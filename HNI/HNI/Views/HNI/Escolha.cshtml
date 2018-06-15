@@ -165,78 +165,35 @@
                     </div>
                 </div>
             </div>
-        
+
             <div class="row">
                 <form id="Escolha" action="@Url.Action("Escolher", "HNI")" class="form-horizontal">
                     <div class="Row">
                         <div class="col-md-6 text-center">
                             <div class="jumbotron" id="Acron3">
-                                <button class="btn" name="Resposta1" id="Acron3">@ViewBag.Resposta01</button>
-
+                                @*<button class="btn" name="Resposta1" onclick="button.clicked" id="Acron3">@ViewBag.Resposta01</button>*@
+                                <a class="btn" id="Resposta1" name="Acron3" href="@Url.Action("Escolher", "HNI", new { @resposta = ViewBag.Resposta01Valor })">@ViewBag.Resposta01</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 text-center">
                         <div class="jumbotron" id="Acron3">
-                            <button class="btn" name="Resposta2"  id="Acron3">@ViewBag.Resposta02</button>
+                            <button class="btn" name="Resposta2" onclick="button.clicked" id="Acron3">@ViewBag.Resposta02</button>
                         </div>
                     </div>
                     <div class="Row">
                         <div class="col-md-6 text-center">
                             <div class="jumbotron" id="Acron3">
-                                <button class="btn" name="Resposta3"  id="Acron3">@ViewBag.Resposta03</button>
+                                <button class="btn" name="Resposta3" onclick="button.clicked" id="Acron3">@ViewBag.Resposta03</button>
                             </div>
                         </div>
                         <div class="col-md-6 text-center">
                             <div class="jumbotron" id="Acron3">
-                                <button class="btn" name="Resposta4"  id="Acron3">@ViewBag.Resposta04</button>
+                                <button class="btn" name="Resposta4" onclick="button.clicked" id="Acron3">@ViewBag.Resposta04</button>
                             </div>
                         </div>
                     </div>
-                    <script type='text/javascript'>
 
-                        $(document).ready(function () {
-                            $('button[name=Resposta1]').click(function () {
-                              
-
-                                        Response.Cookies.Add(new HttpCookie("Resposta", Convert.ToString(ViewBag.Resposta01Valor)));
-                                    
-                                $('form').submit();
-
-                            });
-                        });
-                        $(document).ready(function () {
-                            $('button[name=Resposta2]').click(function () {
-                              
-
-                                   Response.Cookies.Add(new HttpCookie("Resposta", Convert.ToString(ViewBag.Resposta02Valor)));
-                              
-                                $('form').submit();
-
-                            });
-                        });
-
-                        $(document).ready(function () {
-                            $('button[name=Resposta3]').click(function () {
-                                  
-                                        Response.Cookies.Add(new HttpCookie("Resposta", Convert.ToString(ViewBag.Resposta03Valor)));
-                                    
-                                $('form').submit();
-
-                            });
-                        });
-
-                        $(document).ready(function () {
-                            $('button[name=Resposta4]').click(function () {
-                               
-
-                                     Response.Cookies.Add(new HttpCookie("Resposta", Convert.ToString(ViewBag.Resposta04Valor)));
-                              
-                                $('form').submit();
-
-                            });
-                        });
-                    </script>
                 </form>
                 <div class="row">
                     <div class="col-md-2 col-md-offset-5 text-center">
