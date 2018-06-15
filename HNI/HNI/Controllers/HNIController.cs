@@ -118,28 +118,25 @@ namespace HNI.Controllers
 
         }
 
-        public ActionResult Escolher(Resposta R)
+        public ActionResult Escolher()
         {
             HttpCookie cookie = Request.Cookies.Get("Questao");
+            HttpCookie cookie1 = Request.Cookies.Get("Resposta");
             int Q;
+            int R;
             Q = Convert.ToInt32(cookie.Value);
-            Q = (Q * 10) + R.Identidade;
-            int q;
-            q = Q;
-            for (int i = q; i > 1; i = q)
+            R=  Convert.ToInt32(cookie1.Value);
+            Q = (Q * 10) + R;
+            if (R == 0)
             {
-                q=q/2;
-            };
-            if (q == 1)
-            {
+                Q = (Q / 100);
                 Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(Q)));
                 return RedirectToAction("Escolha", "HNI");
             }
             else
             {
-                Q = (Q/100);
                 Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(Q)));
-                return RedirectToAction ("Escolha", "HNI");
+                return RedirectToAction("Escolha", "HNI");
             }
 
         }

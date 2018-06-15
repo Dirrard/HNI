@@ -4,12 +4,15 @@
 }
 @using HNI.Models
 @using HNI.Dataaccess
+
 <style type="text/css">
     body {
     background-image: url('@Url.Content("~/Background-Image.jpg")');
     }
 </style>
-@{ 
+
+
+@{
     EscolhaDAO ES = new EscolhaDAO();
     PersonagemDAO PD = new PersonagemDAO();
     Lugar L = new Lugar();
@@ -121,7 +124,10 @@
 
     }
 
+    Resposta Re = new Resposta();
 }
+
+
 <style type="text/css">
             #Acron2{
                         background-image:url("/Imagens/@ViewBag.Fundo");
@@ -131,8 +137,9 @@
                         border: 3px solid Darkblue;
                              }
 </style>
+
 <div class="row">
-    <hr/>
+    <hr />
 </div>
 <div class="row">
     <div class="col-md-12 text-center">
@@ -144,43 +151,92 @@
                             <div class="col-md-2">
                                 <div class="Row col-lg-offset-1 ">
                                     <img src="/Imagens/@ViewBag.PImagem"
-                                         width="190" height="220" /> 
+                                         width="190" height="220" />
                                 </div>
                                 <div class="Row">
-                                <div class="col-md-12  text-center">
-                                    <div id="Acron6" class="jumbotron">
-                                        <p>@ViewBag.Questao</p>
+                                    <div class="col-md-12  text-center">
+                                        <div id="Acron6" class="jumbotron">
+                                            <p>@ViewBag.Questao</p>
+                                        </div>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        
             <div class="row">
-                <form action="@Url.Action("Escolher", "HNI")"  class="form-horizontal">
-                    <div class="col-md-6 text-center">
-                        <div class="jumbotron" id="Acron3">
-                            <button class="btn" onclick="clickHandler(this);" type="submit" name="Resposta "id="Resposta01"  value="@ViewBag.Resposta01Valor">@ViewBag.Resposta01</button>
-                         
+                <form id="Escolha" action="@Url.Action("Escolher", "HNI")" class="form-horizontal">
+                    <div class="Row">
+                        <div class="col-md-6 text-center">
+                            <div class="jumbotron" id="Acron3">
+                                <button class="btn" name="Resposta1" id="Acron3">@ViewBag.Resposta01</button>
+
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 text-center">
                         <div class="jumbotron" id="Acron3">
-                            <button class="btn" type="submit" name="Resposta "onclick="clickHandler(this);"id="Resposta02" value="@ViewBag.Resposta02Valor">@ViewBag.Resposta02</button>
+                            <button class="btn" name="Resposta2"  id="Acron3">@ViewBag.Resposta02</button>
                         </div>
                     </div>
-                    <div class="col-md-6 text-center">
-                        <div class="jumbotron" id="Acron3">
-                            <button class="btn" type="submit" name="Resposta "onclick="clickHandler(this);"id="Resposta03"  value="@ViewBag.Resposta03Valor">@ViewBag.Resposta03</button>
+                    <div class="Row">
+                        <div class="col-md-6 text-center">
+                            <div class="jumbotron" id="Acron3">
+                                <button class="btn" name="Resposta3"  id="Acron3">@ViewBag.Resposta03</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <div class="jumbotron" id="Acron3">
+                                <button class="btn" name="Resposta4"  id="Acron3">@ViewBag.Resposta04</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 text-center">
-                        <div class="jumbotron" id="Acron3">
-                            <button class="btn" type="submit" name="Resposta "onclick="clickHandler(this);"id="Resposta04" value="@ViewBag.Resposta04Valor">@ViewBag.Resposta04</button>
-                        </div>
-                    </div>
+                    <script type='text/javascript'>
+
+                        $(document).ready(function () {
+                            $('button[name=Resposta1]').click(function () {
+                              
+
+                                        Response.Cookies.Add(new HttpCookie("Resposta", Convert.ToString(ViewBag.Resposta01Valor)));
+                                    
+                                $('form').submit();
+
+                            });
+                        });
+                        $(document).ready(function () {
+                            $('button[name=Resposta2]').click(function () {
+                              
+
+                                   Response.Cookies.Add(new HttpCookie("Resposta", Convert.ToString(ViewBag.Resposta02Valor)));
+                              
+                                $('form').submit();
+
+                            });
+                        });
+
+                        $(document).ready(function () {
+                            $('button[name=Resposta3]').click(function () {
+                                  
+                                        Response.Cookies.Add(new HttpCookie("Resposta", Convert.ToString(ViewBag.Resposta03Valor)));
+                                    
+                                $('form').submit();
+
+                            });
+                        });
+
+                        $(document).ready(function () {
+                            $('button[name=Resposta4]').click(function () {
+                               
+
+                                     Response.Cookies.Add(new HttpCookie("Resposta", Convert.ToString(ViewBag.Resposta04Valor)));
+                              
+                                $('form').submit();
+
+                            });
+                        });
+                    </script>
                 </form>
                 <div class="row">
                     <div class="col-md-2 col-md-offset-5 text-center">
@@ -193,25 +249,24 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal" tabindex="-1" role="dialog"  aria-hidden="true">
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" >Opções:</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row text-center">
-                        <a class="btn btn-primary" id="FAR2" href="~/HNI/Inventario">Inventario</a>
-                        <a class="btn btn-warning" id="FAR2" href="~/HNI/Mapa">Mapa</a>
-                        <a class="btn alert-success" id="FAR2" href="~/HNI/Mapa">Salvar</a>
-                    </div>
-                    </div>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                    </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Opções:</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row text-center">
+                    <a class="btn btn-primary" id="FAR2" href="~/HNI/Inventario">Inventario</a>
+                    <a class="btn btn-warning" id="FAR2" href="~/HNI/Mapa">Mapa</a>
+                    <a class="btn alert-success" id="FAR2" href="~/HNI/Mapa">Salvar</a>
                 </div>
             </div>
-        
-  
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        </div>
+    </div>
+</div>
+

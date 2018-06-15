@@ -187,7 +187,10 @@
     <EmbeddedResource Include="Imagens\Lobo-001.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Imagens\TestePers.PNG">
+    <Content Include="Imagens\TestePers.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Imagens\Mago-01.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <Content Include="Imagens\VoltaireVerse.jpg" />

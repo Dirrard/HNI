@@ -200,15 +200,18 @@ select * from Criatura
 go
 
 BULK INSERT Questao
-
 FROM 'C:\Users\Aluno\Desktop\Questoes-Teste.txt'
+with(CODEPAGE='ACP')
 go
 BULK INSERT Resposta
 FROM 'C:\Users\Aluno\Desktop\Respostas-Teste.txt'
+with(CODEPAGE='ACP')
 go
 BULK INSERT Lugar
 FROM 'C:\Users\Aluno\Desktop\Lugar-Teste.txt'
+with(CODEPAGE='ACP')
 go
 BULK INSERT Personagem
 FROM 'C:\Users\Aluno\Desktop\Personagem-Teste-Escolha.txt'
+with(CODEPAGE='ACP')
 go
