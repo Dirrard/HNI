@@ -17,7 +17,7 @@ namespace HNI.Dataaccess
 
             using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
             {
-                string strSQL = @"SELECT * FROM Questao where Id = '" + Id +"'";
+                string strSQL = @"SELECT * FROM Questao where Identi = '" + Id +"'";
 
                 using (SqlCommand cmd = new SqlCommand(strSQL))
                 {
@@ -43,6 +43,7 @@ namespace HNI.Dataaccess
                             {
                                 Id= Convert.ToInt32(row["Personagem"]),
                             }
+
                         };
                         return Q;
 
@@ -154,10 +155,6 @@ namespace HNI.Dataaccess
                         var L = new Lugar()
                         {
                             Id = Convert.ToInt32(row["Id"]),
-                            Questao = new Questao
-                            {
-                                Id = Convert.ToInt32(row["Questao"])
-                            },
                             Minimo = Convert.ToInt32(row["CriaturaNumeroInicial"]),
                             Maximo = Convert.ToInt32(row["CriaturaNumeroFinal"]),
                             Imagem = row["Imagem"].ToString()

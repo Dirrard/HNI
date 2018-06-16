@@ -244,6 +244,7 @@
     <Content Include="Views\HNI\Inventario.cshtml" />
     <Content Include="Views\HNI\Arvore.cshtml" />
     <Content Include="Views\HNI\Bestiario.cshtml" />
+    <Content Include="Views\HNI\Salvado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

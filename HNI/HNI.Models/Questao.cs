@@ -12,6 +12,6 @@ namespace HNI.Models
         public Cena Cena { get; set; }
         public Personagem Personagem { get; set; }
         public  string Descricao { get; set; }
-   
+        public int Identi { get; set; }
     }
 }

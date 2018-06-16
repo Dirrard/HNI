@@ -114,6 +114,7 @@ namespace HNI.Controllers
             Person = p.Buscar_Id(obj);
             Response.Cookies.Add(new HttpCookie("Personagem", Convert.ToString(Person.Id)));
             Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(1)));
+            Response.Cookies.Add(new HttpCookie("Cena", Convert.ToString(1)));
             return RedirectToAction("Escolha", "HNI");
 
         }
@@ -143,15 +144,28 @@ namespace HNI.Controllers
             return View();
         }
 
-        public ActionResult CriaturasTerra()
+        public ActionResult Salvar()
         {
-            for(int i = 1;i<=3;i++)
-                { 
-          
-                }
+            SaveDAO S = new SaveDAO();
+            EscolhaDAO ES = new EscolhaDAO();
+            Questao Qu = new Questao();
+            HttpCookie cookieq = Request.Cookies.Get("Questao");
+            HttpCookie cookiep = Request.Cookies.Get("Personagem");
+            HttpCookie cookiec = Request.Cookies.Get("Cena");
+            HttpCookie cookieu = Request.Cookies.Get("Usuario");
+            int Q = Convert.ToInt32(cookieq.Value);
+            int U = Convert.ToInt32(cookieq.Value);
+            int P = Convert.ToInt32(cookiep.Value);
+            int C = Convert.ToInt32(cookiec.Value);
+            Qu = ES.Buscar_Questao(Q);
+            S.Salvar(C,Qu.Id,P,U);
+            
+            return RedirectToAction("Salvado", "HNI");
+        }
+       public ActionResult Salvado()
+        {
             return View();
         }
-
     }
 
 }

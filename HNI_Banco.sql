@@ -129,7 +129,8 @@ id_ItemxCriat integer primary key identity(1,1)
 go
 create table Cena
 (
-Id int primary key identity(1,1)
+Id int primary key identity(1,1),
+Identi int
 );
 go
 create table Questao
@@ -137,17 +138,19 @@ create table Questao
 Id int primary key,
 Cena int references Cena(Id),
 Personagem int references Personagem(Id),
-Descr varchar(max)
+Descr varchar(max),
 Identi int 
 );
+go
 create table Resposta
 (
 Descr varchar(max),
 Questao int references Questao(Id),
 Id int primary key identity(1,1),
-Identi int 
+Identi int, 
+Cena INT references Cena(Id)
 );
-
+go
 create table Lugar 
 (
 Id int primary key identity(1,1),
@@ -158,15 +161,17 @@ Imagem Varchar(30)
 go
 create table LugarxQuestao
 (
-Questao integer references Questao(Id),
-Lugar integer references Lugar(Id),
+Questao int references Questao(Id),
+Lugar int references Lugar(Id),
 id_LugarxQuestao integer primary key identity(1,1)
 );
+go
 create table Momento
 (
 Id int primary key identity(1,1),
 Cena int references Cena(Id),
 Questao int references Questao(Id),
+Usuario int references Usuario(Id),
 Personagem int references Personagem(Id)
 );
 go
@@ -207,6 +212,10 @@ BULK INSERT Questao
 FROM 'C:\Users\Aluno\Desktop\Questoes-Teste.txt'
 with(CODEPAGE='ACP')
 go
+BULK INSERT Cena
+FROM 'C:\Users\Aluno\Desktop\Cena-Teste.txt'
+with(CODEPAGE='ACP')
+go
 BULK INSERT Resposta
 FROM 'C:\Users\Aluno\Desktop\Respostas-Teste.txt'
 with(CODEPAGE='ACP')
@@ -227,3 +236,4 @@ go
 Use master;
 drop database HNI
 */
+select * FROM Momento;
