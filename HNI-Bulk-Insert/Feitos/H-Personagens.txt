@@ -1,0 +1,17 @@
+Id	Id_Usuario	Classe	Imagem	Nome	Genero	Ouro	Mana	Hp	AtkF	AtkM	Def	Nivel	[Exp]
+1	0	0	Narrador-01	Narrador	Indefinido	0	0	0	0	0	0	1	0
+2	0	0	Cassius-01	Cassius Bebeam	Masculino	1200	0	0	0	0	0	1	0
+3	0	1	GuerreiroP-01	Guerreiro Padrão	Indefinido	300	10	100	100	10	100	1	10
+4	0	2	MagoP-01	Mago Padrão	Indefinido	300	200	100	10	200	10	1	10
+5	0	3	LadinoP-01	Ladino Padrão	Indefinido	300	150	100	100	100	10	1	10
+6	0	1	Sanster-01	Sanster Manslam	Masculino	1000	300	200	300	200	100	1	0
+7	0	1	Alex-IX-01	Alexander Despair IX	Masculino	10000	1	10	10	10000	10	1	0
+8	0	4	Aluncian-01	Aluncian Moltrean	Masculino	10	900	300	300	300	800	1	0
+9	0	12	Hollins-01	Geard uns Hollins	Masculino	2000	400	400	400	400	400	1	0
+10	0	5	Casmudian-01	Aramundi Casmudian	Masculino	0	1000	300	50	500	100	1	0
+11	0	0	Griffo-01	Griffo Sabio	Masculino	0	800	800	800	800	800	1	0
+12	0	0	Campones-01	José da Silva	Masculino	1	1	1	1	1	1	1	0
+13	0	0	Campones-02	Doilor Mascado	Masculino	1	1	1	1	1	1	1	0
+14	0	0	Campones-03	Dastirangu Mantreall	Masculino	1	1	1	1	1	1	1	0
+
+			 

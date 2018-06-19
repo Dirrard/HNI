@@ -1,0 +1,21 @@
+Id	Cena	Personagem	Descr	Identi
+1	1	1	Protagonista acorda , vê personagem pálido baixo com feições diferenciadas ele fala "Ola sou o Narrador e você é o protagonista dessa história , então o mundo precisa de você um mal ancestral acordou e está juntando forças para se libertar".	1
+2	1	1	"Sim,não sei se notou mas isso é uma história e eu irei guiar seu caminho até concluir seu objetivo final."	11
+3	1	1	"Caos um ser que existe desde o primórdio desse mundo ele é quase tão antigo quanto eu e a história , a muito tempo atrás ele foi vencido por um grande herói e preso dentro de uma área separada do mundo."	12
+4	1	1	"Bem o mundo após o selamento de Caos(o mal) o mundo foi dividido em quatro áreas cada uma tendo uma Fera Guardiã e eles possuem pedaços da chave para libertar o Caos,então seu objetivo será conseguir esse pedaços da chave antes que a influência do caos paire perante as feras guardiãs".	13
+5	1	1	"Porque isso é um jogo e esse é o objetivo então vamos ?".	14
+7	1	1	"Ok , isso é um jogo de escolhas suas opções aparecem em retangulos embaixo eu sou um “Personagem Narrador” que irá lhe auxiliar em momentos como esse até você concluir o objetivo da história que é vencer o grande mal ancestral."
+10	1	1	"Bem um protagonista igual a você só que o de outra história , ele chegou a esse mundo como uma criança escolhida eu o encontrei e guie-o até o sucesso."	121
+11	1	1	"".	122
+12	1	1	.	123
+13	1	1	.	124
+14	1	1	.	131
+15	1	1	.	132
+16	1	1	.	133
+17	1	1	.	134
+18	1	1	.	141
+19	1	1	.	142
+20	1	1	.	143
+21	1	1	.	144
+23	1	1	.	1112
+24	1	1	.	1113

@@ -1,0 +1,15 @@
+Id	Imagem	Nome	[Desc]	Mana	Hp	AtkF	AtkM	Def	Nivel
+0	NPC	NPC	NPC	0	0	0	0	0	0
+1	Guerreiro-01	Guerreiro	Bravos, fortes e habilidosos com utilização de armas fisicas, possuem pouca habiliade magica porem compensam em força bruta.	100	550	100	20	100	1
+2	Mago-01	Mago	Inteligentes,astutos e habilidosos com as energias e poderes magicos,possuem pouca habilidade fisica porem compensam em poder especias.	600	300	20	100	50	1
+3	Ladino-01	Ladino	Bravos,astutos e habilidosos com as energias e armas fisicas , possuem habilidades equilibradas são fortes fiscamente e magicamente	300	400	70	70	70	1
+4	Paladino-01	Paladino	Guerreiros da Ordem,seguem pelo mundo carregando a paz e as historias de historia,fortes e com boa defesa,são otimos em defender seus ideais	50	470	120	10	250	25
+5	Sabio-01	Sabio	Aqueles que buscaram e encontraram a verdade são conhecidos pelos homens como sábios,estão proximos do apicé magico.	350	60	30	350	50	25
+6	Sombra-01	Sombra	é o titulo dado a os ladrões que se tornaram especialistas em magias,sendo mais fortes que magos e praticamente mais habilidosos em mana também.	250	100	50	240	100	25
+7	Espadachim-01	Espadachim	Guerreiros que seguem o caminho da espada,são especialistas,tendo uma ordem de 10 melhores(guerreiros) só formada por espadachim's.	150	300	300	150	100	25
+8	Mago-Guerreiro-01	Mago Guerreiro	São Magos que após verem um mundo precisando de guerreiros, treinam fiscamente para suprir tal nessecidade.	200	200	200	200	50	25
+9	Assasino-01	Assasino	Ladinos que treinaram as habilidades fisicas ao ponto de serem temidos por aqueles que andam na luz.	70	300	250	70	200	25
+10	Berserk-01	Berserk	Guerreiros insandecidos completamente furiosos e fortes,em campos de batalha são vistos como animais.	60	800	400	20	20	25
+11	Mistico-01	Mistico	Magos que estão no processo de se transformar em seres de pura magia,tendo basicamente a maior reserva de mana entre as classe.	1500	10	10	400	10	25
+12	Mestre-01	Mestre	são os ladinos mais habilidosos aqueles que controlam o submundo recebem o titulo de mestres.	250	250	250	250	250	25
+				

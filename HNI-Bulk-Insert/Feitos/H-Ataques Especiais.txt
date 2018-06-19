@@ -1,0 +1,26 @@
+Id	Imagem	Nome	AtkM	Def	AtkF	Hp	Mana
+0	Atke-0	Sansão Vazia	1500	0	0	0	100
+1	Atke-1	Espada Carregada	40	0	100	0	20
+2	Atke-2	Espada de Luz	0	200	0	100	50
+3	Atke-3	Espada Concentrada	10	10	10	10	2
+4	Atke-4	Chamas Iniciantes	70	0	10	0	10
+5	Atke-5	Gelo Iniciante	70	10	0	0	10
+6	Atke-6	Disparo de Energia	150	0	0	0	40
+7	Atke-7	Espada do Heroi	30	0	400	100	40
+8	Atke-8	Espada do Heroi Caído 0	0	450	300	120
+9	Atke-9	Espada do Insandecido	10	0	600	0	140
+10	Atke-10	Espada da Luz do meio dia	0	0	100	600	180
+11	Atke-11	Defesa da Esperança	0	3000	0	40	150
+12	Atke-12	Furia De Batalha	0	0	1000	0	0
+13	Atke-13	Chamas Avançadas	400	0	120	0	180
+14	Atke-14	Gelo Avançado	222	300	0	0	200
+15	Atke-15	Rajada de Energia	500	0	200	0	240
+16	Atke-16	vazão de Poder	1000	0	0	0	350
+17	Atke-17	Espada de Energia	200	0	200	0	200
+18	Atke-18	Bloqueio Magico	40	500	0	50	150
+19	Atke-19	Luz do Amanhã	1000	4000	1000	4000	1000
+20	Atke-20	Trevas de Ontem	4000	1000	4000	0	1500
+
+
+
+		
