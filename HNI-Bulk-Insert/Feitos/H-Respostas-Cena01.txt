@@ -1,0 +1,29 @@
+Descr	Questao	Id	Identi	Cena
+Narrador ?	1	1	1	1
+Mal Ancestral ?	1	2	2	1
+Tá o que eu faço ?	1	3	3	1
+porque eu faria isso ?	1	4	4	1
+Não entendi	2	5	1	1
+Ok	2	6	0	1
+Ok	6	7	0	1
+Grande Herói ?	3	8	1	1
+OK	3	9	0	1
+Tudo bem	7	10	0	1
+Mas o Caos está preso e tentar reunir a chave não seria pior?	4	11	1	1
+Feras guardiãs?	4	12	2	1
+como conseguir os fragmentos de chave?	4	13	3	1
+Ok	8	14	0	1
+Porque ele quebrou a chave?	9	15	0	1
+Ok	9	16	0	1
+Ok	10	17	0	1
+Ok ,Como faço isso?	11	18	1	1
+Porque eu precisarei de uma equipe?	11	19	2	1
+Ok, mas você irá ficar me seguindo ?	11	20	4	1
+as criaturas não são pacificas?	11	21	3	1
+Ok	14	22	0	1
+Ok	15	23	0	1
+isso é estranho,vou descer	12	24	1	1
+Ok vou descer	12	25	1	1
+
+
+		

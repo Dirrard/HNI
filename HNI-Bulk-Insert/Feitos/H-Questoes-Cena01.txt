@@ -1,0 +1,16 @@
+Id	Cena	Personagem	Descr	Identi
+1	1	1	Protagonista acorda , vê um personagem pálido baixo com feições diferenciadas ele fala "Ola sou o Narrador e você é o protagonista dessa história , então o mundo precisa de você um mal ancestral acordou e está juntando forças para se libertar".	1
+2	1	1	"Sim,não sei se notou mas isso é uma história e eu irei guiar seu caminho até concluir seu objetivo final."	11
+3	1	1	"Caos um ser que existe desde o primórdio desse mundo ele é quase tão antigo quanto eu e história , a muito tempo atrás ele foi vencido por um grande herói e preso dentro de uma área separada do mundo."	12
+4	1	1	"Bem o mundo após o selamento de Caos(o mal) o mundo foi dividido em quatro áreas cada uma tendo uma Fera Guardiã e eles possuem pedaços da chave para libertar o Caos,então seu objetivo será conseguir esse pedaços da chave antes que a influência do caos paire perante as feras guardiãs".	13
+5	1	1	"Porque isso é a historia e esse é o objetivo então vamos ?".	14
+6	1	1	"Ok , isso é um jogo de escolhas suas opções aparecem em retangulos embaixo eu sou um “Personagem Narrador” que irá lhe auxiliar em momentos como esse até você concluir o objetivo da história que é vencer o grande mal ancestral."	111
+7	1	1	"Bem um protagonista igual a você só que o de outra história , ele chegou a esse mundo como uma criança escolhida eu o encontrei e guie-o até o sucesso."	121
+8	1	1	"Bem Caos está preso porém agora ele despertou e está se recuperando e com isso por mais que sua cela seja extremamente poderosa ele ainda assim consegue afetar este mundo e a partir de seu poder conseguir seguidores para libertá-lo ou pior influenciar uma das Feras Guardiãs".	131
+9	1	1	"Bem quando Caos foi aprisionado o mundo sofreu um pouco com a criação de sua cela ele se quebrou mais ou menos gerando quatro áreas e os animais que antes viviam nelas se tornaram monstros guiados pelo elemento e após anos da derrota do Caos em cada uma das áreas uma criatura se sobressaiu e comandou as demais eles eram pacíficas com os homens e poderosas então a chave foi quebrada e confiado os pedaços as 4 criaturas que pelas pessoas foram vistas como guardiãs".	132
+10	1	1	"Porque ele não conseguiu destruir ela,apenas quebrar em quatro pedaços".	1321
+11	1	1	"Bem primeiro acho que terá de conseguir uma equipe".	133
+12	1	1	"Bem Você está no quarto em cima de uma taverna que é sede de uma guilda creio que se você descer irá conseguir no mínimo “um amiguinho” eu espero".	1331
+13	1	1	"sim, porém só você consegue me ver e escutar e talvez se você falar de mim para outras pessoas elas vão te achar louco,agora vamos descer".	1334
+14	1	1	"Bem porque você não é lá tão forte e tem chance de criaturas te atacarem no caminho e no mínimo com ajuda espero não ter de esperar um novo protagonista aparecer".	1332
+15	1	1	"sim antes do Caos acordar todas eram seres pacíficos porém agora estão se tornando seres agressivos e perigosos".	1333
