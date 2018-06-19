@@ -130,7 +130,8 @@ go
 create table Cena
 (
 Id int primary key identity(1,1),
-Identi int
+Identi int,
+fim int
 );
 go
 create table Questao
@@ -186,7 +187,8 @@ go
 create table Construcao
 (
 Item int references Item(Id),
-Resultado int references Item(Id)
+Resultado int references Item(Id),
+id int primary key identity(1,1)
 );
 go
 
