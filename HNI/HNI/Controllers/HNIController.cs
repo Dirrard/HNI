@@ -31,6 +31,14 @@ namespace HNI.Controllers
         {
             return View();
         }
+        public ActionResult Loja()
+        {
+            return View();
+        }
+        public ActionResult Mundo()
+        {
+            return View();
+        }
         public ActionResult Batalha()
         {
             return View();
@@ -59,7 +67,6 @@ namespace HNI.Controllers
         {
             return View();
         }
-
         public ActionResult Salvar_U(Usuario obj)
         {
             if (obj.Termo == true && obj.Senha == obj.ConfSenha)
@@ -118,25 +125,38 @@ namespace HNI.Controllers
             return RedirectToAction("Escolha", "HNI");
 
         }
-
         public ActionResult Escolher(int resposta)
         {
             HttpCookie cookie = Request.Cookies.Get("Questao");
+            HttpCookie cookiec = Request.Cookies.Get("Cena");
             int Q;
+            int C;
+            Cena Cena = new Cena();
+            EscolhaDAO ES = new EscolhaDAO();
+            C = Convert.ToInt32(cookiec.Value);
+            Cena = ES.Buscar_Cena(C);
             Q = Convert.ToInt32(cookie.Value);
-            
             Q = (Q * 10) + resposta;
-
-            if (resposta == 0)
+            if (Q < Cena.Fim)
             {
-                Q = (Q / 100);
-                Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(Q)));
-                return RedirectToAction("Escolha", "HNI");
+                if (resposta == 0)
+                {
+                    Q = (Q / 100);
+                    Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(Q)));
+                    return RedirectToAction("Escolha", "HNI");
+                }
+                else
+                {
+                    Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(Q)));
+                    return RedirectToAction("Escolha", "HNI");
+                }
             }
             else
             {
+                Q = Cena.Identidade + 1;
                 Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(Q)));
-                return RedirectToAction("Escolha", "HNI");
+                Response.Cookies.Add(new HttpCookie("Cena", Convert.ToString(Q)));
+                return RedirectToAction("Mundo", "HNI");
             }
 
         }
@@ -145,7 +165,6 @@ namespace HNI.Controllers
             
             return View();
         }
-
         public ActionResult Salvar()
         {
             SaveDAO S = new SaveDAO();
