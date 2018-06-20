@@ -40,10 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtkE.cs" />
     <Compile Include="Cena.cs" />
     <Compile Include="Classe.cs" />
+    <Compile Include="Construcao.cs" />
     <Compile Include="Criatura.cs" />
     <Compile Include="Distancia.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="Lugar.cs" />
     <Compile Include="Momento.cs" />
     <Compile Include="Personagem.cs" />

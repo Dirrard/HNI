@@ -8,5 +8,8 @@ namespace HNI.Models
 {
     class Construcao
     {
+        public Item Item { get; set; }
+        public Item Resultado { get; set; }
+        public int Id { get; set; }
     }
 }
