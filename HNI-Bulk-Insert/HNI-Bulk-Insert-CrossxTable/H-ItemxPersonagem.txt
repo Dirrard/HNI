@@ -1,0 +1,3 @@
+Item_Id	Personagem_Id	id_ItemxPerson
+20	10	1
+19	1	1

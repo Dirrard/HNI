@@ -1,5 +1,5 @@
 Id	Imagem	Nome	AtkM	Def	AtkF	Hp	Mana
-0	Atke-0	Sansão Vazia	1500	0	0	0	100
+0	Atke-0	Sansão Vazia	1500	0	0	0	300
 1	Atke-1	Espada Carregada	40	0	100	0	20
 2	Atke-2	Espada de Luz	0	200	0	100	50
 3	Atke-3	Espada Concentrada	10	10	10	10	2

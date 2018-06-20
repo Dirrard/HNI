@@ -1,3 +1,4 @@
+
 create database HNI
 go
 use HNI
@@ -14,6 +15,7 @@ DataNasc varchar(30)not null,
 Genero varchar(20) not null 
 );
 go
+
 create table Classe
 (
 Id int primary key identity(1,1),
@@ -102,6 +104,7 @@ create table ItemxPerson
 (
 Item_Id integer references Item(Id),
 Personagem_Id integer references Personagem(Id),
+Equipado	char default('N'),
 id_ItemxPerson integer primary key identity(1,1)
 );
 go
@@ -196,27 +199,71 @@ select * from Criatura
 go
 
 BULK INSERT Questao
-FROM 'C:\Users\Aluno\Desktop\Questoes-Teste.txt'
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Questoes-Cena01.txt'
 with(CODEPAGE='ACP')
 go
 BULK INSERT Cena
-FROM 'C:\Users\Aluno\Desktop\Cena-Teste.txt'
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Cena-1.txt'
 with(CODEPAGE='ACP')
 go
 BULK INSERT Resposta
-FROM 'C:\Users\Aluno\Desktop\Respostas-Teste.txt'
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Respostas-Cena01.txt'
 with(CODEPAGE='ACP')
 go
 BULK INSERT Lugar
-FROM 'C:\Users\Aluno\Desktop\Lugar-Teste.txt'
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Lugares.txt'
 with(CODEPAGE='ACP')
 go
 BULK INSERT Personagem
-FROM 'C:\Users\Aluno\Desktop\Personagem-Teste-Escolha.txt'
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Personagens.txt'
+with(CODEPAGE='ACP')
+go
+BULK INSERT Criatura
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Criaturas.txt'
+with(CODEPAGE='ACP')
+go
+BULK INSERT Usuario
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Usuarios.txt'
+with(CODEPAGE='ACP')
+go
+BULK INSERT Item
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Itens.txt'
+with(CODEPAGE='ACP')
+go
+BULK INSERT Classe
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Classes.txt'
+with(CODEPAGE='ACP')
+go
+BULK INSERT Atke
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Ataques Especiais.txt'
 with(CODEPAGE='ACP')
 go
 BULK INSERT LugarxQuestao
-FROM 'C:\Users\Aluno\Desktop\LugarxQuestao-Teste.txt'
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\HNI-Bulk-Insert-CrossxTable\H-LugarxQuestao.txt'
+with(CODEPAGE='ACP')
+go
+BULK INSERT AtkexClasse
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\HNI-Bulk-Insert-CrossxTable\H-AtkexClasse.txt'
+with(CODEPAGE='ACP')
+go
+BULK INSERT AtkexCriat
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\HNI-Bulk-Insert-CrossxTable\H-AtkexCriatura.txt'
+with(CODEPAGE='ACP')
+go
+BULK INSERT Construcao
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\HNI-Bulk-Insert-CrossxTable\H-Construcoes.txt'
+with(CODEPAGE='ACP')
+go
+BULK INSERT ItemxCriat
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\HNI-Bulk-Insert-CrossxTable\H-ItemxCriatura.txt'
+with(CODEPAGE='ACP')
+go
+BULK INSERT ItemxPerson
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\HNI-Bulk-Insert-CrossxTable\H-ItemxPersonagem.txt'
+with(CODEPAGE='ACP')
+go
+BULK INSERT Distancias
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\HNI-Bulk-Insert-CrossxTable\H-Distancias.txt'
 with(CODEPAGE='ACP')
 go
 /*
