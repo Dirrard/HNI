@@ -1,4 +1,3 @@
-Id	Nome	Nick	Email	Senha	DataNas	Genero
 0	NPC	Historia	Historia@gmail.com	Teste@123-ON	10/04/2018	Outro
 1	Diego Castilho Lourenço	DIE EGO	diegocastilho6@gmail.com	ADMIN123	17/07/2001	Masculino
 2	Matheus Pereira Cristiano	Pepe Moreno	Matheuscristianopereira@gmail.com	ADMIN123	16/12/2001	Masculino

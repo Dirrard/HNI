@@ -1,32 +1,27 @@
-Id	Imagem	Nome	Mana	Hp	AtkF	AtkM	Def	Nivel	Valor
-0	Coracao-001	Coração do Variante	0	0	0	0	0	0
-1	Chave-01	Fragmento da Chave da Cela	0	0	0	0	0	0
-2	Chave-02	Fragmento da Chave da Cela	0	0	0	0	0	0
-3	Chave-03	Fragmento da Chave da Cela	0	0	0	0	0	0
-4	Chave-04	Fragmenro da Chave da Cela	0	0	0	0	0	0
-5	Maça-01	Maça	10	10	0	0	0	1	5
-6	Poção-01	Poção de Vida	0	100	0	0	0	1	40
-7	Poção-02	Poção de Mana	100	0	0	0	0	1	80
-8	Armadura-01	Armadura Simples	0	20	0	50	1	200
+0	Coracao-001	Coração do Variante	0	0	0	0	0	0	0
+1	Chave-01	Fragmento da Chave da Cela	0	0	0	0	0	0	0
+2	Chave-02	Fragmento da Chave da Cela	0	0	0	0	0	0	0
+3	Chave-03	Fragmento da Chave da Cela	0	0	0	0	0	0	0
+4	Chave-04	Fragmenro da Chave da Cela	0	0	0	0	0	0	0
+5	Maça-01	Maça	10	10	0	0	0	1	10
+6	Poção-01	Poção de Vida P.	0	100	0	0	0	1	40
+7	Poção-02	Poção de Mana P.	100	0	0	0	0	1	80
+8	Armadura-01	Armadura Simples	0	20	0	0	50	1	200
 9	Espada-01	Espada Simples	0	0	100	0	0	1	230
 10	Manto-01	Manto Simples	100	20	0	0	0	1	200
 11	Cajado-01	Cajado Simples	30	0	10	100	0	1	230
-12	Poção-03	Poção de Vitalidade	0	400	0	0	15	150
-13	Poção-04	Poção de Magia	400	100	0	0	15	170
-14	Espada-02	Espada Agil	0	0	250	0	15	450
-15	Armadura-02	Armadura Forte	0	40	0	300	15	650
+12	Poção-03	Poção de Vida M.	0	400	0	0	0	15	150
+13	Poção-04	Poção de Mana M.	400	100	0	0	0	15	170
+14	Espada-02	Espada Agil	0	0	250	0	0	15	450
+15	Armadura-02	Armadura Forte	0	40	0	0	300	15	650
 16	Manto-02	Manto Experiente	400	40	0	0	0	15	850
-11	Cajado-02	Cajado de Grifo	60	0	10	300	0	15	1200
-12	Poção-05	Poção de Vitalidade Maxima	0	1000	0	0	25	800
-13	Poção-06	Poção de Poder Maximo	1000	150	0	0	15	850
-14	Espada-03	Espada Serpente	0	20	400	0	25	1500
-15	Armadura-03	Armadura de Lava	200	80	0	1000	25	1850
-16	Manto-03	Manto Sabio	1000	80	0	0	0	25	2250
-17	Cajado-03	Cajado Magistral	200	0	10	600	0	25	2650
-18	Despair-01	Espada Despair II	200	100	600	250	100	30	8000
-19	Sane-Elgias-01	Espada Sane Elgias	800	100	400	750	120	30	18000
-20	HeartBreaker-01	HeartBreaker	1000	200	1000	1000	500	0	300000 
-
-
-
-	
+17	Cajado-02	Cajado Grifo	60	0	10	300	0	15	1200
+18	Poção-05	Poção de Vida G.	0	1000	0	0	0	25	800
+19	Poção-06	Poção de Mana G.	1000	150	0	0	0	25	850
+20	Espada-03	Espada Serpente	0	20	400	0	0	25	1500
+21	Armadura-03	Armadura de Lava	200	80	0	0	1000	25	1850
+22	Manto-03	Manto Sabio	1000	80	0	0	0	25	2250
+23	Cajado-03	Cajado Magistral	200	0	10	600	0	25	2650
+24	Despair-01	Espada Despair II	200	100	600	250	100	30	8000
+25	Sane-Elgias-01	Espada Sane Elgias	800	100	400	750	120	30	18000
+26	HeartBreaker-01	HeartBreaker	1000	200	1000	1000	500	0	300000

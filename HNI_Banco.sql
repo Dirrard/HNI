@@ -3,7 +3,7 @@ create database HNI
 go
 use HNI
 go
-
+/*Tabelas*/
 create table Usuario
 (
 Id int primary key identity(1,1),
@@ -15,7 +15,6 @@ DataNasc varchar(30)not null,
 Genero varchar(20) not null 
 );
 go
-
 create table Classe
 (
 Id int primary key identity(1,1),
@@ -194,16 +193,25 @@ Resultado int references Item(Id),
 id int primary key identity(1,1)
 );
 go
-
-select * from Criatura
+/*Insert's do banco*/
+BULK INSERT Usuario
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Usuarios.txt'
+with(CODEPAGE='ACP')
 go
-
-BULK INSERT Questao
-FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Questoes-Cena01.txt'
+BULK INSERT Classe
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Classes.txt'
+with(CODEPAGE='ACP')
+go
+BULK INSERT Personagem
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Personagens.txt'
 with(CODEPAGE='ACP')
 go
 BULK INSERT Cena
 FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Cena-1.txt'
+with(CODEPAGE='ACP')
+go
+BULK INSERT Questao
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Questoes-Cena01.txt'
 with(CODEPAGE='ACP')
 go
 BULK INSERT Resposta
@@ -214,24 +222,12 @@ BULK INSERT Lugar
 FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Lugares.txt'
 with(CODEPAGE='ACP')
 go
-BULK INSERT Personagem
-FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Personagens.txt'
-with(CODEPAGE='ACP')
-go
 BULK INSERT Criatura
 FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Criaturas.txt'
 with(CODEPAGE='ACP')
 go
-BULK INSERT Usuario
-FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Usuarios.txt'
-with(CODEPAGE='ACP')
-go
 BULK INSERT Item
 FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Itens.txt'
-with(CODEPAGE='ACP')
-go
-BULK INSERT Classe
-FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Classes.txt'
 with(CODEPAGE='ACP')
 go
 BULK INSERT Atke
@@ -262,12 +258,14 @@ BULK INSERT ItemxPerson
 FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\HNI-Bulk-Insert-CrossxTable\H-ItemxPersonagem.txt'
 with(CODEPAGE='ACP')
 go
-BULK INSERT Distancias
+BULK INSERT Distancia
 FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\HNI-Bulk-Insert-CrossxTable\H-Distancias.txt'
 with(CODEPAGE='ACP')
 go
+/*Codigos de Verificação e Ajuste:*/
 /*
 Use master;
 drop database HNI
-*/
 select * FROM Momento;
+select * from Criatura;
+*/

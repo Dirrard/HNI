@@ -1,4 +1,3 @@
-Id	Imagem
 0	Vazio
 1	Quarto-Guilda
 2	Guilda-01

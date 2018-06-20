@@ -1,4 +1,3 @@
-Id	Cena	Personagem	Descr	Identi
 1	1	1	Protagonista acorda , vê um personagem pálido baixo com feições diferenciadas ele fala "Ola sou o Narrador e você é o protagonista dessa história , então o mundo precisa de você um mal ancestral acordou e está juntando forças para se libertar".	1
 2	1	1	"Sim,não sei se notou mas isso é uma história e eu irei guiar seu caminho até concluir seu objetivo final."	11
 3	1	1	"Caos um ser que existe desde o primórdio desse mundo ele é quase tão antigo quanto eu e história , a muito tempo atrás ele foi vencido por um grande herói e preso dentro de uma área separada do mundo."	12

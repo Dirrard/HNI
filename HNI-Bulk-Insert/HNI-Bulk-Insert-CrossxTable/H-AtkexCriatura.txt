@@ -1,4 +1,3 @@
-AtkE_Id	Criat_Id	id_AtkexCriat
 0	18	1
 19	19	2
 13	13	3
