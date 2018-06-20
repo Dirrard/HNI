@@ -124,8 +124,9 @@ namespace HNI.Controllers
             HttpCookie cookie = Request.Cookies.Get("Questao");
             int Q;
             Q = Convert.ToInt32(cookie.Value);
-
+            
             Q = (Q * 10) + resposta;
+
             if (resposta == 0)
             {
                 Q = (Q / 100);
