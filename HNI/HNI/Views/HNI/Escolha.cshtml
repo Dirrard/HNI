@@ -30,6 +30,7 @@
     L = ES.Buscar_Lugar(L.Id);
     ViewBag.Fundo = L.Imagem + ".jpg";
     Q.Identi = Convert.ToInt32(cookie.Value);
+    ViewBag.Nome = P.Nome;
     A = ES.Buscar_Respota(Q.Identi, 0);
     if (A.Existe == true)
     {
@@ -157,7 +158,7 @@
                                 <div class="Row">
                                     <div class="col-md-12  text-center">
                                         <div class="jumbotron Acron6 ">
-                                            <p>@ViewBag.Questao</p>
+                                            <p>@ViewBag.Nome:@ViewBag.Questao</p>
                                         </div>
                                     </div>
                                 </div>

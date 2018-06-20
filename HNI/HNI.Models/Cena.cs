@@ -9,5 +9,7 @@ namespace HNI.Models
     public class Cena
     {
         public int Id { get; set; }
+        public int Identidade { get; set; }
+        public int Fim { get; set; }
     }
 }

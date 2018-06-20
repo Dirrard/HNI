@@ -55,6 +55,43 @@ namespace HNI.Dataaccess
 
 
         }
+        public Cena Buscar_Cena(int Id)
+        {
+
+
+            using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
+            {
+                string strSQL = @"SELECT * FROM Cena where Identi = '" + Id + "'";
+
+                using (SqlCommand cmd = new SqlCommand(strSQL))
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandText = strSQL;
+                    var dataReader = cmd.ExecuteReader();
+                    var dt = new DataTable();
+                    dt.Load(dataReader);
+                    conn.Close();
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        var C = new Cena()
+                        {
+                            Id = Convert.ToInt32(row["Id"]),
+                            Identidade = Convert.ToInt32(row["Identi"]),
+                            Fim=Convert.ToInt32(row["fim"]),
+
+                        };
+                        return C;
+
+                    }
+                }
+            }
+            Cena Ce = new Cena();
+            return Ce;
+
+
+        }
         public Resposta Buscar_Respota(int Id,int Identi)
         {
 
@@ -155,8 +192,6 @@ namespace HNI.Dataaccess
                         var L = new Lugar()
                         {
                             Id = Convert.ToInt32(row["Id"]),
-                            Minimo = Convert.ToInt32(row["CriaturaNumeroInicial"]),
-                            Maximo = Convert.ToInt32(row["CriaturaNumeroFinal"]),
                             Imagem = row["Imagem"].ToString()
                         };
                         return L;
