@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HNI.Models
 {
-    class AtkE
+    public class AtkE
     {
         public int Id { get; set; }
         public string Imagem { get; set; }

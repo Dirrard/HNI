@@ -193,6 +193,7 @@ namespace HNI.Dataaccess
                         {
                             Id = Convert.ToInt32(row["Id"]),
                             Imagem = row["Imagem"].ToString()
+                         
                         };
                         return L;
 

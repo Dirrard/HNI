@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HNI.Models
 {
-    class Construcao
+   public class Construcao
     {
         public Item Item { get; set; }
         public Item Resultado { get; set; }

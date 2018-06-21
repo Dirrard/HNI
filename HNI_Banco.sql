@@ -104,7 +104,8 @@ create table ItemxPerson
 Item_Id integer references Item(Id),
 Personagem_Id integer references Personagem(Id),
 Equipado	char default('N'),
-id_ItemxPerson integer primary key identity(1,1)
+id_ItemxPerson integer primary key identity(1,1),
+Qtd int 
 );
 go
 create table AtkexClasse
