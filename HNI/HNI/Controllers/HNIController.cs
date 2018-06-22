@@ -232,7 +232,7 @@ namespace HNI.Controllers
         }
         public ActionResult Mover(int A)
         {
-
+            return RedirectToAction("Mundo","HNI");
         }
     }
 
