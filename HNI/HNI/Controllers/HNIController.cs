@@ -36,7 +36,7 @@ namespace HNI.Controllers
             return View();
         }
         public ActionResult Mundo()
-        {
+        {      
             return View();
         }
         public ActionResult Batalha()
@@ -155,6 +155,7 @@ namespace HNI.Controllers
             {
                 Q = Cena.Identidade + 1;
                 Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(Q)));
+                Response.Cookies.Add(new HttpCookie("Passos", Convert.ToString(0)));
                 Response.Cookies.Add(new HttpCookie("Cena", Convert.ToString(Q)));
                 return RedirectToAction("Mundo", "HNI");
             }
@@ -183,9 +184,55 @@ namespace HNI.Controllers
             
             return RedirectToAction("Salvado", "HNI");
         }
-       public ActionResult Salvado()
+        public ActionResult Salvado()
         {
             return View();
+        }
+        public ActionResult Item_Loja(int o)
+        {
+            Response.Cookies.Add(new HttpCookie("Operacao", Convert.ToString(o)));
+            return RedirectToAction("Loja", "HNI");
+
+        }
+        public ActionResult Operacao(int iitem)
+        {
+            HttpCookie cookieO = Request.Cookies.Get("Operacao");
+            HttpCookie cookieP = Request.Cookies.Get("Personagem");
+            int P;
+            int O;
+            int V;
+            int Qtd;
+            Personagem Per = new Personagem();
+            PersonagemDAO PD = new PersonagemDAO();
+            LojaDAO Loja= new LojaDAO();
+            Item item = new Item();
+            O = Convert.ToInt32(cookieO.Value);
+            P = Convert.ToInt32(cookieP.Value);
+            Per=PD.BuscarP(P);
+            item = Loja.Buscar_Item(iitem);
+            if (O == 1)
+            {
+                V = Per.Ouro - item.Valor;
+                if (V >= 0)
+                {
+                    Loja.Comprar(V,Per.Id);
+                   Qtd = Loja.Verificar(item.Id, Per.Id);
+                    Loja.Pegar(item.Id,Per.Id,Qtd+1);
+                    return RedirectToAction("Loja", "HNI");
+                }
+                else
+                {
+                    return RedirectToAction("Loja", "HNI");
+                }
+            }
+            else
+            {
+                return RedirectToAction("Loja", "HNI");
+            }
+        }
+        public ActionResult Mover(int A)
+        {
+
         }
     }
 

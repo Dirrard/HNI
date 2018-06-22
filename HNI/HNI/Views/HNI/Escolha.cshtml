@@ -29,6 +29,7 @@
     L = ES.Buscar_Lugar_Id(Q.Id);
     L = ES.Buscar_Lugar(L.Id);
     ViewBag.Fundo = L.Imagem + ".jpg";
+    Response.Cookies.Add(new HttpCookie("Lugar", Convert.ToString(L.Id)));
     Q.Identi = Convert.ToInt32(cookie.Value);
     ViewBag.Nome = P.Nome;
     A = ES.Buscar_Respota(Q.Identi, 0);
@@ -222,7 +223,7 @@
                     <a class="btn btn-primary FAR2" href="~/HNI/Inventario">Inventario</a>
                     <a class="btn btn-warning FAR2" href="~/HNI/Mapa">Mapa</a>
                     <a class="btn alert-success FAR2" href="@Url.Action("Salvar", "HNI")">Salvar</a>
-                    <a class="btn background-color:Gold FAR2" href="@Url.Action("Loja", "HNI")">Loja</a>
+                    <a class="btn btn-default FAR2" href="@Url.Action("Loja", "HNI")">Loja</a>
                 </div>
             </div>
             <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>

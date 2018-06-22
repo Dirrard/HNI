@@ -10,6 +10,8 @@ namespace HNI.Models
     {
         public Lugar Inicial{ get; set; }
         public Lugar Final { get; set; }
+        public int CrtInicial { get; set; }
+        public int CrtFinal { get; set; }
         public int Passos { get; set; }
         public int Id { get; set; }
     }

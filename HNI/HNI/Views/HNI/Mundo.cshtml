@@ -2,6 +2,92 @@
 @{
     ViewBag.Title = "Mundo";
 }
+<style type="text/css">
+    body {
+    background-image: url('@Url.Content("~/Background-Image.jpg")');
+    }
+</style>
+@using HNI.Models
+@using HNI.Dataaccess
+@{
+    HttpCookie cookie = Request.Cookies.Get("Lugar");
+    HttpCookie cookieQ = Request.Cookies.Get("Questao");
+    HttpCookie cookieP = Request.Cookies.Get("Passos");
+    MundoDAO MD = new MundoDAO();
+    EscolhaDAO ED = new EscolhaDAO();
+    Lugar L = new Lugar();
+    Distancia D = new Distancia();
+    int Q;
+    int Ini;
+    int P;
+    Q = Convert.ToInt32(cookieQ);
+    Ini = Convert.ToInt32(cookie);
+    P = Convert.ToInt32(cookieP);
+    L = ED.Buscar_Lugar_Id(Q);
+    L = ED.Buscar_Lugar(L.Id);
+    D = MD.Buscar_Distancia(Ini, L.Id);
+    @ViewBag.Fundo = L.Imagem + ".png";
+    @ViewBag.Distancia = D.Passos;
+    @ViewBag.Passos = P;
+}
+<style type="text/css">
+            .Acron2{
+                        background-image:url("/Imagens/@ViewBag.Fundo");
+                        color:black;
+                        font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+                        font-size: large;
+                        border: 3px solid Darkblue;
+                        with:1005px;
+                        height:484px;
+                             }
+</style>
+<div class="row">
+    <hr />
+</div>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <div class="jumbotron Acron">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="jumbotron Acron2">
+                        <div class="row">
+                            <div class="Row col-md-2 col-md-offset-1 ">
+                                    <p class="Distancia">Distancia:@ViewBag.Passos/@ViewBag.Distacia</p>         
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<h2>Mundo</h2>
+        <div class="row">
+            <form id="Escolha" action="@Url.Action("Escolher", "HNI")" class="form-horizontal">
+                <div class="Row">
+                    <div class="col-md-3 text-center">
+                        <div class="jumbotron Acron3">
+                            <a class="btn Acron3 " id="Esquerda" name="Direcoes" href="@Url.Action("Mover", "HNI", new { @Direcao= 0 })"><img src="~/Imagens/Flecha_Esquerda.png" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="jumbotron Acron3">
+                        <a class="btn Acron3 " id="Cima" name="Direcoes" href="@Url.Action("Mover", "HNI", new { @Direcao = 1})"><img src="~/Imagens/Flecha_Cima.png"  /></a>
+                    </div>
+                </div>
+                <div class="Row">
+                    <div class="col-md-3 text-center">
+                        <div class="jumbotron Acron3">
+                            <a class="btn Acron3 " id="Baixo" name="Direcoes" href="@Url.Action("Mover", "HNI", new { @Direcao = -1 })"><img src="~/Imagens/Flecha_Baixo.png" /></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="jumbotron Acron3">
+                            <a class="btn Acron3 " id="Direita" name="Direcoes" href="@Url.Action("Escolher", "HNI", new { @Direcao = 0})"><img src="~/Imagens/Flecha_Direita.png"/></a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 

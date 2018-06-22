@@ -190,6 +190,18 @@
     <EmbeddedResource Include="Imagens\Mago-01.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Imagens\Flecha_Baixo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagens\Flecha_Cima.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagens\Flecha_Direita.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imagens\Flecha_Esquerda.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="Imagens\Narrador-01.png" />
     <Content Include="Models\Imagens\HNI-LP.bmp" />
     <Content Include="Models\Imagens\Ladino-01.png" />
