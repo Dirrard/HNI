@@ -253,12 +253,12 @@
     <Content Include="Views\HNI\Carregar_Jogo.cshtml" />
     <Content Include="Views\HNI\Batalha.cshtml" />
     <Content Include="Views\HNI\Mapa.cshtml" />
-    <Content Include="Views\HNI\Mundo.cshtml" />
     <Content Include="Views\HNI\Inventario.cshtml" />
     <Content Include="Views\HNI\Arvore.cshtml" />
     <Content Include="Views\HNI\Bestiario.cshtml" />
     <Content Include="Views\HNI\Salvado.cshtml" />
     <Content Include="Views\HNI\Loja.cshtml" />
+    <Content Include="Views\HNI\Lugar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

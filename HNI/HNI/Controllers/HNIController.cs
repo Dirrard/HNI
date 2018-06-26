@@ -35,8 +35,8 @@ namespace HNI.Controllers
         {
             return View();
         }
-        public ActionResult Mundo()
-        {      
+        public ActionResult Lugar()
+        {
             return View();
         }
         public ActionResult Batalha()
@@ -157,7 +157,7 @@ namespace HNI.Controllers
                 Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(Q)));
                 Response.Cookies.Add(new HttpCookie("Passos", Convert.ToString(0)));
                 Response.Cookies.Add(new HttpCookie("Cena", Convert.ToString(Q)));
-                return RedirectToAction("Mundo", "HNI");
+                return RedirectToAction("Lugar", "HNI");
             }
 
         }
@@ -232,7 +232,89 @@ namespace HNI.Controllers
         }
         public ActionResult Mover(int A)
         {
-            return RedirectToAction("Mundo","HNI");
+            HttpCookie cookie = Request.Cookies.Get("Lugar");
+            HttpCookie cookieQ = Request.Cookies.Get("Questao");
+            HttpCookie cookieP = Request.Cookies.Get("Passos");
+            MundoDAO MD = new MundoDAO();
+            EscolhaDAO ED = new EscolhaDAO();
+            Lugar L = new Lugar();
+            Distancia D = new Distancia();
+            int Q;
+            int Ini;
+            int P;
+            Q = Convert.ToInt32(cookieQ.Value);
+            Ini = Convert.ToInt32(cookie.Value);
+            P = Convert.ToInt32(cookieP.Value);
+            L = ED.Buscar_Lugar_Id(Q);
+            L = ED.Buscar_Lugar(L.Id);
+            D = MD.Buscar_Distancia(Ini, L.Id);
+            int R;
+            int R2;
+            int C;
+            Random rnd = new Random();
+            R = rnd.Next(1,200);
+
+            if (R <= 50)
+            {
+                C = rnd.Next(D.CrtInicial,(D.CrtFinal+1));
+                if (C != 0)
+                {
+                    if (C == 17)
+                    {
+                        R2 = rnd.Next(1,5000);
+                        if (R2 <= 5)
+                        {
+                            Response.Cookies.Add(new HttpCookie("Criatura", Convert.ToString(C)));
+                            return RedirectToAction("Batalha", "HNI");
+                        }
+                        else
+                        {
+                            if (P >= D.Passos)
+                            {
+                                return RedirectToAction("Escolha", "HNI");
+                            }
+                            else
+                            {
+                                P = P + A;
+                                Response.Cookies.Add(new HttpCookie("Passos", Convert.ToString(P)));
+                                return RedirectToAction("Lugar", "HNI");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Response.Cookies.Add(new HttpCookie("Criatura", Convert.ToString(C)));
+                        return RedirectToAction("Batalha", "HNI");
+                    }
+
+                }
+                else
+                {
+                    if (P >= D.Passos)
+                    {
+                        return RedirectToAction("Escolha", "HNI");
+                    }
+                    else
+                    {
+                        P = P + A;
+                        Response.Cookies.Add(new HttpCookie("Passos", Convert.ToString(P)));
+                        return RedirectToAction("Lugar", "HNI");
+                    }
+                }
+            }
+            else
+            {
+                if (P >= D.Passos)
+                {
+                    return RedirectToAction("Escolha", "HNI");
+                }
+                else
+                {
+                    P = P + A;
+                    Response.Cookies.Add(new HttpCookie("Passos", Convert.ToString(P)));
+                    return RedirectToAction("Lugar", "HNI");
+                }
+            }
         }
     }
 

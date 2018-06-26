@@ -1,12 +1,12 @@
-﻿
-@{
-    ViewBag.Title = "Mundo";
+﻿@{
+    ViewBag.Title = "Lugar";
 }
 <style type="text/css">
     body {
     background-image: url('@Url.Content("~/Background-Image.jpg")');
     }
 </style>
+
 @using HNI.Models
 @using HNI.Dataaccess
 @{
@@ -20,15 +20,15 @@
     int Q;
     int Ini;
     int P;
-    Q = Convert.ToInt32(cookieQ);
-    Ini = Convert.ToInt32(cookie);
-    P = Convert.ToInt32(cookieP);
+    Q = Convert.ToInt32(cookieQ.Value);
+    Ini = Convert.ToInt32(cookie.Value);
+    P = Convert.ToInt32(cookieP.Value);
     L = ED.Buscar_Lugar_Id(Q);
     L = ED.Buscar_Lugar(L.Id);
     D = MD.Buscar_Distancia(Ini, L.Id);
-    @ViewBag.Fundo = L.Imagem + ".png";
-    @ViewBag.Distancia = D.Passos;
-    @ViewBag.Passos = P;
+    ViewBag.Fundo = L.Imagem + ".png";
+    ViewBag.Distancia = D.Passos;
+    ViewBag.Passos = P;
 }
 <style type="text/css">
             .Acron2{
@@ -41,6 +41,7 @@
                         height:484px;
                              }
 </style>
+
 <div class="row">
     <hr />
 </div>
@@ -59,30 +60,29 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
-            <form id="Escolha" action="@Url.Action("Escolher", "HNI")" class="form-horizontal">
+            <form id="Escolha" action="@Url.Action("Mover", "HNI")" class="form-horizontal">
                 <div class="Row">
                     <div class="col-md-3 text-center">
                         <div class="jumbotron Acron3">
-                            <a class="btn Acron3 " id="Esquerda" name="Direcoes" href="@Url.Action("Mover", "HNI", new { @Direcao= 0 })"><img src="~/Imagens/Flecha_Esquerda.png" /></a>
+                            <a class="btn Acron3 " id="Esquerda" name="Direcao" href="@Url.Action("Mover", "HNI", new { @A= 0 })"><img src="~/Imagens/Flecha_Esquerda.png" /></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 text-center">
                     <div class="jumbotron Acron3">
-                        <a class="btn Acron3 " id="Cima" name="Direcoes" href="@Url.Action("Mover", "HNI", new { @Direcao = 1})"><img src="~/Imagens/Flecha_Cima.png" /></a>
+                        <a class="btn Acron3 " id="Cima" name="Direcao" href="@Url.Action("Mover", "HNI", new { @A = 1})"><img src="~/Imagens/Flecha_Cima.png" /></a>
                     </div>
                 </div>
                 <div class="Row">
                     <div class="col-md-3 text-center">
                         <div class="jumbotron Acron3">
-                            <a class="btn Acron3 " id="Baixo" name="Direcoes" href="@Url.Action("Mover", "HNI", new { @Direcao = -1 })"><img src="~/Imagens/Flecha_Baixo.png" /></a>
+                            <a class="btn Acron3 " id="Baixo" name="Direcao" href="@Url.Action("Mover", "HNI", new { @A = (-1) })"><img src="~/Imagens/Flecha_Baixo.png" /></a>
                         </div>
                     </div>
                     <div class="col-md-3 text-center">
                         <div class="jumbotron Acron3">
-                            <a class="btn Acron3 " id="Direita" name="Direcoes" href="@Url.Action("Escolher", "HNI", new { @Direcao = 0})"><img src="~/Imagens/Flecha_Direita.png" /></a>
+                            <a class="btn Acron3 " id="Direita" name="Direcao" href="@Url.Action("Mover", "HNI", new { @A = 0})"><img src="~/Imagens/Flecha_Direita.png" /></a>
                         </div>
                     </div>
                 </div>
@@ -90,4 +90,3 @@
         </div>
     </div>
 </div>
-
