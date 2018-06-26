@@ -28,18 +28,17 @@
     ViewBag.PImagem = P.Imagem + ".png";
     L = ES.Buscar_Lugar_Id(Q.Id);
     L = ES.Buscar_Lugar(L.Id);
-    ViewBag.Fundo = L.Imagem + ".jpg";
+    ViewBag.Fundo = L.Imagem + ".png";
     Response.Cookies.Add(new HttpCookie("Lugar", Convert.ToString(L.Id)));
-    Q.Identi = Convert.ToInt32(cookie.Value);
     ViewBag.Nome = P.Nome;
-    A = ES.Buscar_Respota(Q.Identi, 0);
+    A = ES.Buscar_Respota(Q.Id, 0);
     if (A.Existe == true)
     {
 
 
         ViewBag.Resposta01 = A.Descricao;
         ViewBag.Resposta01Valor = A.Identidade;
-        A = ES.Buscar_Respota(Q.Identi, 1);
+        A = ES.Buscar_Respota(Q.Id, 1);
         if (A.Existe == true)
         {
             ViewBag.Resposta02 = A.Descricao;
@@ -51,7 +50,7 @@
             ViewBag.Resposta02 = "";
             ViewBag.Resposta02Valor = "0";
         }
-        A = ES.Buscar_Respota(Q.Identi, 2);
+        A = ES.Buscar_Respota(Q.Id, 2);
         if (A.Existe == true)
         {
             ViewBag.Resposta03 = A.Descricao;
@@ -62,7 +61,7 @@
             ViewBag.Resposta03 = "";
             ViewBag.Resposta03Valor = "0";
         }
-        A = ES.Buscar_Respota(Q.Identi, 3);
+        A = ES.Buscar_Respota(Q.Id, 3);
         if (A.Existe == true)
         {
             ViewBag.Resposta04 = A.Descricao;
@@ -78,7 +77,7 @@
     }
     else
     {
-        A = ES.Buscar_Respota(Q.Identi, 1);
+        A = ES.Buscar_Respota(Q.Id, 1);
         ViewBag.Resposta01 = A.Descricao;
         ViewBag.Resposta01Valor = A.Identidade;
         if (A.Existe == true)
@@ -92,7 +91,7 @@
             ViewBag.Resposta01 = "";
             ViewBag.Resposta01Valor = "0";
         }
-        A = ES.Buscar_Respota(Q.Identi, 2);
+        A = ES.Buscar_Respota(Q.Id, 2);
         if (A.Existe == true)
         {
             ViewBag.Resposta02 = A.Descricao;
@@ -103,7 +102,7 @@
             ViewBag.Resposta02 = "";
             ViewBag.Resposta02Valor = "0";
         }
-        A = ES.Buscar_Respota(Q.Identi, 3);
+        A = ES.Buscar_Respota(Q.Id, 3);
         if (A.Existe == true)
         {
             ViewBag.Resposta03 = A.Descricao;
@@ -114,7 +113,7 @@
             ViewBag.Resposta03 = "";
             ViewBag.Resposta03Valor = "0";
         }
-        A = ES.Buscar_Respota(Q.Identi, 4);
+        A = ES.Buscar_Respota(Q.Id, 4);
         if (A.Existe == true)
         {
             ViewBag.Resposta04 = A.Descricao;

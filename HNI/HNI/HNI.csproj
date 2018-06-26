@@ -163,6 +163,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <EmbeddedResource Include="Imagens\Quarto-Guilda.png" />
     <EmbeddedResource Include="Models\Imagens\Guerreiro-01.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -203,6 +204,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <Content Include="Imagens\Narrador-01.png" />
+    <EmbeddedResource Include="Imagens\Vazio.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="Models\Imagens\HNI-LP.bmp" />
     <Content Include="Models\Imagens\Ladino-01.png" />
     <EmbeddedResource Include="Models\Imagens\Lobo-001.png">

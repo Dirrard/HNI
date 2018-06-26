@@ -264,7 +264,9 @@
                                         <hr class="Fi" />
                                         <p class="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
                                         <p class="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
+                                        <p class="Relato">Individuos Normais por Bando: @ViewBag.Ban</p>
                                         <p class="Relato">Classificação da Criatura: @ViewBag.Cla</p>
+                                        <p class="Relato">Recompensa por Cabeça da Criatura: @ViewBag.Rec Peças de Ouro </p>
                                     </div>
                                 </div>
                                                 ViewBag.Id++;
@@ -288,13 +290,13 @@
         Devido sua importância eu quis separa-las das demais, pois não são apenas criaturas ou monstros que habitam esse mundo, são nossas guardiãs, aqueles seres que nós permitiram viver em uma erá "pacífica"
         - Laurence Pyke II pesquisador de criaturas.
     </p>
-    <div  class="navbar-collapse collapse Besta">
-        <ul class="nav navbar-nav Besta">
+    <div class="navbar-collapse collapse Besta ">
+        <ul class="nav navbar-nav Besta ">
             <li>
-                <a href="#"  class="dropdown-toggle" data-toggle="dropdown Besta ">
+                <a href="#" class="dropdown-toggle Besta " data-toggle="dropdown">
                     <span class="caret"></span>
                 </a>
-                <ul  class="dropdown-menu Besta ">
+                <ul class="dropdown-menu Besta">
                     <li>
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
@@ -311,7 +313,7 @@
                                         @{  ViewBag.Imagem01 = "/Imagens/" + C.Imagem + ".png"; }
                                         <div class="jumbotron Ilustracao">
                                             <img src="@ViewBag.Imagem01"
-                                                 width="200" height="220" />
+                                                 width="230" height="280" />
                                         </div>
                                     </div>
                                     <div class="col-md-8">
@@ -321,19 +323,19 @@
                                             ViewBag.Nome = C.Nome;
                                             ViewBag.Agre = C.Agressividade;
                                             ViewBag.Per = C.Perigo;
+                                            ViewBag.Ban = C.Bando;
                                             ViewBag.Cla = C.Classificacao;
-                                        }
+                                            ViewBag.Rec = C.Ouro; }
                                         <p class="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
                                         <h5 class="Titulo1">Informações</h5>
                                         <hr class="Fi" />
-                                        <p class="Relato">Agressividade do Ser: @ViewBag.Agre </p>
-                                        <p class="Relato">Perigo do Ser: @ViewBag.Per</p>
-                                        <p class="Relato">Classificação do Ser: @ViewBag.Cla</p>
-
+                                        <p class="Relato">Agressividade da Fera: @ViewBag.Agre </p>
+                                        <p class="Relato">Perigo da Fera: @ViewBag.Per</p>
+                                        <p class="Relato">Classificação da Criatura: @ViewBag.Cla</p>
                                     </div>
                                 </div>
                                                 ViewBag.Id++;
-                                            } while (ViewBag.Id <= 17); }
+                                            } while (ViewBag.Id <= 16); }
 
 
 
@@ -364,7 +366,7 @@
                     <li>
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
-                                @{ ViewBag.Id = 18;}
+                                @{ ViewBag.Id = 17;}
                                 @{do
             {<div  class="row Besta">
                                     <div class="col-md-4">
@@ -393,15 +395,13 @@
                                         <p class="Relato">" @ViewBag.Nome, @ViewBag.Relato".</p>
                                         <h5 class="Titulo1">Informações</h5>
                                         <hr class="Fi" />
-                                        <p class="Relato">Agressividade da Criatura: @ViewBag.Agre </p>
-                                        <p class="Relato">Perigo Individual da Criatura: @ViewBag.Per</p>
-                                        <p class="Relato">Individuos Normais por Bando: @ViewBag.Ban</p>
-                                        <p class="Relato">Classificação da Criatura: @ViewBag.Cla</p>
-                                        <p class="Relato">Recompensa por Cabeça da Criatura: @ViewBag.Rec Peças de Ouro </p>
+                                        <p class="Relato">Agressividade do Ser: @ViewBag.Agre </p>
+                                        <p class="Relato">Perigo do Ser: @ViewBag.Per</p>
+                                        <p class="Relato">Classificação do Ser: @ViewBag.Cla</p>
                                     </div>
                                 </div>
                                                 ViewBag.Id++;
-                                            } while (ViewBag.Id <= 21); }
+                                            } while (ViewBag.Id <= 20); }
 
 
 

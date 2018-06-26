@@ -31,12 +31,12 @@
     Per = PD.BuscarP(P);
     Vendedor = PD.BuscarP(2);
     ViewBag.Dinhero = Per.Ouro;
-    ViewBag.Dinhero_Vendedor = Vendedor.Ouro;
+    ViewBag.DinheroV = Vendedor.Ouro;
     if (O == 1)
     {
         ViewBag.Operacao = "Comprar";
-        ViewBag.ViewBag.Item_Valor = 5;
-        ViewBag.ViewBag.Item_Final = 23;
+        ViewBag.Item_Valor = 5;
+        ViewBag.Item_Final = 23;
     }
     /* if (O == 2)
      {
@@ -72,8 +72,8 @@
                 <div class="col-md-12 text-center">
                     <div class="jumbotron Acron2">
                         <div class="row">
-                            <div class="col-md-2 col-md-offset-2">
-                                <div class="Row col-lg-offset-1 ">
+                            <div class="col-md-12">
+                                <div class="Row">
                                     <img src="/Imagens/Cassius-01.png"
                                          width="190" height="220" />
                                 </div>
@@ -91,35 +91,34 @@
             </div>
 
             <div class="row">
-                    <div class="col-md-6  text-center">
-                        <p>Seu Ouro : @ViewBag.Dinheiro</p>
-                    </div>
-                    <div class="col-md-6  text-center">       
-                        <p>Ouro Dele : @ViewBag.Dinheiro_Vendedor</p>
-                    </div>
+                <div class="col-md-6  text-center">
+                    <p>Seu Ouro : @ViewBag.Dinheiro</p>
+                </div>
+                <div class="col-md-6  text-center">
+                    <p>Ouro Dele : @ViewBag.DinheiroV</p>
+                </div>
                 <form id="Itens" action="@Url.Action("Item_Loja", "HNI")" class="form-horizontal">
                     <div class="col-md-6  text-center">
-                        <a class="btn btn-success FAR2 " href="@Url.Action("Item_Loja", "HNI",new { @o = 1 })">Comprar</a>
+                        <a class="btn btn-success FAR2 " href="@Url.Action("Item_Loja", "HNI", new { @o = 1 })">Comprar</a>
 
                     </div>
                     <div class="col-md-6  text-center">
-                     @{  /* <a class="btn btn-danger FAR2 " href="@Url.Action("Item_Loja", "HNI", 2)">Vender</a>*/
-                     }
-
+                        <a class="btn btn-danger FAR2 " href="@Url.Action("Item_Loja", "HNI", new { @o = 1 })">Vender</a>
                     </div>
                 </form>
                 <form id="Operacao" action="@Url.Action("Operacao", "HNI")" class="form-horizontal">
                     @{
+                        int A;
                         do
                         {
                             if (O == 1)
                             {
                                 item = Loja.Buscar_Item_Vendedor(ViewBag.Item_Valor);
                                 <div class="col-md-2  text-center">
-                                     <button type="submit" class="btn btn-default Acron5 "  data-toggle="modal" data-target="#modal1" value="@ViewBag.Item_Valor "> <img src="/Imagens/@item.Imagem" width="50" height="50" /></button>
+                                    <button type="submit" class="btn btn-default Acron5 " onclick="@ViewBag.Definitivo = @Convert.ToInt32(ViewBag.Item_Valor)" data-toggle="modal" data-target="#modal1"> <img src="/Imagens/@item.Imagem" width="50" height="50" /></button>
                                 </div>
-                                            ViewBag.Item_Valor = ViewBag.Item_Valor + 1;
-                                        }
+                                ViewBag.Item_Valor = ViewBag.Item_Valor + 1;
+                            }
 
                         } while (ViewBag.Item_Valor < ViewBag.Item_Final);
 
@@ -128,7 +127,7 @@
                 <div class="row">
 
                     <div class="col-md-2 col-md-offset-5 text-center">
-                        <a class="btn btn-danger FAR2 " href="@Url.Action("Escolha", "HNI")">Voltar</a>
+                        <a class="btn btn-default FAR2 " href="@Url.Action("Escolha", "HNI")">Voltar</a>
 
                     </div>
                 </div>
@@ -136,7 +135,7 @@
         </div>
     </div>
 </div>
-
+@{ item = Loja.Buscar_Item_Vendedor(Convert.ToInt32(ViewBag.Definitivo));}
 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -149,8 +148,8 @@
             <div class="modal-body">
                 <div class="row text-center">
                     <p>Item : @item.Nome , Preço : @item.Valor</p>
-                    <a class="btn btn-danger FAR2 " href="@Url.Action("Operacao", "HNI", new { @iitem = item.Id })">Sim</a>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                    <a class="btn btn-success FAR2 " href="@Url.Action("Operacao", "HNI", new { @iitem = item.Id })">Sim</a>
+                    <button type="button" class="btn btn-danger FAR2 " data-dismiss="modal">Não</button>
                 </div>
             </div>
         </div>

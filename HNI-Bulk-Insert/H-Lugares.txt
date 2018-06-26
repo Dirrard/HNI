@@ -1,4 +1,3 @@
-0	Vazio
 1	Quarto-Guilda
 2	Guilda-01
 3	GUilda-02

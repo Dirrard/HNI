@@ -17,7 +17,7 @@ namespace HNI.Dataaccess
 
             using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
             {
-                string strSQL = @"SELECT * FROM ItemxPerson where Item_Id = '" + Id + "' and Personagem_Id = '"+2+"';";
+                string strSQL = @"SELECT * FROM Item where Id = '" + Id + "';";
 
                 using (SqlCommand cmd = new SqlCommand(strSQL))
                 {
@@ -170,5 +170,8 @@ namespace HNI.Dataaccess
             return 0;
 
         }
+
+
+
     }
 }

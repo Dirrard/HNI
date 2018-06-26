@@ -148,11 +148,11 @@ Identi int
 go
 create table Resposta
 (
-Descr varchar(max),
-Questao int references Questao(Id),
 Id int primary key identity(1,1),
+Questao int references Questao(Id),
 Identi int, 
-Cena INT references Cena(Id)
+Cena INT references Cena(Id),
+Descr varchar(max)
 );
 go
 create table Lugar 
