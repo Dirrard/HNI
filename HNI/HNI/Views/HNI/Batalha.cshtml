@@ -2,6 +2,120 @@
 @{
     ViewBag.Title = "Batalha";
 }
+@using HNI.Models
+@using HNI.Dataaccess
+
+<style type="text/css">
+    body {
+    background-image: url('@Url.Content("~/Background-Image.jpg")');
+    }
+</style>
+
+
+@{
+    EscolhaDAO ES = new EscolhaDAO();
+    PersonagemDAO PD = new PersonagemDAO();
+    CriaturaDAO CD = new CriaturaDAO();
+    Lugar L = new Lugar();
+    Criatura C = new Criatura();
+    Questao Q = new Questao();
+    Personagem P = new Personagem();
+    int Cr;
+    HttpCookie cookie = Request.Cookies.Get("Questao");
+    HttpCookie cookieP = Request.Cookies.Get("Personagem");
+    HttpCookie cookieC = Request.Cookies.Get("Criatura");
+    Cr = Convert.ToInt32(cookieC);
+    Q.Identi = Convert.ToInt32(cookie.Value);
+    Q = ES.Buscar_Questao(Q.Identi);
+    int p = Convert.ToInt32(cookieP.Value);
+    P = PD.BuscarP(p);
+    ViewBag.PImagem = P.Imagem + "-B" + ".png";
+    L = ES.Buscar_Lugar_Id(Q.Id);
+    L = ES.Buscar_Lugar(L.Id);
+    ViewBag.Fundo = L.Imagem + "-B" + ".png";
+    Response.Cookies.Add(new HttpCookie("Lugar", Convert.ToString(L.Id)));
+    ViewBag.Nome = P.Nome;
+    C = CD.Buscar(Cr);
+    ViewBag.CriaturaImagem = C.Imagem + ".png";
+    ViewBag.CriaturaVida = C.Hp;
+    ViewBag.CriaturaMana = C.Mana;
+    ViewBag.PersonagemVida = P.Hp;
+    ViewBag.PersonagemMana = P.Mana;
+
+}
+
+
+<style type="text/css">
+            .Acron2{
+                        background-image:url("/Imagens/@ViewBag.Fundo");
+                        color:black;
+                        font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+                        font-size: large;
+                        border: 3px solid Darkblue;
+                             }
+</style>
+
+<div class="row">
+    <hr />
+</div>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <div class="jumbotron Acron">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="jumbotron Acron2">
+                        <div class="row">
+                            <div class="Row ">
+                                <div class="col-md-2">
+                                    <img src="/Imagens/@ViewBag.PImagem"
+                                         width="200" height="400" />
+                                    <p class="Mostral1">Vida:@ViewBag.PersonagemVida<p />
+                                    <p class="Mostral2">Mana:@ViewBag.PersonagemMana<p />
+                                </div>
+                                <div class="col-md-2 col-md-offset-7 text-center">
+                                    <img src="/Imagens/@ViewBag.CriaturaImagem"
+                                         width="200" height="400" />
+                                    <p class="Mostral1">Vida:@ViewBag.CriaturaVida<p />
+                                    <p class="Mostral2">Mana:@ViewBag.CriaturaMana<p />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <form id="Escolha" action="@Url.Action("Batalhar", "HNI")" class="form-horizontal">
+                    <div class="Row">
+                        <div class="col-md-3 text-center">
+                            <div class="jumbotron Acaobtn2">
+                                <a class="btn Acaobtn1 " name="Acoes" href="@Url.Action("Batalhar", "HNI", new { @Acao = 1 })">Atacar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="jumbotron Acaobtn2">
+                            <a class="btn Acaobtn1 " name="Acoes" href="@Url.Action("Batalhar", "HNI", new { @Acao = 2 })">Defender</a>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="col-md-3 text-center">
+                            <div class="jumbotron Acaobtn2">
+                                <a class="btn Acaobtn1 " name="Acoes" href="@Url.Action("Batalhar", "HNI", new { @Acao = 3})">Fugir</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="jumbotron Acaobtn2">
+                                <a class="btn Acaobtn1 " name="Acoes" href="@Url.Action("Batalhar", "HNI", new { @Acao = 4 })">Ataques Especiais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

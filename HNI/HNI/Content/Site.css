@@ -186,3 +186,32 @@
      font-size: large;
      border: 1px solid black;
 }
+
+.Acaobtn1 {
+    background-color:burlywood;
+    color:black;
+    font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+
+}
+.Acaobtn2 {
+    background-color:burlywood;
+    color:black;
+    font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    border:3px solid darkred;
+}
+.Mostral1 {
+    background-color:darkred;
+    color:white;
+    font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    border:1px solid black;
+}
+.Mostral2 {
+    background-color:midnightblue;
+    color:white;
+    font-family: 'Baskerville Old Face', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    border:1px solid black;
+}
