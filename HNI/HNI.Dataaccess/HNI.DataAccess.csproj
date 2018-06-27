@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtkEDAO.cs" />
+    <Compile Include="BatalhaDAO.cs" />
     <Compile Include="ClasseDAO.cs" />
     <Compile Include="CriaturaDAO.cs" />
     <Compile Include="EscolhaDAO.cs" />

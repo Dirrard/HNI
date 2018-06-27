@@ -21,10 +21,22 @@
     Questao Q = new Questao();
     Personagem P = new Personagem();
     int Cr;
+    int DC;
+    int DP;
+    int UP;
+    int UC;
+    HttpCookie cookieDC = Request.Cookies.Get("Dano da Criatura");
+    HttpCookie cookieDP = Request.Cookies.Get("Dano do Personagem");
+    HttpCookie cookieUC = Request.Cookies.Get("Utilização do Personagem");
+    HttpCookie cookieUP = Request.Cookies.Get("Utilização da Criatura");
     HttpCookie cookie = Request.Cookies.Get("Questao");
     HttpCookie cookieP = Request.Cookies.Get("Personagem");
     HttpCookie cookieC = Request.Cookies.Get("Criatura");
-    Cr = Convert.ToInt32(cookieC);
+    DC = Convert.ToInt32(cookieDC.Value);
+    DP = Convert.ToInt32(cookieDP.Value);
+    UC = Convert.ToInt32(cookieUC.Value);
+    UP = Convert.ToInt32(cookieUP.Value);
+    Cr = Convert.ToInt32(cookieC.Value);
     Q.Identi = Convert.ToInt32(cookie.Value);
     Q = ES.Buscar_Questao(Q.Identi);
     int p = Convert.ToInt32(cookieP.Value);
@@ -37,10 +49,10 @@
     ViewBag.Nome = P.Nome;
     C = CD.Buscar(Cr);
     ViewBag.CriaturaImagem = C.Imagem + ".png";
-    ViewBag.CriaturaVida = C.Hp;
-    ViewBag.CriaturaMana = C.Mana;
-    ViewBag.PersonagemVida = P.Hp;
-    ViewBag.PersonagemMana = P.Mana;
+    ViewBag.CriaturaVida = C.Hp - DP;
+    ViewBag.CriaturaMana = C.Mana - UC;
+    ViewBag.PersonagemVida = P.Hp - DC;
+    ViewBag.PersonagemMana = P.Mana - UP;
 
 }
 
@@ -106,13 +118,32 @@
                         </div>
                         <div class="col-md-3">
                             <div class="jumbotron Acaobtn2">
-                                <a class="btn Acaobtn1 " name="Acoes" href="@Url.Action("Batalhar", "HNI", new { @Acao = 4 })">Ataques Especiais</a>
+                                <button type="submit" class="btn Acaobtn1" data-toggle="modal" data-target="#modal">Ataques Especiais</button>
                             </div>
                         </div>
                     </div>
 
                 </form>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content Acaobtn1">
+            <div class="modal-header">
+                <h4 class="modal-title Acaobtn1">Ataques Especiais:</h4>
+            </div>
+            <div class="modal-body Acaobtn2">
+                <div class="row text-center">
+                    <a class="btn  Acaobtn2" href="@Url.Action("AtaqueE", "HNI", new { @Id = 1})"></a>
+                    <a class="btn  Acaobtn2" href="@Url.Action("AtaqueE", "HNI", new { @Id = 2})"></a>
+                    <a class="btn  Acaobtn2" href="@Url.Action("AtaqueE", "HNI", new { @Id = 3})"></a>
+                    <a class="btn  Acaobtn2" href="@Url.Action("AtaqueE", "HNI", new { @Id = 4})"></a>
+                </div>
+            </div>
+            <button type="button" class="btn Acaobtn2" data-dismiss="modal">X</button>
         </div>
     </div>
 </div>

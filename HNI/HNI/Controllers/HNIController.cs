@@ -256,6 +256,10 @@ namespace HNI.Controllers
 
             if (R <= 50)
             {
+                 Response.Cookies.Add(new HttpCookie("Dano da Criatura", Convert.ToString(0)));
+                 Response.Cookies.Add(new HttpCookie("Dano do Personagem", Convert.ToString(0)));
+                 Response.Cookies.Add(new HttpCookie("Utilização do Personagem", Convert.ToString(0)));
+                 Response.Cookies.Add(new HttpCookie("Utilização da Criatura", Convert.ToString(0)));
                 C = rnd.Next(D.CrtInicial,(D.CrtFinal+1));
                 if (C != 0)
                 {

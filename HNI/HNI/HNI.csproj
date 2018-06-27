@@ -163,11 +163,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <EmbeddedResource Include="Imagens\Cobra-001.png" />
+    <EmbeddedResource Include="Imagens\Lobo-001.png" />
     <EmbeddedResource Include="Imagens\Quarto-Guilda.png" />
     <EmbeddedResource Include="Models\Imagens\Guerreiro-01.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Imagens\Cobra-001.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Imagens\Guerreiro-01.png">
@@ -183,9 +182,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Imagens\Leão-001.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Imagens\Lobo-001.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Imagens\Mago-01.png">
