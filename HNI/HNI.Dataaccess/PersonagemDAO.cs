@@ -138,5 +138,29 @@ namespace HNI.Dataaccess
 
         }
 
+        public void Status_Atualizacao(int Id,int Nivel, int Exp, int Ouro, int Mana, int Hp, int AtkF, int AtkM, int Def)
+        {
+            {
+                using (SqlConnection conn =
+                    new SqlConnection(@"Initial Catalog=HNI;
+                        Data Source=localhost;
+                        Integrated Security=SSPI;"))
+                {
+                    string strSQL = @"UPDATE Personagem SET Nivel ='"+Nivel+"',Exp ='"+Exp+"',Ouro ='"+Ouro+"',Mana = '"+Mana+ "',Hp = '" + Hp+ "',AtkF = '" + AtkF + "',AtkM = '" + AtkM + "',Def= '" + Def + "' where Id ='"+Id+"'";
+                     
+
+                    using (SqlCommand cmd = new SqlCommand(strSQL))
+                    {
+                        cmd.Connection = conn;
+                        conn.Open();
+
+                        cmd.ExecuteNonQuery();
+
+                        conn.Close();
+                    }
+                }
+            }
+        }
+
     }
 }

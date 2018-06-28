@@ -347,18 +347,171 @@ namespace HNI.Controllers
 
         public ActionResult Batalhar(int Acao)
         {
+            HttpCookie cookieC = Request.Cookies.Get("Criatura");
+            HttpCookie cookieP = Request.Cookies.Get("Personagem");
+            HttpCookie cookieDC = Request.Cookies.Get("Dano da Criatura");
+            HttpCookie cookieDP = Request.Cookies.Get("Dano do Personagem");
+            HttpCookie cookieUC = Request.Cookies.Get("Utilização da Criatura");
+            HttpCookie cookieUP = Request.Cookies.Get("Utilização do Personagem");
+
+            PersonagemDAO PD = new PersonagemDAO();
+            CriaturaDAO CD = new CriaturaDAO();
+            Personagem P = new Personagem();
+            Criatura C = new Criatura();
+            int p;
+            int c;
+            int DC;
+            int UC;
+            int UP;
+            int DP;
+            int M;
+            int R;
+            int R2;
+            Random rnd = new Random();
+
+            p = Convert.ToInt32(cookieP.Value);
+            c= Convert.ToInt32(cookieC.Value);
+            DC = Convert.ToInt32(cookieDC.Value);
+            UC = Convert.ToInt32(cookieUC.Value);
+            UP = Convert.ToInt32(cookieUP.Value);
+            DP = Convert.ToInt32(cookieDP.Value);
+            P = PD.Buscar_Id(P);
+            C = CD.Buscar(c);
+
+
             if (Acao == 1)
             {
+                
+                M=((P.AtkF * 20 )/ 100);
+                R = rnd.Next(M,(P.AtkF + 1));
+                M = ((C.Def) * 30 / 100);
+                R2 = rnd.Next(M, (C.Def + 1));
+                R = R - R2;
+                if (R > 0)
+                {
+                    DP = DP + R;
+                    C.Hp = C.Hp - DP;
+                    if (C.Hp > 0)
+                    {
 
+                        Response.Cookies.Add(new HttpCookie("Dano do Personagem", Convert.ToString(DP)));
+                        return RedirectToAction("CriaturaAcao", "HNI", new { @Def = 0 });
+                    }
+                    else
+                    {
+                        P.Exp = P.Exp + C.Exp;
+                        P.Nivel = P.Nivel * 100;
+                        P.Ouro = P.Ouro + C.Ouro;
+                        if (P.Exp == P.Nivel)
+                        {
+                            P.Nivel = (P.Nivel / 100) + 1;
+                            P.Exp = (0);
+                            return RedirectToAction("Passar_Nivel", "HNI");
+                        }
+                        PD.Status_Atualizacao(P.Id, P.Nivel, P.Exp, P.Ouro, P.Mana, P.Hp, P.AtkF, P.AtkM, P.Def);
+                        return RedirectToAction("Lugar", "HNI");
+                    }
+                }
+                else
+                {
+                    return RedirectToAction("CriaturaAcao", "HNI", new { @Def = 0 });
+                }
             }
             if (Acao == 2)
             {
-
+                M = (P.Def * 4 / 10);
+                int Def = rnd.Next(M,(P.Def+1));
+                return RedirectToAction("CriaturaAcao", "HNI", new { @Def = Def });
             }
             if (Acao == 3)
             {
+                int F;
+                F = rnd.Next(1,101);
+                if(F <= 10)
+                {
+                    return RedirectToAction("Lugar", "HNI");
+
+                }
+                return RedirectToAction("CriaturaAcao", "HNI", new { @Def = 0 });
+            }
+            else
+            {
+                return RedirectToAction("CriaturaAcao", "HNI", new { @Def = 0 });
+            }
+        }
+
+
+
+        public ActionResult CriaturaAcao(int Def)
+        {
+            HttpCookie cookieC = Request.Cookies.Get("Criatura");
+            HttpCookie cookieP = Request.Cookies.Get("Personagem");
+            HttpCookie cookieDC = Request.Cookies.Get("Dano da Criatura");
+            HttpCookie cookieDP = Request.Cookies.Get("Dano do Personagem");
+            HttpCookie cookieUC = Request.Cookies.Get("Utilização da Criatura");
+            HttpCookie cookieUP = Request.Cookies.Get("Utilização do Personagem");
+
+            PersonagemDAO PD = new PersonagemDAO();
+            CriaturaDAO CD = new CriaturaDAO();
+            Personagem P = new Personagem();
+            Criatura C = new Criatura();
+            int p;
+            int c;
+            int DC;
+            int UC;
+            int UP;
+            int DP;
+            int M;
+            int R;
+            int R2;
+            Random rnd = new Random();
+
+            p = Convert.ToInt32(cookieP.Value);
+            c = Convert.ToInt32(cookieC.Value);
+            DC = Convert.ToInt32(cookieDC.Value);
+            UC = Convert.ToInt32(cookieUC.Value);
+            UP = Convert.ToInt32(cookieUP.Value);
+            DP = Convert.ToInt32(cookieDP.Value);
+            P = PD.Buscar_Id(P);
+            C = CD.Buscar(c);
+
+            R = rnd.Next(1,5);
+
+            if (R <=3)
+            {
+                M = (C.AtkF / 100);
+                R = rnd.Next(M,(C.AtkF+1));
+                DC = DC+R;
+                DC = DC - Def;
+                P.Hp = P.Hp - DC;
+                
+                if (P.Hp > 0)
+                {
+                    Response.Cookies.Add(new HttpCookie("Dano da Criatura", Convert.ToString(DC)));
+                    return RedirectToAction("Batalha", "HNI");
+                }
+                else
+                {
+                    return RedirectToAction("Perda", "HNI");
+                }
+            }
+            if (R == 4)
+            {
+
+                return RedirectToAction("Batalha", "HNI");
+            }
+            else
+            {
+                return RedirectToAction("Batalha", "HNI");
 
             }
+
+
+        }
+
+        public ActionResult Passar_Nivel()
+        {
+            return RedirectToAction("Inventario", "HNI");
         }
     }
 
