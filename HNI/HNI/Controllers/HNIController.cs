@@ -69,6 +69,14 @@ namespace HNI.Controllers
         }
         public ActionResult Salvar_U(Usuario obj)
         {
+            if (obj.DataNasc >= )
+
+                if (!ValidarEmail(obj.Email))
+                {
+                    ViewBag.ErroMns = " Erro na validação de Email";
+                    return View("Cadastro");
+                }
+
             if (obj.Termo == true && obj.Senha == obj.ConfSenha)
             {
                 new UsuarioDAO().Inserir(obj);
@@ -370,7 +378,7 @@ namespace HNI.Controllers
             Random rnd = new Random();
 
             p = Convert.ToInt32(cookieP.Value);
-            c= Convert.ToInt32(cookieC.Value);
+            c = Convert.ToInt32(cookieC.Value);
             DC = Convert.ToInt32(cookieDC.Value);
             UC = Convert.ToInt32(cookieUC.Value);
             UP = Convert.ToInt32(cookieUP.Value);
@@ -381,9 +389,9 @@ namespace HNI.Controllers
 
             if (Acao == 1)
             {
-                
-                M=((P.AtkF * 20 )/ 100);
-                R = rnd.Next(M,(P.AtkF + 1));
+
+                M = ((P.AtkF * 20) / 100);
+                R = rnd.Next(M, (P.AtkF + 1));
                 M = ((C.Def) * 30 / 100);
                 R2 = rnd.Next(M, (C.Def + 1));
                 R = R - R2;
@@ -420,14 +428,14 @@ namespace HNI.Controllers
             if (Acao == 2)
             {
                 M = (P.Def * 4 / 10);
-                int Def = rnd.Next(M,(P.Def+1));
+                int Def = rnd.Next(M, (P.Def + 1));
                 return RedirectToAction("CriaturaAcao", "HNI", new { @Def = Def });
             }
             if (Acao == 3)
             {
                 int F;
-                F = rnd.Next(1,101);
-                if(F <= 10)
+                F = rnd.Next(1, 101);
+                if (F <= 10)
                 {
                     return RedirectToAction("Lugar", "HNI");
 
@@ -475,16 +483,16 @@ namespace HNI.Controllers
             P = PD.Buscar_Id(P);
             C = CD.Buscar(c);
 
-            R = rnd.Next(1,5);
+            R = rnd.Next(1, 5);
 
-            if (R <=3)
+            if (R <= 3)
             {
                 M = (C.AtkF / 100);
-                R = rnd.Next(M,(C.AtkF+1));
-                DC = DC+R;
+                R = rnd.Next(M, (C.AtkF + 1));
+                DC = DC + R;
                 DC = DC - Def;
                 P.Hp = P.Hp - DC;
-                
+
                 if (P.Hp > 0)
                 {
                     Response.Cookies.Add(new HttpCookie("Dano da Criatura", Convert.ToString(DC)));
@@ -500,7 +508,7 @@ namespace HNI.Controllers
                 AtkEDAO AD = new AtkEDAO();
                 BatalhaDAO BD = new BatalhaDAO();
                 AtkE A = new AtkE();
-                A = BD.Buscar_Id_Atke_Criatura(C.Id,1);
+                A = BD.Buscar_Id_Atke_Criatura(C.Id, 1);
                 if (A.Nome == "E")
                 {
                     int I;
@@ -515,11 +523,11 @@ namespace HNI.Controllers
                     AF = (A.AtkF / 50);
                     AM = (A.AtkM / 50);
 
-                    R = rnd.Next(M, (C.AtkM+ 1));
+                    R = rnd.Next(M, (C.AtkM + 1));
                     AFR = rnd.Next(AF, (A.AtkF + 1));
                     AMR = rnd.Next(AM, (A.AtkM + 1));
 
-                    DC = DC + R + AFR+ AMR;
+                    DC = DC + R + AFR + AMR;
                     DC = DC - Def;
                     P.Hp = P.Hp - DC;
                     UC = UC + A.Mana;
@@ -545,8 +553,8 @@ namespace HNI.Controllers
                 }
                 else
                 {
-                    
-                    return RedirectToAction("CriaturaAcao", "HNI", new{ @Def = Def });
+
+                    return RedirectToAction("CriaturaAcao", "HNI", new { @Def = Def });
                 }
             }
             else
@@ -590,48 +598,48 @@ namespace HNI.Controllers
             DP = Convert.ToInt32(cookieDP.Value);
             P = PD.Buscar_Id(P);
             C = CD.Buscar(c);
-                AtkEDAO AD = new AtkEDAO();
-                BatalhaDAO BD = new BatalhaDAO();
-                AtkE A = new AtkE();
-                A = BD.Buscar_Id_Atke_Personagem(P.Id, Id);
-                if (A.Nome == "E")
+            AtkEDAO AD = new AtkEDAO();
+            BatalhaDAO BD = new BatalhaDAO();
+            AtkE A = new AtkE();
+            A = BD.Buscar_Id_Atke_Personagem(P.Id, Id);
+            if (A.Nome == "E")
+            {
+                int I;
+                int AF;
+                int AFR;
+                int AM;
+                int AMR;
+
+                I = A.Id;
+                A = AD.Buscar(I);
+                M = (P.AtkM / 10);
+                AF = (A.AtkF / 50);
+                AM = (A.AtkM / 50);
+
+                R = rnd.Next(M, (C.AtkM + 1));
+                AFR = rnd.Next(AF, (A.AtkF + 1));
+                AMR = rnd.Next(AM, (A.AtkM + 1));
+                M = ((C.Def) * 30 / 100);
+                R2 = rnd.Next(M, (C.Def + 1));
+                DP = DP + R + AFR + AMR;
+                DP = DP - R2;
+                C.Hp = C.Hp - DP;
+                UP = UP + A.Mana;
+                M = P.Mana - UP;
+
+                if (M > 0)
                 {
-                    int I;
-                    int AF;
-                    int AFR;
-                    int AM;
-                    int AMR;
-
-                    I = A.Id;
-                    A = AD.Buscar(I);
-                    M = (P.AtkM / 10);
-                    AF = (A.AtkF / 50);
-                    AM = (A.AtkM / 50);
-
-                    R = rnd.Next(M, (C.AtkM + 1));
-                    AFR = rnd.Next(AF, (A.AtkF + 1));
-                    AMR = rnd.Next(AM, (A.AtkM + 1));
-                    M = ((C.Def) * 30 / 100);
-                    R2 = rnd.Next(M, (C.Def + 1));
-                    DP = DP + R + AFR + AMR;
-                    DP = DP- R2;
-                    C.Hp = C.Hp - DP;
-                    UP = UP + A.Mana;
-                    M = P.Mana - UP;
-                   
-                    if (M > 0)
+                    if (C.Hp > 0)
                     {
-                        if (C.Hp > 0)
-                        {
                         DC = DC - A.Hp;
-                            Response.Cookies.Add(new HttpCookie("Dano da Criatura", Convert.ToString(DC)));
-                            Response.Cookies.Add(new HttpCookie("Utilização do Personagem", Convert.ToString(UP)));
-                            Response.Cookies.Add(new HttpCookie("Dano do Personagem", Convert.ToString(DP)));
-                           return RedirectToAction("CriaturaAcao", "HNI", new { @Def = A.Def });
+                        Response.Cookies.Add(new HttpCookie("Dano da Criatura", Convert.ToString(DC)));
+                        Response.Cookies.Add(new HttpCookie("Utilização do Personagem", Convert.ToString(UP)));
+                        Response.Cookies.Add(new HttpCookie("Dano do Personagem", Convert.ToString(DP)));
+                        return RedirectToAction("CriaturaAcao", "HNI", new { @Def = A.Def });
 
                     }
                     else
-                        {
+                    {
 
                         P.Exp = P.Exp + C.Exp;
                         P.Nivel = P.Nivel * 100;
@@ -645,62 +653,26 @@ namespace HNI.Controllers
                         PD.Status_Atualizacao(P.Id, P.Nivel, P.Exp, P.Ouro, P.Mana, P.Hp, P.AtkF, P.AtkM, P.Def);
                         return RedirectToAction("Lugar", "HNI");
                     }
-                    }
-                    else
-                    {
-                    return RedirectToAction("CriaturaAcao", "HNI", new { @Def = 0 });
-                }
-
                 }
                 else
                 {
+                    return RedirectToAction("CriaturaAcao", "HNI", new { @Def = 0 });
+                }
+
+            }
+            else
+            {
 
                 return RedirectToAction("CriaturaAcao", "HNI", new { @Def = 0 });
             }
-            }
- 
+        }
+
 
         public ActionResult Passar_Nivel()
         {
-            return View();
+            return RedirectToAction("Inventario", "HNI");
         }
-        public ActionResult Level_Up(string Nome)
-        {
-            HttpCookie cookieP = Request.Cookies.Get("Personagem");
-            int p;
-            p = Convert.ToInt32(cookieP.Value);
-            PersonagemDAO PD = new PersonagemDAO();
-            Personagem P = new Personagem();
-            P = PD.Buscar_Id(P);
 
-            if (Nome == "ATF")
-            {
-                PD.Status_Atualizacao(P.Id, P.Nivel, P.Exp, P.Ouro, P.Mana, P.Hp, (P.AtkF+10), P.AtkM, P.Def);
-                return RedirectToAction("Lugar", "HNI");
-            }
-            if (Nome == "ATM")
-            {
-                PD.Status_Atualizacao(P.Id, P.Nivel, P.Exp, P.Ouro, P.Mana, P.Hp, P.AtkF, (P.AtkM +10), P.Def);
-                return RedirectToAction("Lugar", "HNI");
-            }
-            if (Nome == "DEF")
-            {
-                PD.Status_Atualizacao(P.Id, P.Nivel, P.Exp, P.Ouro, P.Mana, P.Hp, P.AtkF, P.AtkM ,( P.Def + 10));
-                return RedirectToAction("Lugar", "HNI");
-            }
-            if (Nome == "M")
-            {
-               PD.Status_Atualizacao(P.Id, P.Nivel, P.Exp, P.Ouro,( P.Mana + 20), P.Hp, P.AtkF, P.AtkM, P.Def );
-                return RedirectToAction("Lugar", "HNI");
-            }
-            if (Nome == "HP")
-            {
-                PD.Status_Atualizacao(P.Id, P.Nivel, P.Exp, P.Ouro, P.Mana , (P.Hp + 20), P.AtkF, P.AtkM, P.Def);
-                return RedirectToAction("Lugar", "HNI");
-            }
-            else
-            { return RedirectToAction("Lugar", "HNI"); }
-        }
         public ActionResult Perda()
         {
             HttpCookie cookie = Request.Cookies.Get("Questao");
@@ -726,6 +698,29 @@ namespace HNI.Controllers
             Response.Cookies.Add(new HttpCookie("Cena", Convert.ToString(c)));
             return View();
         }
+
+        private bool ValidarEmail(string email)
+        {
+            if (String.IsNullOrEmpty(email))
+                return false;
+            if (!email.Contains("@") || !email.Contains("."))
+                return false;
+            string[] strCamposEmail = email.Split(new String[] { "@" }, StringSplitOptions.RemoveEmptyEntries);
+            if (strCamposEmail.Length != 2)
+                return false;
+            if (strCamposEmail[0].Length < 3)
+                return false;
+            if (!strCamposEmail[1].Contains("."))
+                return false;
+            strCamposEmail = strCamposEmail[1].Split(new String[] { "." }, StringSplitOptions.RemoveEmptyEntries);
+            if (strCamposEmail.Length < 2)
+                return false;
+            if (strCamposEmail[0].Length < 1)
+                return false;
+            return true;
+        }
+
     }
+
 
 }
