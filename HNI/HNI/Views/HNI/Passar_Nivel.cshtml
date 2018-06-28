@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Passar de Nivel";
+}
+
+<h2 class="text-center">Passando de Nivel</h2>
+@using HNI.Models
+@using HNI.Dataaccess
+
+<style type="text/css">
+    body {
+    background-image: url('@Url.Content("~/Background-Image.jpg")');
+    }
+</style>
+
+
+@{
+
+    PersonagemDAO PD = new PersonagemDAO();
+    Personagem P = new Personagem();
+    ClasseDAO CD = new ClasseDAO();
+    Classe C = new Classe();
+    HttpCookie cookie = Request.Cookies.Get("Personagem");
+
+    P = PD.BuscarP(Convert.ToInt32(cookie.Value));
+    C = CD.Buscar(P);
+    ViewBag.Imagem = P.Imagem + ".png";
+    ViewBag.Nome = P.Nome;
+    ViewBag.Atkf = P.AtkF;
+    ViewBag.Atkm = P.AtkM;
+    ViewBag.Def = P.Def;
+    ViewBag.Mana = P.Mana;
+    ViewBag.Hp = P.Hp;
+
+    ViewBag.Classe = C.Nome;
+    ViewBag.Nivel = P.Nivel;
+}
+<div class="col-md-4 text-center col-md-offset-4 jumbotron Card">
+    <div class="row">
+        <img src="/Imagens/@ViewBag.Imagem"
+             width="290" height="420" />
+        <p class="text-center">@ViewBag.Nome</p>
+    </div>
+</div><div class="col-md-4 text-center col-md-offset-4 ">
+          <div class="row"><h3>Agora que você passou de Nivel pode aumentar 1 de seus status</h3></div>
+</div>
+<div class="col-md-4 text-center col-md-offset-4 jumbotron FAR2">
+    <div class="row">
+        <p class="text-center">Classe | @ViewBag.Classe</p>
+        <p class="text-center">Nivel | @ViewBag.Nivel</p>
+        <div class="row text-center">
+            <p>Hp | @ViewBag.Hp <a class="btn StatusBut" href="@Url.Action("Level_Up", "HNI", new { @Nome = "HP" })">+ 20</a></p>
+        </div>
+        <div class="row text-center">
+            <p>Mana | @ViewBag.Mana <a class="btn StatusBut" href="@Url.Action("Level_Up", "HNI", new { @Nome = "M" })">+ 20</a></p>
+        </div>
+        <div class="row text-center">
+            <p>AtkF | @ViewBag.Atkf <a class="btn StatusBut" href="@Url.Action("Level_Up", "HNI", new { @Nome = "ATF" })">+ 10</a></p>
+        </div>
+        <div class="row text-center">
+            <p>AtkM | @ViewBag.Atkm <a class="btn StatusBut" href="@Url.Action("Level_Up", "HNI", new { @Nome = "ATM" })">+ 10</a></p>
+        </div>
+        <div class="row  text-center ">
+            <p>Def | @ViewBag.Def <a class="btn StatusBut" href="@Url.Action("Level_Up", "HNI", new { @Nome = "DEF" })">+ 10</a></p>
+        </div>
+    </div>
+</div>
+
+
+

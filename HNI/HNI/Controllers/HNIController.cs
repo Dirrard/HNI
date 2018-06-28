@@ -662,9 +662,45 @@ namespace HNI.Controllers
 
         public ActionResult Passar_Nivel()
         {
-            return RedirectToAction("Inventario", "HNI");
+            return View();
         }
+        public ActionResult Level_Up(string Nome)
+        {
+            HttpCookie cookieP = Request.Cookies.Get("Personagem");
+            int p;
+            p = Convert.ToInt32(cookieP.Value);
+            PersonagemDAO PD = new PersonagemDAO();
+            Personagem P = new Personagem();
+            P = PD.Buscar_Id(P);
 
+            if (Nome == "ATF")
+            {
+                PD.Status_Atualizacao(P.Id, P.Nivel, P.Exp, P.Ouro, P.Mana, P.Hp, (P.AtkF+10), P.AtkM, P.Def);
+                return RedirectToAction("Lugar", "HNI");
+            }
+            if (Nome == "ATM")
+            {
+                PD.Status_Atualizacao(P.Id, P.Nivel, P.Exp, P.Ouro, P.Mana, P.Hp, P.AtkF, (P.AtkM +10), P.Def);
+                return RedirectToAction("Lugar", "HNI");
+            }
+            if (Nome == "DEF")
+            {
+                PD.Status_Atualizacao(P.Id, P.Nivel, P.Exp, P.Ouro, P.Mana, P.Hp, P.AtkF, P.AtkM ,( P.Def + 10));
+                return RedirectToAction("Lugar", "HNI");
+            }
+            if (Nome == "M")
+            {
+               PD.Status_Atualizacao(P.Id, P.Nivel, P.Exp, P.Ouro,( P.Mana + 20), P.Hp, P.AtkF, P.AtkM, P.Def );
+                return RedirectToAction("Lugar", "HNI");
+            }
+            if (Nome == "HP")
+            {
+                PD.Status_Atualizacao(P.Id, P.Nivel, P.Exp, P.Ouro, P.Mana , (P.Hp + 20), P.AtkF, P.AtkM, P.Def);
+                return RedirectToAction("Lugar", "HNI");
+            }
+            else
+            { return RedirectToAction("Lugar", "HNI"); }
+        }
         public ActionResult Perda()
         {
             HttpCookie cookie = Request.Cookies.Get("Questao");

@@ -1,4 +1,3 @@
-0	Atke-0	Sansão Vazia	1500	0	0	0	300
 1	Atke-1	Espada Carregada	40	0	100	0	20
 2	Atke-2	Espada de Luz	0	200	0	100	50
 3	Atke-3	Espada Concentrada	10	10	10	10	2
@@ -19,3 +18,4 @@
 18	Atke-18	Bloqueio Magico	40	500	0	50	150
 19	Atke-19	Luz do Amanhã	1000	4000	1000	4000	1000
 20	Atke-20	Trevas de Ontem	4000	1000	4000	0	1500
+21	Atke-0	Sansão Vazia	1500	0	0	0	300

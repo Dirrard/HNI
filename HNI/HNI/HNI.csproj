@@ -256,6 +256,7 @@
     <Content Include="Views\HNI\Loja.cshtml" />
     <Content Include="Views\HNI\Lugar.cshtml" />
     <Content Include="Views\HNI\Perda.cshtml" />
+    <Content Include="Views\HNI\Passar_Nivel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -215,3 +215,9 @@
     font-size: large;
     border:1px solid black;
 }
+
+.StatusBut{
+    color:black;
+    font-size:20px;
+    border:1px solid black;
+}
