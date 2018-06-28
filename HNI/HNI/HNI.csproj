@@ -255,6 +255,7 @@
     <Content Include="Views\HNI\Salvado.cshtml" />
     <Content Include="Views\HNI\Loja.cshtml" />
     <Content Include="Views\HNI\Lugar.cshtml" />
+    <Content Include="Views\HNI\Perda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
