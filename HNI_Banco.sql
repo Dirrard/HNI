@@ -96,6 +96,7 @@ create table AtkexPerson
 (
 AtkE_Id integer references AtkE(Id),
 Personegem_Id integer references Personagem(Id),
+Identi integer,
 id_AtkexPerson integer primary key identity(1,1)
 );
 go
@@ -112,6 +113,7 @@ create table AtkexClasse
 (
 AtkE_Id integer references AtkE(Id),
 Classe_Id integer references Classe(Id),
+Identi integer,
 id_AtkexClasse integer primary key identity(1,1)
 );
 go
@@ -119,6 +121,7 @@ create table AtkexCriat
 (
 AtkE_Id integer references AtkE(Id),
 Criat_Id integer references Criatura(Id),
+Identi integer,
 id_AtkexCriat integer primary key identity(1,1)
 );
 go

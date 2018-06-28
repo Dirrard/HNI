@@ -103,6 +103,8 @@ namespace HNI.Controllers
             obj.Exp = 0;
             ClasseDAO ca = new ClasseDAO();
             Classe c = new Classe();
+            AtkE A = new AtkE();
+            AtkEDAO AD = new AtkEDAO();
             c = ca.Buscar(obj);
             UsuarioDAO ud = new UsuarioDAO();
             HttpCookie cookie = Request.Cookies.Get("Usuario");
@@ -119,6 +121,27 @@ namespace HNI.Controllers
             p.Inserir(obj);
             Personagem Person = new Personagem();
             Person = p.Buscar_Id(obj);
+            A = ca.Buscar_AtkE(c.Id, 1);
+            if (A.Nome == "E")
+            {
+                AD.Aprender(A.Id, Person.Id, 1);
+            }
+            A = ca.Buscar_AtkE(c.Id, 2);
+            if (A.Nome == "E")
+            {
+                AD.Aprender(A.Id, Person.Id, 2);
+            }
+            A = ca.Buscar_AtkE(c.Id, 3);
+            if (A.Nome == "E")
+            {
+                AD.Aprender(A.Id, Person.Id, 3);
+            }
+            A = ca.Buscar_AtkE(c.Id, 4);
+            if (A.Nome == "E")
+            {
+                AD.Aprender(A.Id, Person.Id, 4);
+            }
+
             Response.Cookies.Add(new HttpCookie("Personagem", Convert.ToString(Person.Id)));
             Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(1)));
             Response.Cookies.Add(new HttpCookie("Cena", Convert.ToString(1)));
@@ -163,7 +186,7 @@ namespace HNI.Controllers
         }
         public ActionResult Bestiario()
         {
-            
+
             return View();
         }
         public ActionResult Salvar()
@@ -180,8 +203,8 @@ namespace HNI.Controllers
             int P = Convert.ToInt32(cookiep.Value);
             int C = Convert.ToInt32(cookiec.Value);
             Qu = ES.Buscar_Questao(Q);
-            S.Salvar(C,Qu.Id,P,U);
-            
+            S.Salvar(C, Qu.Id, P, U);
+
             return RedirectToAction("Salvado", "HNI");
         }
         public ActionResult Salvado()
@@ -204,20 +227,20 @@ namespace HNI.Controllers
             int Qtd;
             Personagem Per = new Personagem();
             PersonagemDAO PD = new PersonagemDAO();
-            LojaDAO Loja= new LojaDAO();
+            LojaDAO Loja = new LojaDAO();
             Item item = new Item();
             O = Convert.ToInt32(cookieO.Value);
             P = Convert.ToInt32(cookieP.Value);
-            Per=PD.BuscarP(P);
+            Per = PD.BuscarP(P);
             item = Loja.Buscar_Item(iitem);
             if (O == 1)
             {
                 V = Per.Ouro - item.Valor;
                 if (V >= 0)
                 {
-                    Loja.Comprar(V,Per.Id);
-                   Qtd = Loja.Verificar(item.Id, Per.Id);
-                    Loja.Pegar(item.Id,Per.Id,Qtd+1);
+                    Loja.Comprar(V, Per.Id);
+                    Qtd = Loja.Verificar(item.Id, Per.Id);
+                    Loja.Pegar(item.Id, Per.Id, Qtd + 1);
                     return RedirectToAction("Loja", "HNI");
                 }
                 else
@@ -252,20 +275,20 @@ namespace HNI.Controllers
             int R2;
             int C;
             Random rnd = new Random();
-            R = rnd.Next(1,200);
+            R = rnd.Next(1, 200);
 
             if (R <= 50)
             {
-                 Response.Cookies.Add(new HttpCookie("Dano da Criatura", Convert.ToString(0)));
-                 Response.Cookies.Add(new HttpCookie("Dano do Personagem", Convert.ToString(0)));
-                 Response.Cookies.Add(new HttpCookie("Utilização do Personagem", Convert.ToString(0)));
-                 Response.Cookies.Add(new HttpCookie("Utilização da Criatura", Convert.ToString(0)));
-                C = rnd.Next(D.CrtInicial,(D.CrtFinal+1));
+                Response.Cookies.Add(new HttpCookie("Dano da Criatura", Convert.ToString(0)));
+                Response.Cookies.Add(new HttpCookie("Dano do Personagem", Convert.ToString(0)));
+                Response.Cookies.Add(new HttpCookie("Utilização do Personagem", Convert.ToString(0)));
+                Response.Cookies.Add(new HttpCookie("Utilização da Criatura", Convert.ToString(0)));
+                C = rnd.Next(D.CrtInicial, (D.CrtFinal + 1));
                 if (C != 0)
                 {
                     if (C == 17)
                     {
-                        R2 = rnd.Next(1,5000);
+                        R2 = rnd.Next(1, 5000);
                         if (R2 <= 5)
                         {
                             Response.Cookies.Add(new HttpCookie("Criatura", Convert.ToString(C)));
@@ -318,6 +341,23 @@ namespace HNI.Controllers
                     Response.Cookies.Add(new HttpCookie("Passos", Convert.ToString(P)));
                     return RedirectToAction("Lugar", "HNI");
                 }
+            }
+        }
+
+
+        public ActionResult Batalhar(int Acao)
+        {
+            if (Acao == 1)
+            {
+
+            }
+            if (Acao == 2)
+            {
+
+            }
+            if (Acao == 3)
+            {
+
             }
         }
     }

@@ -17,7 +17,7 @@ namespace HNI.Dataaccess
 
             using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
             {
-                string strSQL = @"SELECT * FROM AtkexPerson where Id_Personagem = '" + i + "' and AtkE_Id ='"+N+"'";
+                string strSQL = @"SELECT * FROM AtkexPerson where Personagem_Id = '" + i + "' and Identi ='"+N+"'";
 
                 using (SqlCommand cmd = new SqlCommand(strSQL))
                 {
@@ -33,7 +33,7 @@ namespace HNI.Dataaccess
                     {
                         var A = new AtkE()
                         {
-                            Id = Convert.ToInt32(row["Id"]),
+                            Id = Convert.ToInt32(row["AtkE_Id"]),
                         };
                         A.Nome = "E";
                         return A;
@@ -53,7 +53,7 @@ namespace HNI.Dataaccess
 
             using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
             {
-                string strSQL = @"SELECT * FROM AtkexCriat where Id_Criat = '" + i + "' and AtkE_Id ='" + N + "'";
+                string strSQL = @"SELECT * FROM AtkexCriat where Criat_Id = '" + i + "' and Identi ='" + N + "'";
 
                 using (SqlCommand cmd = new SqlCommand(strSQL))
                 {
@@ -69,7 +69,7 @@ namespace HNI.Dataaccess
                     {
                         var A = new AtkE()
                         {
-                            Id = Convert.ToInt32(row["Id"]),
+                            Id = Convert.ToInt32(row["AtkE_Id"]),
                         };
                         A.Nome = "E";
                         return A;

@@ -20,6 +20,9 @@
     Criatura C = new Criatura();
     Questao Q = new Questao();
     Personagem P = new Personagem();
+    BatalhaDAO BD = new BatalhaDAO();
+    AtkEDAO AD = new AtkEDAO();
+    AtkE A = new AtkE();
     int Cr;
     int DC;
     int DP;
@@ -48,11 +51,52 @@
     Response.Cookies.Add(new HttpCookie("Lugar", Convert.ToString(L.Id)));
     ViewBag.Nome = P.Nome;
     C = CD.Buscar(Cr);
+    A = BD.Buscar_Id_Atke_Personagem(P.Id, 1);
+    if (A.Nome == "E")
+    {
+        AD.Buscar(A.Id);
+        ViewBag.AtkeImagem1 = A.Imagem + ".png";
+    }
+    else
+    {
+        ViewBag.AtkeImagem1 = "AtkE_Vazio.png";
+    }
+    A = BD.Buscar_Id_Atke_Personagem(P.Id, 2);
+    if (A.Nome == "E")
+    {
+        AD.Buscar(A.Id);
+        ViewBag.AtkeImagem2 = A.Imagem + ".png";
+    }
+    else
+    {
+        ViewBag.AtkeImagem2 = "AtkE_Vazio.png";
+    }
+    A = BD.Buscar_Id_Atke_Personagem(P.Id, 3);
+    if (A.Nome == "E")
+    {
+        AD.Buscar(A.Id);
+        ViewBag.AtkeImagem3 = A.Imagem + ".png";
+    }
+    else
+    {
+        ViewBag.AtkeImagem3 = "AtkE_Vazio.png";
+    }
+    A = BD.Buscar_Id_Atke_Personagem(P.Id, 4);
+    if (A.Nome == "E")
+    {
+        AD.Buscar(A.Id);
+        ViewBag.AtkeImagem4 = A.Imagem + ".png";
+    }
+    else
+    {
+        ViewBag.AtkeImagem4 = "AtkE_Vazio.png";
+    }
     ViewBag.CriaturaImagem = C.Imagem + ".png";
     ViewBag.CriaturaVida = C.Hp - DP;
     ViewBag.CriaturaMana = C.Mana - UC;
     ViewBag.PersonagemVida = P.Hp - DC;
     ViewBag.PersonagemMana = P.Mana - UP;
+
 
 }
 
@@ -137,10 +181,10 @@
             </div>
             <div class="modal-body Acaobtn2">
                 <div class="row text-center">
-                    <a class="btn  Acaobtn2" href="@Url.Action("AtaqueE", "HNI", new { @Id = 1})"></a>
-                    <a class="btn  Acaobtn2" href="@Url.Action("AtaqueE", "HNI", new { @Id = 2})"></a>
-                    <a class="btn  Acaobtn2" href="@Url.Action("AtaqueE", "HNI", new { @Id = 3})"></a>
-                    <a class="btn  Acaobtn2" href="@Url.Action("AtaqueE", "HNI", new { @Id = 4})"></a>
+                    <a class="btn  Acaobtn2" href="@Url.Action("AtaqueE", "HNI", new { @Id = 1})"><img src="/Imagens/@ViewBag.AtkeImagem1" width="50" height="50" /></a>
+                    <a class="btn  Acaobtn2" href="@Url.Action("AtaqueE", "HNI", new { @Id = 2})"><img src="/Imagens/@ViewBag.AtkeImagem2" width="50" height="50" /></a>
+                    <a class="btn  Acaobtn2" href="@Url.Action("AtaqueE", "HNI", new { @Id = 3})"><img src="/Imagens/@ViewBag.AtkeImagem3" width="50" height="50" /></a>
+                    <a class="btn  Acaobtn2" href="@Url.Action("AtaqueE", "HNI", new { @Id = 4})"><img src="/Imagens/@ViewBag.AtkeImagem4" width="50" height="50" /></a>
                 </div>
             </div>
             <button type="button" class="btn Acaobtn2" data-dismiss="modal">X</button>

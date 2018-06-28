@@ -54,5 +54,42 @@ namespace HNI.Dataaccess
 
 
         }
+
+        public AtkE Buscar_AtkE(int I , int Identi)
+        {
+
+
+            using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
+            {
+                string strSQL = @"SELECT * FROM AtkexClasse where Identi = '" +Identi + "' and Classe_Id ='"+I+"'";
+
+                using (SqlCommand cmd = new SqlCommand(strSQL))
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandText = strSQL;
+                    var dataReader = cmd.ExecuteReader();
+                    var dt = new DataTable();
+                    dt.Load(dataReader);
+                    conn.Close();
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        var Atke = new AtkE()
+                        {
+                            Id = Convert.ToInt32(row["AtkE_Id"]),
+                        };
+                        Atke.Nome = "E";
+                        return Atke;
+
+                    }
+                }
+            }
+            AtkE at = new AtkE();
+            at.Nome = "N";
+            return at;
+
+
+        }
     }
 }

@@ -50,10 +50,61 @@ namespace HNI.Dataaccess
                 }
             }
             AtkE E= new AtkE();
-            E.Imagem = "AtkE_Vazio";
             return E;
 
 
         }
+
+        public void Aprender(int A , int ID , int identi)
+        {
+            {
+                using (SqlConnection conn =
+                    new SqlConnection(@"Initial Catalog=HNI;
+                        Data Source=localhost;
+                        Integrated Security=SSPI;"))
+                {
+                    string strSQL = @"INSERT INTO AtkExPerson (Id_AtkE,Id_Personagem,Identi)
+                                 VALUES (@A,@P,@I);";
+
+                    using (SqlCommand cmd = new SqlCommand(strSQL))
+                    {
+                        cmd.Connection = conn;
+
+                        cmd.Parameters.Add("@A", SqlDbType.VarChar).Value = A;
+                        cmd.Parameters.Add("@P", SqlDbType.VarChar).Value = ID;
+                        cmd.Parameters.Add("@I", SqlDbType.VarChar).Value = identi;
+                        conn.Open();
+
+                        cmd.ExecuteNonQuery();
+
+                        conn.Close();
+                    }
+                }
+            }
+        }
+
+        public void Desaprender(int identi , int ID)
+        {
+            {
+                using (SqlConnection conn =
+                    new SqlConnection(@"Initial Catalog=HNI;
+                        Data Source=localhost;
+                        Integrated Security=SSPI;"))
+                {
+                    string strSQL = @"Delete AtkExPerson Where Identi ='"+identi+"' and Id_Personagem ='"+ID+"'";
+
+                    using (SqlCommand cmd = new SqlCommand(strSQL))
+                    {
+                        cmd.Connection = conn;
+                        conn.Open();
+
+                        cmd.ExecuteNonQuery();
+
+                        conn.Close();
+                    }
+                }
+            }
+        }
+
     }
 }
