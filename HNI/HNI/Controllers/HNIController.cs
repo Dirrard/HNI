@@ -475,7 +475,6 @@ namespace HNI.Controllers
             int DP;
             int M;
             int R;
-            int R2;
             Random rnd = new Random();
 
             p = Convert.ToInt32(cookieP.Value);

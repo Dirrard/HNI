@@ -2,6 +2,45 @@
 @{
     ViewBag.Title = "Carregar";
 }
+@using HNI.Models
+@using HNI.Dataaccess
 
-<h2>Carregar</h2>
+<style type="text/css">
+    body {
+    background-image: url('@Url.Content("~/Background-Image.jpg")');
+    }
+</style>
+
+
+@{
+
+    PersonagemDAO PD = new PersonagemDAO();
+    Personagem P = new Personagem();
+    ClasseDAO CD = new ClasseDAO();
+    Classe C = new Classe();
+    HttpCookie cookie = Request.Cookies.Get("Personagem");
+
+    P = PD.BuscarP(Convert.ToInt32(cookie.Value));
+    C = CD.Buscar(P);
+    ViewBag.Imagem = P.Imagem + ".png";
+    ViewBag.Nome = P.Nome;
+    ViewBag.Atkf = P.AtkF;
+    ViewBag.Atkm = P.AtkM;
+    ViewBag.Def = P.Def;
+    ViewBag.Mana = P.Mana;
+    ViewBag.Hp = P.Hp;
+
+    ViewBag.Classe = C.Nome;
+    ViewBag.Nivel = P.Nivel;
+}
+<hr />
+<div class="jumbotron CarregarPA">
+ 
+</div>
+<div class="col-md-12">
+    <div class="row text-center">
+        <a class="btn StatusBut btn-default" href="@Url.Action("Escolha", "HNI")">Voltar</a>
+    </div>
+</div>
+
 
