@@ -12,3 +12,5 @@ HNI/.vs/HNI/v14/.suo
 *.user
 *.user
 /HNI/HNI/*.user
+/HNI/Teste/obj
+/HNI/Teste/bin
