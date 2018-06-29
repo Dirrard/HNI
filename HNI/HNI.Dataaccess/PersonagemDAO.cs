@@ -11,7 +11,7 @@ namespace HNI.Dataaccess
 {
     public class PersonagemDAO
     {
-        public void Inserir(Personagem obj)
+        public void Inserir(Personagem obj,int identi)
         {
             {
                 using (SqlConnection conn =
@@ -19,8 +19,8 @@ namespace HNI.Dataaccess
                         Data Source=localhost;
                         Integrated Security=SSPI;"))
                 {
-                    string strSQL = @"INSERT INTO Personagem (Nome,Classe,Imagem,Genero,Ouro,Mana,Hp,AtkF,AtkM,Def,Nivel,[Exp],Id_Usuario)
-                                 VALUES (@nome,@classe,@imagem,@genero,@ouro,@mana,@hp,@atkf,@atkm,@def,@nivel,@exp,@usuario);";
+                    string strSQL = @"INSERT INTO Personagem (Nome,Classe,Imagem,Genero,Ouro,Mana,Hp,AtkF,AtkM,Def,Nivel,[Exp],Id_Usuario,Identi)
+                                 VALUES (@nome,@classe,@imagem,@genero,@ouro,@mana,@hp,@atkf,@atkm,@def,@nivel,@exp,@usuario,@Identi);";
 
                     using (SqlCommand cmd = new SqlCommand(strSQL))
                     {
@@ -39,6 +39,7 @@ namespace HNI.Dataaccess
                         cmd.Parameters.Add("@nivel", SqlDbType.VarChar).Value = obj.Nivel;
                         cmd.Parameters.Add("@exp", SqlDbType.VarChar).Value = obj.Exp;
                         cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = obj.Usuario.Id;
+                        cmd.Parameters.Add("@Identi", SqlDbType.VarChar).Value = identi;
                         conn.Open();
 
                         cmd.ExecuteNonQuery();
@@ -138,6 +139,60 @@ namespace HNI.Dataaccess
 
         }
 
+        public Personagem Buscar(int Id , int Identi)
+        {
+
+
+            using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
+            {
+                string strSQL = @"SELECT * FROM Personagem where Usuario = '" + Id + "' and Identi ='"+Identi+"'";
+
+                using (SqlCommand cmd = new SqlCommand(strSQL))
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandText = strSQL;
+                    var dataReader = cmd.ExecuteReader();
+                    var dt = new DataTable();
+                    dt.Load(dataReader);
+                    conn.Close();
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        var P = new Personagem()
+                        {
+                            Id = Convert.ToInt32(row["Id"]),
+                            Nome = row["Nome"].ToString(),
+                            Imagem = row["Imagem"].ToString(),
+                            Classe = new Classe()
+                            {
+                                Id = Convert.ToInt32(row["Classe"]),
+                            },
+                            Genero = row["Genero"].ToString(),
+                            Ouro = Convert.ToInt32(row["Ouro"]),
+                            Mana = Convert.ToInt32(row["Mana"]),
+                            Hp = Convert.ToInt32(row["Hp"]),
+                            AtkF = Convert.ToInt32(row["AtkF"]),
+                            AtkM = Convert.ToInt32(row["AtkM"]),
+                            Def = Convert.ToInt32(row["Def"]),
+                            Nivel = Convert.ToInt32(row["Nivel"]),
+                            Exp = Convert.ToInt32(row["Exp"]),
+                            Usuario = new Usuario
+                            {
+                                Id = Convert.ToInt32(row["Id_Usuario"]),
+                            }
+                        };
+                        return P;
+
+                    }
+                }
+            }
+            Personagem Pa = new Personagem();
+            Pa.Nome = "N";
+            return Pa;
+
+
+        }
         public void Status_Atualizacao(int Id,int Nivel, int Exp, int Ouro, int Mana, int Hp, int AtkF, int AtkM, int Def)
         {
             {

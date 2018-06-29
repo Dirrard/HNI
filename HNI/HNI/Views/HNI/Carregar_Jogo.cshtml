@@ -17,12 +17,14 @@
     PersonagemDAO PD = new PersonagemDAO();
     Personagem P = new Personagem();
     ClasseDAO CD = new ClasseDAO();
+    SaveDAO Save = new SaveDAO();
     Classe C = new Classe();
-    HttpCookie cookie = Request.Cookies.Get("Personagem");
-
-    P = PD.BuscarP(Convert.ToInt32(cookie.Value));
+    HttpCookie cookieU = Request.Cookies.Get("Usuario");
+  
+    int U = Convert.ToInt32(cookieU.Value);
+    P = PD.Buscar(U,1);
     C = CD.Buscar(P);
-    ViewBag.Imagem = P.Imagem + ".png";
+
     ViewBag.Nome = P.Nome;
     ViewBag.Atkf = P.AtkF;
     ViewBag.Atkm = P.AtkM;
@@ -35,11 +37,54 @@
 }
 <hr />
 <div class="jumbotron CarregarPA">
- 
+    <div class="col-md-10 CarregarL">
+        <div class="row">
+            <p>Nome:@ViewBag.Nome|AtkF:@ViewBag.Atkf|AtkM:@ViewBag.Atkm|Def:@ViewBag.Def|Mana:@ViewBag.Mana|Hp:@ViewBag.Hp</p>
+            <p>Ouro:@ViewBag.Ouro <a class="btn StatusBut btn-default" href="@Url.Action("Carregar", "HNI", new { @Id = ViewBag.Id })">Continuar Jogo</a></p>
+        </div>
+    </div>
+   @{ P = PD.Buscar(U,2);
+    C = CD.Buscar(P);
+   
+    ViewBag.Nome = P.Nome;
+    ViewBag.Atkf = P.AtkF;
+    ViewBag.Atkm = P.AtkM;
+    ViewBag.Def = P.Def;
+    ViewBag.Mana = P.Mana;
+    ViewBag.Hp = P.Hp;
+
+    ViewBag.Classe = C.Nome;
+    ViewBag.Nivel = P.Nivel;
+    }
+    <div class="col-md-10 CarregarL">
+        <div class="row">
+            <p>Nome:@ViewBag.Nome|AtkF:@ViewBag.Atkf|AtkM:@ViewBag.Atkm|Def:@ViewBag.Def|Mana:@ViewBag.Mana|Hp:@ViewBag.Hp</p>
+            <p>Ouro:@ViewBag.Ouro <a class="btn StatusBut btn-default" href="@Url.Action("Carregar", "HNI",new { @Id = ViewBag.Id })">Continuar Jogo</a></p>
+        </div>
+    </div>
+    @{ P = PD.Buscar(U, 3);
+        C = CD.Buscar(P);
+        
+        ViewBag.Nome = P.Nome;
+        ViewBag.Atkf = P.AtkF;
+        ViewBag.Atkm = P.AtkM;
+        ViewBag.Def = P.Def;
+        ViewBag.Mana = P.Mana;
+        ViewBag.Hp = P.Hp;
+
+        ViewBag.Classe = C.Nome;
+        ViewBag.Nivel = P.Nivel;
+    }
+    <div class="col-md-10 CarregarL">
+        <div class="row">
+            <p>Nome:@ViewBag.Nome|AtkF:@ViewBag.Atkf|AtkM:@ViewBag.Atkm|Def:@ViewBag.Def|Mana:@ViewBag.Mana|Hp:@ViewBag.Hp</p>
+            <p>Ouro:@ViewBag.Ouro <a class="btn StatusBut btn-default" href="@Url.Action("Carregar", "HNI",new { @Id = ViewBag.Id })">Continuar Jogo</a></p>
+        </div>
+    </div>
 </div>
 <div class="col-md-12">
     <div class="row text-center">
-        <a class="btn StatusBut btn-default" href="@Url.Action("Escolha", "HNI")">Voltar</a>
+        <a class="btn StatusBut btn-default" href="@Url.Action("Jogo", "HNI")">Voltar</a>
     </div>
 </div>
 

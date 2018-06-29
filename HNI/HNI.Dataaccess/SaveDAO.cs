@@ -41,7 +41,53 @@ namespace HNI.Dataaccess
                 }
             }
         }
+        public Momento Carregar (int Id)
+        {
 
+
+            using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
+            {
+                string strSQL = @"SELECT * FROM Momento where Personagem_Id = '" + Id + "'";
+
+                using (SqlCommand cmd = new SqlCommand(strSQL))
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandText = strSQL;
+                    var dataReader = cmd.ExecuteReader();
+                    var dt = new DataTable();
+                    dt.Load(dataReader);
+                    conn.Close();
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        var A = new Momento()
+                        {
+                            Questao = new Questao()
+                            {
+                                Id = Convert.ToInt32(row["Questao"]),
+                            },
+                            Lugar= new Lugar()
+                            {
+                                Id = Convert.ToInt32(row["Lugar"]),
+                            },
+                            Cena = new Cena()
+                            {
+                                Id = Convert.ToInt32(row["Cena"]),
+                            }
+                            
+                        };
+                        return A;
+
+                    }
+                }
+            }
+            Momento E = new Momento();
+
+            return E;
+
+
+        }
 
     }
 }

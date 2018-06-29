@@ -44,7 +44,8 @@ AtkF integer,
 AtkM integer,
 Def integer,
 Nivel integer,
-[Exp] integer
+[Exp] integer,
+Identi integer
 );
 go
 create table Item

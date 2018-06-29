@@ -116,6 +116,7 @@ namespace HNI.Controllers
             ClasseDAO ca = new ClasseDAO();
             Classe c = new Classe();
             AtkE A = new AtkE();
+            Personagem z = new Personagem();
             AtkEDAO AD = new AtkEDAO();
             c = ca.Buscar(obj);
             UsuarioDAO ud = new UsuarioDAO();
@@ -130,7 +131,32 @@ namespace HNI.Controllers
             obj.Mana = c.Mana;
             obj.Hp = c.Hp;
             obj.Genero = "Masculino";
-            p.Inserir(obj);
+            z = p.Buscar(u, 1);
+             if(z.Nome != "N")
+            {
+                p.Inserir(obj, 1);
+            }
+            else
+            {
+                z = p.Buscar(u, 2);
+                if (z.Nome != "N")
+                {
+                    p.Inserir(obj, 2);
+                }
+                else
+                {
+                    z = p.Buscar(u, 3);
+                    if (z.Nome != "N")
+                    {
+                        p.Inserir(obj, 3);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Carregar_Jogo", "HNI");
+                    }
+                }
+            }
+
             Personagem Person = new Personagem();
             Person = p.Buscar_Id(obj);
             A = ca.Buscar_AtkE(c.Id, 1);
@@ -722,6 +748,23 @@ namespace HNI.Controllers
                 return false;
             return true;
         }
+
+        public ActionResult Carregar(int Id)
+        {
+            HttpCookie cookie = Request.Cookies.Get("Usuario");
+            Momento M = new Momento();
+            PersonagemDAO PD = new PersonagemDAO();
+            Personagem P = new Personagem();
+            SaveDAO S = new SaveDAO();
+            P = PD.Buscar(Convert.ToInt32(cookie.Value),Id);
+            M = S.Carregar(P.Id);
+            Response.Cookies.Add(new HttpCookie("Cena", Convert.ToString(M.Cena)));
+            Response.Cookies.Add(new HttpCookie("Lugar", Convert.ToString(M.Lugar)));
+            Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(M.Questao)));
+            Response.Cookies.Add(new HttpCookie("Personagem", Convert.ToString(P.Id)));
+            return RedirectToAction("Escolha", "HNI");
+        }
+
 
     }
 
