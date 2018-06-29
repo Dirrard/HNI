@@ -221,3 +221,31 @@
     font-size:20px;
     border:1px solid black;
 }
+.InventarioI {
+      color:black;
+      background-color:cornflowerblue;
+    border:5px solid black;
+}
+.InventarioE {
+      color:black;
+      background-color:azure;
+    border:2px solid black;
+}
+.InventarioA {
+      color:black;
+      background-color:darkseagreen;
+    border:3px solid black;
+}
+.InventarioIt
+{
+      color:black;
+      background-color:darkslateblue;
+    border:3px solid black;
+}
+.CarregarPA
+{
+    color:black;
+    background-color:darkslategrey;
+    border:5px solid black;
+
+}

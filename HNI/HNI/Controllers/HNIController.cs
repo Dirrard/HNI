@@ -27,6 +27,10 @@ namespace HNI.Controllers
         {
             return View();
         }
+        public ActionResult Inventario()
+        {
+            return View();
+        }
         public ActionResult Jogo()
         {
             return View();
@@ -472,7 +476,6 @@ namespace HNI.Controllers
             int DP;
             int M;
             int R;
-            int R2;
             Random rnd = new Random();
 
             p = Convert.ToInt32(cookieP.Value);
