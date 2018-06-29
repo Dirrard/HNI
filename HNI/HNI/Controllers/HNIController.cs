@@ -69,8 +69,10 @@ namespace HNI.Controllers
         }
         public ActionResult Salvar_U(Usuario obj)
         {
-            if (obj.DataNasc >= )
-
+            {
+                ViewBag.ErroData = " Erro na validação do campo data";
+                return View("Cadastro");
+            }
                 if (!ValidarEmail(obj.Email))
                 {
                     ViewBag.ErroMns = " Erro na validação de Email";
@@ -86,7 +88,6 @@ namespace HNI.Controllers
             {
                 return RedirectToAction("Cadastro_Erro", "HNI");
             }
-
         }
         public ActionResult Login_U(Usuario obj)
         {
@@ -698,6 +699,7 @@ namespace HNI.Controllers
             Response.Cookies.Add(new HttpCookie("Cena", Convert.ToString(c)));
             return View();
         }
+
 
         private bool ValidarEmail(string email)
         {
