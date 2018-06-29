@@ -27,6 +27,10 @@ namespace HNI.Controllers
         {
             return View();
         }
+        public ActionResult Inventario()
+        {
+            return View();
+        }
         public ActionResult Jogo()
         {
             return View();
