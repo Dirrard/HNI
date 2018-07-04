@@ -72,17 +72,12 @@ namespace HNI.Controllers
             return View();
         }
         public ActionResult Salvar_U(Usuario obj)
-        {
+        { 
+            if (!ValidarEmail(obj.Email))
             {
-                ViewBag.ErroData = " Erro na validação do campo data";
-                return View("Cadastro");
+                Response.Cookies.Add(new HttpCookie("ErroMns", Convert.ToString("Erro na validacao de Email")));
+                return RedirectToAction("Cadastro", "HNI");
             }
-                if (!ValidarEmail(obj.Email))
-                {
-                    ViewBag.ErroMns = " Erro na validação de Email";
-                    return View("Cadastro");
-                }
-
             if (obj.Termo == true && obj.Senha == obj.ConfSenha)
             {
                 new UsuarioDAO().Inserir(obj);
@@ -119,7 +114,7 @@ namespace HNI.Controllers
             AtkE A = new AtkE();
             Personagem z = new Personagem();
             AtkEDAO AD = new AtkEDAO();
-            c = ca.Buscar(obj);
+            c = ca.Buscar(obj.Classe.Id);
             UsuarioDAO ud = new UsuarioDAO();
             HttpCookie cookie = Request.Cookies.Get("Usuario");
             Int32 u = Convert.ToInt32(cookie.Value);
@@ -133,21 +128,21 @@ namespace HNI.Controllers
             obj.Hp = c.Hp;
             obj.Genero = "Masculino";
             z = p.Buscar(u, 1);
-             if(z.Nome != "N")
+             if(z.Nome == "N")
             {
                 p.Inserir(obj, 1);
             }
             else
             {
                 z = p.Buscar(u, 2);
-                if (z.Nome != "N")
+                if (z.Nome == "N")
                 {
                     p.Inserir(obj, 2);
                 }
                 else
                 {
                     z = p.Buscar(u, 3);
-                    if (z.Nome != "N")
+                    if (z.Nome == "N")
                     {
                         p.Inserir(obj, 3);
                     }
@@ -767,6 +762,11 @@ namespace HNI.Controllers
             return RedirectToAction("Escolha", "HNI");
         }
 
+        public ActionResult Passa_Cadastro()
+        {
+            Response.Cookies.Add(new HttpCookie("ErroMns", Convert.ToString("")));
+            return RedirectToAction("Cadastro", "HNI");
+        }
 
     }
 

@@ -21,7 +21,7 @@
     HttpCookie cookie = Request.Cookies.Get("Personagem");
 
     P = PD.BuscarP(Convert.ToInt32(cookie.Value));
-    C = CD.Buscar(P);
+    C = CD.Buscar(P.Classe.Id);
     ViewBag.Imagem = P.Imagem + ".png";
     ViewBag.Nome = P.Nome;
     ViewBag.Atkf = P.AtkF;

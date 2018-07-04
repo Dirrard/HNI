@@ -23,7 +23,7 @@
   
     int U = Convert.ToInt32(cookieU.Value);
     P = PD.Buscar(U,1);
-    C = CD.Buscar(P);
+    C = CD.Buscar(P.Classe.Id);
 
     ViewBag.Nome = P.Nome;
     ViewBag.Atkf = P.AtkF;
@@ -44,7 +44,7 @@
         </div>
     </div>
    @{ P = PD.Buscar(U,2);
-    C = CD.Buscar(P);
+    C = CD.Buscar(P.Id);
    
     ViewBag.Nome = P.Nome;
     ViewBag.Atkf = P.AtkF;
@@ -63,7 +63,7 @@
         </div>
     </div>
     @{ P = PD.Buscar(U, 3);
-        C = CD.Buscar(P);
+        C = CD.Buscar(P.Id);
         
         ViewBag.Nome = P.Nome;
         ViewBag.Atkf = P.AtkF;

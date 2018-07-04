@@ -11,7 +11,18 @@
 </style>
 <div class="row">
     <div  class="text-center Bod ">
-        <h1>Bem-Vindo ao Cadastro do jogo HNI</h1>
+        @{
+            HttpCookie cookie = Request.Cookies.Get("ErroMns");
+            ViewBag.ErroMns = cookie.Value;
+            if (ViewBag.ErroMns != "")
+            {
+                <h1 class="Erro">@ViewBag.ErroMns</h1>
+            }
+            else
+            {
+                <h1>Bem-Vindo ao Cadastro do jogo HNI</h1>
+            }
+        }
         <br />
     </div>
     <div class="jumbotron Bodin">

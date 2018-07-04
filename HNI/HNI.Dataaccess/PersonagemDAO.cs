@@ -145,7 +145,7 @@ namespace HNI.Dataaccess
 
             using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
             {
-                string strSQL = @"SELECT * FROM Personagem where Usuario = '" + Id + "' and Identi ='"+Identi+"'";
+                string strSQL = @"SELECT * FROM Personagem where Id_Usuario = '" + Id + "' and Identi ='"+Identi+"'";
 
                 using (SqlCommand cmd = new SqlCommand(strSQL))
                 {

@@ -11,13 +11,13 @@ namespace HNI.Dataaccess
 {
     public class ClasseDAO
     {
-        public Classe Buscar(Personagem p)
+        public Classe Buscar(int Id)
         {
            
 
             using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
             {
-                string strSQL = @"SELECT * FROM Classe where Id = '" + p.Classe.Id + "'";
+                string strSQL = @"SELECT * FROM Classe where Id = '" + Id + "'";
 
                 using (SqlCommand cmd = new SqlCommand(strSQL))
                 {
