@@ -219,6 +219,10 @@ BULK INSERT Questao
 FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Questoes-Cena01.txt'
 with(CODEPAGE='ACP')
 go
+BULK INSERT Questao
+FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Questoes-Cena02.txt'
+with(CODEPAGE='ACP')
+go
 BULK INSERT Resposta
 FROM 'C:\Users\Aluno\Documents\GitHub\HNI\HNI-Bulk-Insert\H-Respostas-Cena01.txt'
 with(CODEPAGE='ACP')

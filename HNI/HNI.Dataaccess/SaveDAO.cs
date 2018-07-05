@@ -9,9 +9,9 @@ using System.Data;
 
 namespace HNI.Dataaccess
 {
-   public class SaveDAO
+    public class SaveDAO
     {
-        public void Salvar(int C, int Q, int P , int U)
+        public void Salvar(int C, int Q, int P, int U)
         {
             {
                 using (SqlConnection conn =
@@ -21,7 +21,7 @@ namespace HNI.Dataaccess
                 {
                     string strSQL = @"INSERT INTO Momento (Cena,Questao,Usuario,Personagem)
                     VALUES (@Cena,@Questao,@Usuario,@Personagem);
-                            "; 
+                            ";
 
                     using (SqlCommand cmd = new SqlCommand(strSQL))
                     {
@@ -34,20 +34,20 @@ namespace HNI.Dataaccess
 
                         conn.Open();
 
-                       cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
 
                         conn.Close();
                     }
                 }
             }
         }
-        public Momento Carregar (int Id)
+        public Momento Carregar(int Id)
         {
 
 
             using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
             {
-                string strSQL = @"SELECT * FROM Momento where Personagem_Id = '" + Id + "'";
+                string strSQL = @"SELECT * FROM Momento where Personagem= '" + Id + "'";
 
                 using (SqlCommand cmd = new SqlCommand(strSQL))
                 {
@@ -67,7 +67,7 @@ namespace HNI.Dataaccess
                             {
                                 Id = Convert.ToInt32(row["Questao"]),
                             },
-                            Lugar= new Lugar()
+                            Lugar = new Lugar()
                             {
                                 Id = Convert.ToInt32(row["Lugar"]),
                             },
@@ -75,7 +75,7 @@ namespace HNI.Dataaccess
                             {
                                 Id = Convert.ToInt32(row["Cena"]),
                             }
-                            
+
                         };
                         return A;
 
@@ -83,11 +83,45 @@ namespace HNI.Dataaccess
                 }
             }
             Momento E = new Momento();
+            E.Cena = new Cena()
+            {
+                Id = 0,
+            };
+            E.Questao = new Questao()
+            {
+                Id = 0,
+            };
+            E.Lugar = new Lugar()
+            {
+                Id = 0,
+            };
 
             return E;
 
 
         }
+        public void Deletar(int Id)
+        {
+
+
+            using (SqlConnection conn = new SqlConnection(@"Initial Catalog=HNI;Data Source = localhost; Integrated Security=SSPI"))
+            {
+                string strSQL = @"Delete FROM Momento where Id = '" + Id + "'";
+
+                using (SqlCommand cmd = new SqlCommand(strSQL))
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandText = strSQL;
+                    var dataReader = cmd.ExecuteReader();
+                    var dt = new DataTable();
+                    dt.Load(dataReader);
+                    conn.Close();
+
+                }
+            }
+        }
+
 
     }
 }

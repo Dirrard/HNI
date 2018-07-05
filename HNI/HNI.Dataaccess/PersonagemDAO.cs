@@ -189,6 +189,7 @@ namespace HNI.Dataaccess
             }
             Personagem Pa = new Personagem();
             Pa.Nome = "N";
+            Pa.AtkF = 000;
             return Pa;
 
 

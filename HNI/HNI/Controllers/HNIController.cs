@@ -72,7 +72,7 @@ namespace HNI.Controllers
             return View();
         }
         public ActionResult Salvar_U(Usuario obj)
-        { 
+        {
             if (!ValidarEmail(obj.Email))
             {
                 Response.Cookies.Add(new HttpCookie("ErroMns", Convert.ToString("Erro na validacao de Email")));
@@ -128,7 +128,7 @@ namespace HNI.Controllers
             obj.Hp = c.Hp;
             obj.Genero = "Masculino";
             z = p.Buscar(u, 1);
-             if(z.Nome == "N")
+            if (z.Nome == "N")
             {
                 p.Inserir(obj, 1);
             }
@@ -228,18 +228,28 @@ namespace HNI.Controllers
             SaveDAO S = new SaveDAO();
             EscolhaDAO ES = new EscolhaDAO();
             Questao Qu = new Questao();
+            Momento M = new Momento();
             HttpCookie cookieq = Request.Cookies.Get("Questao");
             HttpCookie cookiep = Request.Cookies.Get("Personagem");
             HttpCookie cookiec = Request.Cookies.Get("Cena");
             HttpCookie cookieu = Request.Cookies.Get("Usuario");
             int Q = Convert.ToInt32(cookieq.Value);
-            int U = Convert.ToInt32(cookieq.Value);
+            int U = Convert.ToInt32(cookieu.Value);
             int P = Convert.ToInt32(cookiep.Value);
             int C = Convert.ToInt32(cookiec.Value);
             Qu = ES.Buscar_Questao(Q);
-            S.Salvar(C, Qu.Id, P, U);
-
-            return RedirectToAction("Salvado", "HNI");
+            M = S.Carregar(P);
+            if (M.Cena.Id == 0 && M.Lugar.Id == 0 && M.Questao.Id == 0)
+            {
+                S.Salvar(C, Qu.Id, P, U);
+                return RedirectToAction("Salvado", "HNI");
+            }
+            else
+            {
+                S.Deletar(M.Id);
+                S.Salvar(C, Qu.Id, P, U);
+                return RedirectToAction("Salvado", "HNI");
+            }
         }
         public ActionResult Salvado()
         {
@@ -753,12 +763,21 @@ namespace HNI.Controllers
             PersonagemDAO PD = new PersonagemDAO();
             Personagem P = new Personagem();
             SaveDAO S = new SaveDAO();
-            P = PD.Buscar(Convert.ToInt32(cookie.Value),Id);
+            P = PD.Buscar(Convert.ToInt32(cookie.Value), Id);
             M = S.Carregar(P.Id);
-            Response.Cookies.Add(new HttpCookie("Cena", Convert.ToString(M.Cena)));
-            Response.Cookies.Add(new HttpCookie("Lugar", Convert.ToString(M.Lugar)));
-            Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(M.Questao)));
-            Response.Cookies.Add(new HttpCookie("Personagem", Convert.ToString(P.Id)));
+            if (M.Questao.Id == 0 && M.Lugar.Id == 0 && M.Cena.Id == 0)
+            {
+                Response.Cookies.Add(new HttpCookie("Cena", Convert.ToString(1)));
+                Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(1)));
+                Response.Cookies.Add(new HttpCookie("Personagem", Convert.ToString(P.Id)));
+            }
+            else
+            {
+                Response.Cookies.Add(new HttpCookie("Cena", Convert.ToString(M.Cena.Id)));
+                Response.Cookies.Add(new HttpCookie("Lugar", Convert.ToString(M.Lugar.Id)));
+                Response.Cookies.Add(new HttpCookie("Questao", Convert.ToString(M.Questao.Id)));
+                Response.Cookies.Add(new HttpCookie("Personagem", Convert.ToString(P.Id)));
+            }
             return RedirectToAction("Escolha", "HNI");
         }
 
